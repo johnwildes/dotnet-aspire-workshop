@@ -11,7 +11,7 @@ In this module, we will integrate a PostgreSQL database with our application. We
 1. Install the required NuGet package in your AppHost project:
 
 ```xml
-<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.3.0" />
+<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.0" />
 ```
 
 1. Update the AppHost's Program.cs to add PostgreSQL:
@@ -25,6 +25,18 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 
 The `WithDataVolume(isReadOnly: false)` configuration ensures that your data persists between container restarts. The data is stored in a Docker volume that exists outside the container, making it survive container restarts.
 
+### New in .NET Aspire 9.4: Enhanced Database Initialization
+
+.NET Aspire 9.4 introduces the improved `WithInitFiles()` method for all database providers, replacing the more complex `WithInitBindMount()` method:
+
+```csharp
+var postgres = builder.AddPostgres("postgres")
+    .WithDataVolume(isReadOnly: false)
+    .WithInitFiles("./database-init");  // Simplified initialization from files
+```
+
+This method works consistently across all database providers (PostgreSQL, MySQL, MongoDB, Oracle) and provides better error handling and simplified configuration.
+
 To ensure proper application startup, we'll configure the web application to wait for the database:
 
 ```csharp
@@ -34,15 +46,37 @@ var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
     .WithExternalHttpEndpoints();
 ```
 
+### Adding Container Persistence to Your Database
+
+For development scenarios where you want your database container and data to persist across multiple application runs, you can configure the container lifetime:
+
+```csharp
+var postgres = builder.AddPostgres("postgres")
+    .WithDataVolume(isReadOnly: false)
+    .WithLifetime(ContainerLifetime.Persistent);  // Container persists across app restarts
+
+var weatherDb = postgres.AddDatabase("weatherdb");
+```
+
+With `ContainerLifetime.Persistent`, the PostgreSQL container will continue running even when you stop your Aspire application. This means:
+
+- **Faster startup times**: No need to wait for PostgreSQL to initialize on subsequent runs
+- **Data persistence**: Your database data remains intact between application sessions
+- **Consistent development**: The database stays in the same state you left it
+
+> **Note**: Persistent containers are primarily useful for development scenarios. In production deployments, you'll typically use managed database services that handle persistence automatically.
+
+> **Advanced Container Features**: .NET Aspire also supports advanced container configuration like `WithExplicitStart()` for better startup coordination, and `WithContainerFiles()` for mounting initialization scripts. These features provide fine-grained control over container behavior when needed for complex development scenarios. To learn more about these advanced features, see [Persist data using volumes](https://learn.microsoft.com/dotnet/aspire/fundamentals/persist-data-volumes) and [Container resource lifecycle](https://learn.microsoft.com/dotnet/aspire/fundamentals/app-host-overview#container-resource-lifecycle) in the official documentation.
+
 ## Integrating EF Core with PostgreSQL
 
 1. Install the required NuGet packages in your web application:
 
 ```xml
-<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.3.0" />
+<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
 ```
 
-1. Create your DbContext class:
+2. Create your DbContext class:
 
 ```csharp
 public class MyWeatherContext : DbContext
@@ -62,7 +96,7 @@ public class MyWeatherContext : DbContext
 }
 ```
 
-1. Register the DbContext in your application's Program.cs:
+3. Register the DbContext in your application's Program.cs:
 
 ```csharp
 builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
@@ -70,7 +104,7 @@ builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
 
 Note that .NET Aspire handles the connection string configuration automatically. The connection name "weatherdb" matches the database name we created in the AppHost project.
 
-1. Set up database initialization:
+4. Set up database initialization:
 
 ```csharp
 if (app.Environment.IsDevelopment())
@@ -96,24 +130,24 @@ Now we'll update the web application to support favoriting weather zones and fil
 @inject MyWeatherContext DbContext
 ```
 
-1. Add these new properties to the `@code` block to support the favorites functionality:
+2. Add these new properties to the `@code` block to support the favorites functionality:
 
 ```csharp
 bool ShowOnlyFavorites { get; set; }
 List<Zone> FavoriteZones { get; set; } = new List<Zone>();
 ```
 
-1. Update the `OnInitializedAsync` method to load favorites from the database. Find the existing method and replace it with:
+3. Update the `OnInitializedAsync` method to load favorites from the database. Find the existing method and replace it with:
 
 ```csharp
 protected override async Task OnInitializedAsync()
 {
     AllZones = (await NwsManager.GetZonesAsync()).ToArray();
-    FavoriteZones = await MyWeatherContext.FavoriteZones.ToListAsync();
+    FavoriteZones = await DbContext.FavoriteZones.ToListAsync();
 }
 ```
 
-1. Finally, add the `ToggleFavorite` method to handle saving favorites to the database. Add this method to the `@code` block:
+4. Finally, add the `ToggleFavorite` method to handle saving favorites to the database. Add this method to the `@code` block:
 
 ```csharp
 private async Task ToggleFavorite(Zone zone)
@@ -121,18 +155,18 @@ private async Task ToggleFavorite(Zone zone)
     if (FavoriteZones.Contains(zone))
     {
         FavoriteZones.Remove(zone);
-        MyWeatherContext.FavoriteZones.Remove(zone);
+        DbContext.FavoriteZones.Remove(zone);
     }
     else
     {
         FavoriteZones.Add(zone);
-        MyWeatherContext.FavoriteZones.Add(zone);
+        DbContext.FavoriteZones.Add(zone);
     }
     await DbContext.SaveChangesAsync();
 }
 ```
 
-1. In the `@code` block of `Home.razor`, locate the `zones` property and replace it with this updated version that includes the favorites filter:
+5. In the `@code` block of `Home.razor`, locate the `zones` property and replace it with this updated version that includes the favorites filter:
 
 ```csharp
 IQueryable<Zone> zones
@@ -157,7 +191,7 @@ IQueryable<Zone> zones
 }
 ```
 
-1. First, add a checkbox to filter the zones list. In `Home.razor`, add this code just before the `<QuickGrid>` element:
+6. First, add a checkbox to filter the zones list. In `Home.razor`, add this code just before the `<QuickGrid>` element:
 
 ```csharp
 <div class="form-check mb-3">
@@ -168,7 +202,7 @@ IQueryable<Zone> zones
 </div>
 ```
 
-1. Next, add a new column to show the favorite status. Add this column definition inside the `<QuickGrid>` element, after the existing State column:
+7. Next, add a new column to show the favorite status. Add this column definition inside the `<QuickGrid>` element, after the existing State column:
 
 ```csharp
 <TemplateColumn Title="Favorite">
