@@ -1,10 +1,10 @@
-﻿# Appr.NET Aspire simplifie le développement d'applications avec :nons .NET Aspire
+# Apprenons .NET Aspire
 
 Venez apprendre tout à propos de [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/), une pile prête pour le cloud pour créer des applications distribuées observables, prêtes pour la production.​ .NET Aspire peut être ajouté à n'importe quelle application, quelles que soient sa taille et sa portée, pour vous aider à créer de meilleures applications plus rapidement.​
 
 Cet atelier utilise **.NET Aspire 9.4** et est conçu pour **.NET 9** (**.NET 8** est également pris en charge).
 
-.NET Aspire simplifi le développement d'applications avec :
+.NET Aspire simplifie le développement d'applications avec :
 
 - **Orchestration** : Orchestration intégrée avec un moteur de workflow simple mais puissant. Utilisez C# et des API familières sans une seule ligne de YAML. Ajoutez facilement des services cloud populaires, connectez-les à vos projets et exécutez-les localement en un seul clic.
 - **Découverte de services** : Injection automatique des chaînes de connexion ou des configurations réseau appropriées et des informations de découverte de services pour simplifier l'expérience du développeur.
