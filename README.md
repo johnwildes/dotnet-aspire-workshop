@@ -1,6 +1,8 @@
 ﻿# .NET Aspire Workshop
 
-Come learn all about [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/), a new cloud ready stack for building observable, production ready, distributed applications.​ .NET Aspire can be added to any application regardless of the size and scale to help you build better applications faster.​
+Come learn all about [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/), a cloud ready stack for building observable, production ready, distributed applications.​ .NET Aspire can be added to any application regardless of the size and scale to help you build better applications faster.​
+
+This workshop uses **.NET Aspire 9.4** and is designed for **.NET 9** (**.NET 8** is also supported).
 
 .NET Aspire streamlines app development with:
 
@@ -44,7 +46,19 @@ You can also watch the Let's Learn .NET Aspire live stream events for the follow
 
 ## Workshop
 
-This .NET Aspire workshop is part of the [Let's Learn .NET](https://aka.ms/letslearndotnet) series.  This workshop is designed to help you learn about .NET Aspire and how to use it to build cloud ready applications.  This workshop is broken down into 15 modules:
+This .NET Aspire workshop is part of the [Let's Learn .NET](https://aka.ms/letslearndotnet) series. This workshop is designed to help you learn about .NET Aspire and how to use it to build cloud ready applications.
+
+### Prerequisites
+
+Before starting this workshop, ensure you have:
+
+- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) (recommended) or [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/) with the C# extension
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (for containerized resources)
+
+### Workshop Modules
+
+This workshop is broken down into 15 modules (estimated completion time: 4-6 hours):
 
 1. [Setup & Installation](./workshop/1-setup.md)
 1. [Service Defaults](./workshop/2-servicedefaults.md)
@@ -59,14 +73,20 @@ This .NET Aspire workshop is part of the [Let's Learn .NET](https://aka.ms/letsl
 1. [Azure Integrations](./workshop/11-azure-integrations.md)
 1. [Custom Commands](./workshop/12-custom-commands.md)
 1. [Health Checks](./workshop/13-healthchecks.md)
-1. [GitHub Models Integration](./workshop/14-github-models-integration.md) **NEW!**
-1. [Docker Integration](./workshop/15-docker-integration.md) **NEW!**
+1. [GitHub Models Integration](./workshop/14-github-models-integration.md)
+1. [Docker Integration](./workshop/15-docker-integration.md)
 
-A full slide deck is available for this workshop [here](./workshop/AspireWorkshop.pptx).
+A full [slide deck](./workshop/AspireWorkshop.pptx) is available for this workshop.
 
-The starting project for this workshop is located in the `start` folder.  This project is a simple weather API that uses the National Weather Service API to get weather data and a web frontend to display the weather data powered by Blazor.
+### Getting Started
 
-This workshop is designed to be done in a 2 hour time frame.
+The starting project for this workshop is located in the `start` folder. This project is a simple weather API that uses the National Weather Service API to get weather data and a web frontend to display the weather data powered by Blazor.
+
+To begin the workshop:
+
+1. Navigate to the `start` folder
+2. Open the solution file `MyWeatherHub.sln`
+3. Follow the instructions in [Module 1: Setup & Installation](./workshop/1-setup.md)
 
 ## Demo data
 
