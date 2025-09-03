@@ -110,6 +110,8 @@ var api = builder.AddProject<Projects.Api>("api")
 
 This feature bridges the gap between your Aspire-managed services and the broader ecosystem of services your application depends on.
 
+> Note: External service modeling is a development-time modeling feature. It doesn't proxy traffic—the clients still call the real external service endpoint; the AppHost provides discovery and visibility.
+
 ## Updating the API to Use the External Service
 
 Now that we've defined the external weather API service in our AppHost, we need to update the API project to use service discovery to connect to it. The `Api` project already has an `NwsManager` class that makes HTTP requests to the National Weather Service.

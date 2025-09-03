@@ -261,6 +261,8 @@ If you want to reset and start fresh:
 1. Find and delete the PostgreSQL volume
 1. Restart the application - it will create a fresh database automatically
 
+> Note: The `Zone` type is a `record`, so equality is by value. When the UI checks `FavoriteZones.Contains(context)`, it's comparing by the record's values (like Key/Name/State), which is the intended behavior for favorites.
+
 ## Other Data Options
 
 In addition to PostgreSQL, .NET Aspire provides first-class support for several other database systems:

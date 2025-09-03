@@ -176,7 +176,7 @@ Focus exclusively on modules 1–9 in this repository.
 - [x] Module 5 (Container runtime prerequisite timing): The Redis container requires Docker/Podman. Added an explicit reminder to start Docker/Podman before launching the AppHost.
 - [x] Module 6 (Telemetry duplication): Added a note that ServiceDefaults provides baseline OTEL and custom meters/sources are additive.
 - [x] Module 7 (Persistent containers): Clarified that `WithLifetime(ContainerLifetime.Persistent)` and `WithInitFiles(...)` are optional enhancements.
-- [ ] Module 7 (EF usage in Blazor): The favorites feature compares `Zone` records with `FavoriteZones.Contains(context)`. Because `Zone` is a record, value equality applies, which is intended. Consider a brief doc note to reduce confusion.
+- [x] Module 7 (EF usage in Blazor): The favorites feature compares `Zone` records with `FavoriteZones.Contains(context)`. Because `Zone` is a record, value equality applies, which is intended. Added a brief note to reduce confusion.
 - [x] Module 8 (Package versions): The doc shows MSTest 3.8.2; `complete/IntegrationTests` uses 3.9.3. Added a note that any recent 3.x is fine.
 - [x] Module 9 (Prereqs): Explicitly mentioned `azd login` and subscription selection; noted required subscription permissions.
 - [x] Module 9 (Working directory): Reiterated to run `azd` from the directory containing the AppHost (typically `complete/`).
@@ -185,11 +185,13 @@ Focus exclusively on modules 1–9 in this repository.
 ### Recommended improvements
 
 - [ ] Module 3 (VS Code): Provided `launch.json` snippet runs the AppHost; confirm it's included in the repo for `start/` (we only have compound configs for running Api and Web). Consider adding the AppHost launch snippet to `start/.vscode/launch.json` or clarify manual creation.
-- [ ] Module 3 (Error simulation): Docs mention an error after clicking ~5 different cities. This relies on simulated exceptions in `complete/Api/Data/NwsManager.cs` (every 5th request). Consider briefly mentioning that mechanism for clarity.
+- [x] Module 3 (Error simulation): Docs mention an error after clicking ~5 different cities. Added a brief note explaining `NwsManager` simulates an exception roughly every 5th request.
 - [x] Module 4 (Service discovery URL consistency): The sample changes for `NwsManager` now use `new Uri("https://weather-api")` (no trailing slash) and a `zoneUrl` with a leading slash, matching the complete code.
 - [ ] Module 4 (External service modeling): Add a short note that this is development-time modeling and doesn't proxy traffic—requests still go to the actual external service.
+- [x] Module 4 (External service modeling): Added a short note that this is development-time modeling and doesn't proxy traffic—requests still go to the actual external service.
 - [x] Module 9 (Service names): Updated examples to use `myweatherhub`/`api` instead of `webfrontend`/`apiservice`.
 - [ ] Cross-cutting (IT-Tools container): The AppHost includes an extra `it-tools` container with external endpoint. Either remove it from `complete` for focus or add a brief note so users aren't surprised by the extra endpoint.
+- [x] Cross-cutting (IT-Tools container): Added a brief note that an optional `it-tools` container may appear and can be ignored for modules 1–9.
 
 ### Open questions (need answers before proceeding)
 

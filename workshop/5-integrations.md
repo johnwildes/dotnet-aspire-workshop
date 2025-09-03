@@ -81,6 +81,8 @@ We will add the _Output caching_ Redis client integration to our `Api` project. 
 
     Because we configured the application to use Redis cache in the `Program.cs` file, we no longer need to add the default output caching policy.
 
+    > Note: The goal here is to avoid duplicating the default in-memory policy, not to disable Output Caching. When you configure `builder.AddRedisOutputCache("cache")`, Output Caching uses Redis as the backing store. Any `AddOutputCache` policies/tags you define still apply—responses are just stored in Redis instead of memory.
+
 ## Run the updated application
 
 1. Start the App Host project and open the `MyWeatherHub` project from the dashboard.

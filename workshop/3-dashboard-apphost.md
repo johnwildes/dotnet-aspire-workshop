@@ -99,6 +99,8 @@ Before continuing, consider some common terminology used in .NET Aspire:
 
 1. Click on the `Trace` or the `Details` to see the error message and stack trace.
 
+> Note: The API intentionally simulates an error roughly every 5th forecast request in `NwsManager` to make it easy to observe failures in the dashboard during development.
+
 > Note: Health endpoints like `/health` and `/alive` are mapped by `MapDefaultEndpoints()` only when the app runs in the Development environment. Ensure you're running locally in Development when following health-check steps.
 
 ## The Dashboard Resource Graph
@@ -140,3 +142,5 @@ The dashboard can now visualize connections between resources even when they are
 - External service mapping between your services and external dependencies
 
 **Next**: [Module #4: Service Discovery](./4-servicediscovery.md)
+
+> Heads up: You may also see an optional `it-tools` container/resource in the dashboard if present in your AppHost. It's not required for modules 1–9 and can be ignored.
