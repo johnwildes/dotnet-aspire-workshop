@@ -63,9 +63,9 @@
      - Click `Start` to start and debug both projects.
    - Visual Studio Code: Run the `Api` and `MyWeatherHub` projects using the `Run and Debug` panel. We have provided a `launch.json` file with the necessary configurations to run both.
 1. Test the application by navigating to the following URLs:
-   - [https://localhost:7032/swagger/index.html](https://localhost:7032/swagger/index.html) - API
+   - [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API OpenAPI document
    - [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
-1. You should see the Swagger UI for the API and the MyWeatherHub home page.
+1. You should see the OpenAPI document (JSON) for the API and the MyWeatherHub home page.
 1. You can also view the health checks for the API by navigating to [https://localhost:7032/health](https://localhost:7032/health).
 1. You can also view the health checks for the MyWeatherHub by navigating to [https://localhost:7274/health](https://localhost:7274/health).
 1. View the logs in the terminal to see the health checks and other telemetry data such as resiliency with Polly:

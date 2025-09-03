@@ -70,10 +70,10 @@
 
 1. 다음 URL로 이동하여 애플리케이션을 테스트합니다:
 
-    - [https://localhost:7032/swagger/index.html](https://localhost:7032/swagger/index.html) - API
+    - [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API (OpenAPI 문서)
     - [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
 
-1. API에 대한 Swagger UI와 MyWeatherHub 홈페이지가 나타납니다.
+1. API의 OpenAPI 문서(JSON)와 MyWeatherHub 홈페이지가 나타납니다.
 1. [https://localhost:7032/health](https://localhost:7032/health)로 이동하여 API에 대한 상태 확인을 볼 수 있습니다.
 1. [https://localhost:7274/health](https://localhost:7274/health)로 이동하여 MyWeatherHub에 대한 상태 확인을 볼 수 있습니다.
 1. 터미널에서 로그를 확인하여 Polly와 같은 헬스 체크, 회복탄력성 및 기타 텔레메트리 데이터를 볼 수 있습니다:
