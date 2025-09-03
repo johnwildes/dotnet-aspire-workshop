@@ -124,7 +124,7 @@ aspire deploy
 - _.azure/aspireazddev/.env_：環境固有のオーバーライドを含みます。
 - _.azure/aspireazddev/config.json_：この環境でパブリック エンドポイントを持つべきサービスを `azd` に通知する構成ファイル。
 
-[](https://learn.microsoft.com/dotnet/aspire/deployment/azure/aca-deployment?tabs=visual-studio%2Cinstall-az-windows%2Cpowershell&pivots=azure-azd#deploy-the-app)
+
 
 ### アプリのデプロイ
 

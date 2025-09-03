@@ -124,7 +124,7 @@ Este comando fornece relatórios de progresso aprimorados, melhores mensagens de
 - _.azure/aspireazddev/.env_: Contém substituições específicas do ambiente.
 - _.azure/aspireazddev/config.json_: Arquivo de configuração que informa ao `azd` quais serviços devem ter um endpoint público neste ambiente.
 
-[](https://learn.microsoft.com/dotnet/aspire/deployment/azure/aca-deployment?tabs=visual-studio%2Cinstall-az-windows%2Cpowershell&pivots=azure-azd#deploy-the-app)
+
 
 ### Implantar o aplicativo
 

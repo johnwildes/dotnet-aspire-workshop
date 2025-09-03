@@ -124,7 +124,7 @@ aspire deploy
 - _.azure/aspireazddev/.env_：包含特定于环境的覆盖。
 - _.azure/aspireazddev/config.json_：配置文件，告知 `azd` 在此环境中哪些服务应该有公共终结点。
 
-[](https://learn.microsoft.com/dotnet/aspire/deployment/azure/aca-deployment?tabs=visual-studio%2Cinstall-az-windows%2Cpowershell&pivots=azure-azd#deploy-the-app)
+
 
 ### 部署应用
 

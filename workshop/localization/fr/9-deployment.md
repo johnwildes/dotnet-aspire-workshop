@@ -124,7 +124,7 @@ Cette commande fournit des rapports de progression améliorés, de meilleurs mes
 - _.azure/aspireazddev/.env_ : Contient les remplacements spécifiques à l'environnement.
 - _.azure/aspireazddev/config.json_ : Fichier de configuration qui informe `azd` quels services doivent avoir un point de terminaison public dans cet environnement.
 
-[](https://learn.microsoft.com/dotnet/aspire/deployment/azure/aca-deployment?tabs=visual-studio%2Cinstall-az-windows%2Cpowershell&pivots=azure-azd#deploy-the-app)
+
 
 ### Déployer l'application
 

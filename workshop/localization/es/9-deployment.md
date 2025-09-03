@@ -124,7 +124,7 @@ Este comando proporciona informes de progreso mejorados, mejores mensajes de err
 - _.azure/aspireazddev/.env_: Contiene sobreescrituras específicas del entorno.
 - _.azure/aspireazddev/config.json_: Archivo de configuración que informa a `azd` qué servicios deben tener un punto final público en este entorno.
 
-[](https://learn.microsoft.com/dotnet/aspire/deployment/azure/aca-deployment?tabs=visual-studio%2Cinstall-az-windows%2Cpowershell&pivots=azure-azd#deploy-the-app)
+
 
 ### Desplegar la aplicación
 

@@ -124,7 +124,7 @@ aspire deploy
 - _.azure/aspireazddev/.env_: 환경별 재정의를 포함합니다.
 - _.azure/aspireazddev/config.json_: 이 환경에서 공용 끝점을 가져야 하는 서비스를 `azd`에 알려주는 구성 파일입니다.
 
-[](https://learn.microsoft.com/dotnet/aspire/deployment/azure/aca-deployment?tabs=visual-studio%2Cinstall-az-windows%2Cpowershell&pivots=azure-azd#deploy-the-app)
+
 
 ### 앱 배포
 
