@@ -63,9 +63,9 @@
      - 点击 `Start` 来启动和调试这两个项目.
    - Visual Studio Code: 使用 `Run and Debug` 面板来运行 `Api` 和 `MyWeatherHub` 项目。我们提供了包含所需配置的 `launch.json` 文件来支持运行这两个项目。
 2. 通过导航到以下 URL 来测试应用程序:
-   - [https://localhost:7032/swagger/index.html](https://localhost:7032/swagger/index.html) - API
+   - [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API（OpenAPI 文档）
    - [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
-3. 您应该会看到 API 的 Swagger UI 和 MyWeatherHub 主页。
+3. 您应该会看到 API 的 OpenAPI 文档（JSON）和 MyWeatherHub 主页。
 4. 您还可以通过导航到 [https://localhost:7032/health](https://localhost:7032/health).
 5. 您还可以通过导航到 [https://localhost:7274/health](https://localhost:7274/health).
 6. 查看终端中的日志以查看运行状况检查和其他遥测数据，例如 Polly 的弹性：
