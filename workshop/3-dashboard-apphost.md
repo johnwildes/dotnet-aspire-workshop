@@ -55,7 +55,7 @@ Before continuing, consider some common terminology used in .NET Aspire:
 
 ## Run the application
 
-1. Set the `AppHost` project as the startup project in Visual Studio by right clicking on the `AppHost` and clicking `Set Default Project`.
+1. Set the `AppHost` project as the startup project in Visual Studio by right-clicking the `AppHost` project and selecting `Set as Startup Project`.
 1. If you are using Visual Studio Code open the `launch.json` and replace all of the contents with the following:
 
     ```json
@@ -99,6 +99,8 @@ Before continuing, consider some common terminology used in .NET Aspire:
 
 1. Click on the `Trace` or the `Details` to see the error message and stack trace.
 
+> Note: Health endpoints like `/health` and `/alive` are mapped by `MapDefaultEndpoints()` only when the app runs in the Development environment. Ensure you're running locally in Development when following health-check steps.
+
 ## The Dashboard Resource Graph
 
 We saw the table of resources in the .NET Aspire dashboard and that's a nice list of our resources, and we'll see that grow as our application system starts to utilize more resources.  Additionally, there is a **Graph** view of resources available by clicking the **Graph** text just above the table.
@@ -110,9 +112,11 @@ This graph is generated based on the references and relationships you configure 
 ## New Dashboard Features in .NET Aspire 9.4
 
 ### Automatic Update Notifications
+
 The dashboard now automatically checks for newer versions of .NET Aspire and shows friendly notifications when updates are available. This helps you stay current with the latest improvements and security updates.
 
 ### Enhanced Parameter and Connection String Visibility
+
 Parameters and connection strings are now visible in the dashboard, providing better visibility into your application's configuration during development:
 
 - Connection strings appear in resource details with secure toggle visibility
@@ -120,13 +124,17 @@ Parameters and connection strings are now visible in the dashboard, providing be
 - This makes debugging configuration issues much easier during development
 
 ### Console Log Text Wrapping Control
+
 The dashboard includes a new toggle for controlling text wrapping in console logs, making it easier to view long log lines. You can find the toggle in the console logs view to switch between wrapped and unwrapped text display.
 
 ### Hidden Resource Visibility Toggle
+
 You can now show/hide hidden resources in the dashboard to see internal infrastructure components when needed. This gives you complete visibility into your application's infrastructure components that are normally hidden from view.
 
 ### Enhanced Peer Visualization
+
 The dashboard can now visualize connections between resources even when they aren't instrumented with telemetry. This includes:
+
 - Connection string parsing for various database types
 - Parameter visualization for URLs and connection strings
 - External service mapping between your services and external dependencies

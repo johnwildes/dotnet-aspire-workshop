@@ -23,7 +23,7 @@ var postgres = builder.AddPostgres("postgres")
 var weatherDb = postgres.AddDatabase("weatherdb");
 ```
 
-The `WithDataVolume(isReadOnly: false)` configuration ensures that your data persists between container restarts. The data is stored in a Docker volume that exists outside the container, making it survive container restarts.
+The `WithDataVolume(isReadOnly: false)` configuration ensures that your data persists between container restarts. The data is stored in a Docker volume that exists outside the container, making it survive container restarts. This is optional for the workshop—if you omit it, the sample still runs; you just won't keep data between runs.
 
 ### New in .NET Aspire 9.4: Enhanced Database Initialization
 
@@ -35,7 +35,7 @@ var postgres = builder.AddPostgres("postgres")
     .WithInitFiles("./database-init");  // Simplified initialization from files
 ```
 
-This method works consistently across all database providers (PostgreSQL, MySQL, MongoDB, Oracle) and provides better error handling and simplified configuration.
+This method works consistently across all database providers (PostgreSQL, MySQL, MongoDB, Oracle) and provides better error handling and simplified configuration. Using `WithInitFiles` is optional for this workshop; the database integration works without it.
 
 To ensure proper application startup, we'll configure the web application to wait for the database:
 
@@ -58,7 +58,7 @@ var postgres = builder.AddPostgres("postgres")
 var weatherDb = postgres.AddDatabase("weatherdb");
 ```
 
-With `ContainerLifetime.Persistent`, the PostgreSQL container will continue running even when you stop your Aspire application. This means:
+With `ContainerLifetime.Persistent`, the PostgreSQL container will continue running even when you stop your Aspire application. This is optional and not required to complete the module. If enabled, it means:
 
 - **Faster startup times**: No need to wait for PostgreSQL to initialize on subsequent runs
 - **Data persistence**: Your database data remains intact between application sessions
@@ -303,9 +303,8 @@ Data API Builder (DAB) automatically generates REST and GraphQL endpoints from y
 
 In this module, we added PostgreSQL database support to our application using .NET Aspire's database integration features. We used Entity Framework Core for data access and configured our application to work with both local development and cloud-hosted databases.
 
-The natural next step would be to add tests to verify the database integration works correctly. 
+The natural next step would be to add tests to verify the database integration works correctly.
 
 Head over to [Module #8: Integration Testing](./8-integration-testing.md) to learn how to write integration tests for your .NET Aspire application.
-
 
 **Next**: [Module #8: Integration Testing](./8-integration-testing.md)

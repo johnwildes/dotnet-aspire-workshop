@@ -169,27 +169,27 @@ Focus exclusively on modules 1–9 in this repository.
 
 ### Low-risk fixes (apply now)
 
-- [ ] Module 3 (Dashboard & App Host): The instruction says "Set Default Project"; in Visual Studio the label is "Set as Startup Project". Confirm and update wording for accuracy.
-- [ ] Module 4 (Typos): "MyWeatheApp" appears in text; should be "MyWeatherHub".
-- [ ] Module 5 (Redis admin UI naming): The text references "Redis Commander", but the instructions and screenshots refer to "Redis Insight". Standardize on "Redis Insight".
+- [x] Module 3 (Dashboard & App Host): The instruction says "Set Default Project"; in Visual Studio the label is "Set as Startup Project". Confirmed and updated wording.
+- [x] Module 4 (Typos): "MyWeatheApp" appears in text; should be "MyWeatherHub". Fixed.
+- [x] Module 5 (Redis admin UI naming): The text references "Redis Commander", but the instructions and screenshots refer to "Redis Insight". Standardized on "Redis Insight".
 - [ ] Module 5 (Output caching guidance): The doc says to delete default Output Caching code; in `complete` the API uses `builder.AddRedisOutputCache("cache")` and still configures `services.AddOutputCache(...)` to add tags/policies. Clarify that the intent is to remove the default in-memory policy, not prevent using Output Caching; with Redis configured, `AddOutputCache` policies still apply but store is Redis.
-- [ ] Module 5 (Container runtime prerequisite timing): The Redis container requires Docker/Podman. The doc calls this out—good. Consider explicitly reminding users to start Docker before launching the AppHost to avoid first-run surprises.
-- [ ] Module 6 (Telemetry duplication): `ServiceDefaults` already enables baseline OpenTelemetry for ASP.NET Core and HttpClient. The module adds custom meters and an activity source (good). Consider adding a note that duplication is expected and that the custom registrations are additive.
-- [ ] Module 7 (Persistent containers): The doc suggests `WithLifetime(ContainerLifetime.Persistent)` and `WithInitFiles(...)` as options; the `complete` sample doesn't use them. Clarify they're optional enhancements.
+- [x] Module 5 (Container runtime prerequisite timing): The Redis container requires Docker/Podman. Added an explicit reminder to start Docker/Podman before launching the AppHost.
+- [x] Module 6 (Telemetry duplication): Added a note that ServiceDefaults provides baseline OTEL and custom meters/sources are additive.
+- [x] Module 7 (Persistent containers): Clarified that `WithLifetime(ContainerLifetime.Persistent)` and `WithInitFiles(...)` are optional enhancements.
 - [ ] Module 7 (EF usage in Blazor): The favorites feature compares `Zone` records with `FavoriteZones.Contains(context)`. Because `Zone` is a record, value equality applies, which is intended. Consider a brief doc note to reduce confusion.
-- [ ] Module 8 (Package versions): The doc shows MSTest 3.8.2; `complete/IntegrationTests` uses 3.9.3. Align the version or note that any recent 3.x is fine.
-- [ ] Module 9 (Prereqs): Consider explicitly mentioning that `azd` will trigger interactive login if needed (`az login`) and that users may need appropriate Azure subscription permissions.
-- [ ] Module 9 (Working directory): Reiterate that `azd init/provision/deploy` should be run from the `complete/` directory (or wherever the AppHost is) so `azure.yaml` is generated in the right place.
-- [ ] Cross-cutting (Health endpoints visibility): `MapDefaultEndpoints()` only maps `/health` and `/alive` in Development. Ensure docs/screenshots assume Development; otherwise mention required environment config to see those endpoints in non-dev.
+- [x] Module 8 (Package versions): The doc shows MSTest 3.8.2; `complete/IntegrationTests` uses 3.9.3. Added a note that any recent 3.x is fine.
+- [x] Module 9 (Prereqs): Explicitly mentioned `azd login` and subscription selection; noted required subscription permissions.
+- [x] Module 9 (Working directory): Reiterated to run `azd` from the directory containing the AppHost (typically `complete/`).
+- [x] Cross-cutting (Health endpoints visibility): Added a note that `MapDefaultEndpoints()` only maps `/health` and `/alive` in Development.
 
 ### Recommended improvements
 
 - [ ] Module 3 (VS Code): Provided `launch.json` snippet runs the AppHost; confirm it's included in the repo for `start/` (we only have compound configs for running Api and Web). Consider adding the AppHost launch snippet to `start/.vscode/launch.json` or clarify manual creation.
 - [ ] Module 3 (Error simulation): Docs mention an error after clicking ~5 different cities. This relies on simulated exceptions in `complete/Api/Data/NwsManager.cs` (every 5th request). Consider briefly mentioning that mechanism for clarity.
-- [ ] Module 4 (Service discovery URL consistency): The sample changes for `NwsManager` show `new Uri("https://weather-api/")` and a `zoneUrl` without a leading slash. In `complete/Api/Data/NwsManager.cs` the base address is `https://weather-api` (no trailing slash) and `zoneUrl` begins with `/zones/...`. Either approach works, but the doc and code should use one consistent pattern to avoid confusion.
-- [ ] Module 4 (External service modeling): The doc adds an external `weather-api` resource. Consider adding a short note that this is purely for development-time modeling and doesn't proxy traffic—requests still go to the actual external service.
-- [ ] Module 9 (Service names): The deployment examples show `webfrontend`/`apiservice`, while this repo uses `myweatherhub`/`api`. Update examples to match actual resource names to reduce friction during `azd init` prompts.
-- [ ] Cross-cutting (IT-Tools container): The AppHost includes an extra `it-tools` container with external endpoint. It's not mentioned in modules 1–9 docs. Either remove it from `complete` for focus or add a brief note so users aren't surprised by the extra endpoint.
+- [x] Module 4 (Service discovery URL consistency): The sample changes for `NwsManager` now use `new Uri("https://weather-api")` (no trailing slash) and a `zoneUrl` with a leading slash, matching the complete code.
+- [ ] Module 4 (External service modeling): Add a short note that this is development-time modeling and doesn't proxy traffic—requests still go to the actual external service.
+- [x] Module 9 (Service names): Updated examples to use `myweatherhub`/`api` instead of `webfrontend`/`apiservice`.
+- [ ] Cross-cutting (IT-Tools container): The AppHost includes an extra `it-tools` container with external endpoint. Either remove it from `complete` for focus or add a brief note so users aren't surprised by the extra endpoint.
 
 ### Open questions (need answers before proceeding)
 
