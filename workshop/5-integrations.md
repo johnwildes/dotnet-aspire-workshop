@@ -45,7 +45,7 @@ We haven't made any changes to the `Api` or `MyWeatherHub` projects, but we can 
 
 1. Ensure Docker Desktop or Podman is running.
 1. Start the App Host project.
-1. You will see both the Redis container and Redis Commander container download and start in both the dashboard and in Docker Desktop.
+1. You will see both the Redis container and Redis Insight container download and start in both the dashboard and in Docker Desktop.
 
     ![Redis running in dashboard and desktop](./media/redis-started.png)
 
@@ -81,7 +81,7 @@ We will add the _Output caching_ Redis client integration to our `Api` project. 
 
     Because we configured the application to use Redis cache in the `Program.cs` file, we no longer need to add the default output caching policy.
 
-    > Note: The goal here is to avoid duplicating the default in-memory policy, not to disable Output Caching. When you configure `builder.AddRedisOutputCache("cache")`, Output Caching uses Redis as the backing store. Any `AddOutputCache` policies/tags you define still apply—responses are just stored in Redis instead of memory.
+    > Note: We removed the default in-memory AddOutputCache block, but caching continues to work using Redis via `builder.AddRedisOutputCache("cache")`; keep your `AddOutputCache` policies/tags in place so they operate against Redis instead of the in-memory store.
 
 ## Run the updated application
 
