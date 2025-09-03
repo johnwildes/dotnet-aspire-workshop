@@ -55,6 +55,8 @@ This project file is fairly standard for a test project. The key elements are:
 - A `ProjectReference` to the AppHost project, which gives the test project access to the target distributed application definition.
 - The `EnableMSTestRunner` and `OutputType` settings to configure the test project to run with the native MSTest runner.
 
+> Note: Any MSTest 3.x version is fine for this workshop. If your environment provides a newer 3.x, you can use that.
+
 1. Create test classes for integration tests:
 
 The `IntegrationTests.cs` file tests the API and web application functionality:
@@ -193,6 +195,8 @@ This test focuses on verifying service discovery configuration:
 
 This test is particularly valuable because it verifies that your application's services are correctly wired together through environment variables, which is how .NET Aspire handles service discovery in distributed applications.
 
+> Note: If you see a `WeatherBackgroundTests.cs` file in the complete solution that's empty, it's a placeholder for future background job tests and can be ignored for this workshop.
+
 ## Running the Integration Tests
 
 ### Using the Command Line
@@ -249,6 +253,7 @@ For more information on Playwright, refer to the [official documentation](https:
 In this module, we covered integration testing using `Aspire.Hosting.Testing` with `MSTest`. We created a separate test project to test both the API and the web application, following patterns similar to the `WebApplicationFactory` approach in ASP.NET Core but adapted for distributed applications.
 
 Our tests verified three critical aspects of the distributed application:
+
 1. The API functionality (testing that endpoints return expected data)
 1. The web application functionality (testing that the UI renders correctly)
 1. The service discovery mechanism (testing that services can find and communicate with each other)

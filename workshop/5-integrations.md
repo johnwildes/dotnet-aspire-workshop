@@ -29,7 +29,7 @@ With the NuGet package installed, we can add Redis to our App Host:
                      .WithReference(cache);
     ```
 
-1. Additionally, we could configure [Redis Insight](https://github.com/RedisInsight/RedisInsight), a Redis management tool from the Redis team. As part of the `Aspire.Hosting.Redis` package,  Redis Insight is available in the same integration. To add Redis Insight, update the code adding the Redis resource to call the `WithRedisInsight()` method on the returned builder:
+1. Add [Redis Insight](https://github.com/RedisInsight/RedisInsight), a Redis management tool from the Redis team. As part of the `Aspire.Hosting.Redis` package, Redis Insight is available in the same integration. Update the Redis resource to call the `WithRedisInsight()` method on the returned builder:
 
     ```csharp
     var cache = builder.AddRedis("cache")
@@ -41,11 +41,11 @@ With the NuGet package installed, we can add Redis to our App Host:
 We haven't made any changes to the `Api` or `MyWeatherHub` projects, but we can see the Redis cache start when we start the App Host.
 
 > [!IMPORTANT]
-> Since Redis runs in a container you will need to ensure that Docker is running on your machine.  [Instructions for running Podman with .NET Aspire](https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling#container-runtime) are available
+> Since Redis runs in a container you will need to ensure that a container runtime is running on your machine (Docker Desktop or Podman). See the [container runtime setup instructions](https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling#container-runtime) for Podman.
 
 1. Ensure Docker Desktop or Podman is running.
 1. Start the App Host project.
-1. You will see both the Redis container and Redis Commander container download and start in both the dashboard and in Docker Desktop.
+1. You will see both the Redis container and Redis Insight container download and start in both the dashboard and in Docker Desktop.
 
     ![Redis running in dashboard and desktop](./media/redis-started.png)
 
@@ -80,6 +80,8 @@ We will add the _Output caching_ Redis client integration to our `Api` project. 
     ```
 
     Because we configured the application to use Redis cache in the `Program.cs` file, we no longer need to add the default output caching policy.
+
+    > Note: We removed the default in-memory AddOutputCache block, but caching continues to work using Redis via `builder.AddRedisOutputCache("cache")`; keep your `AddOutputCache` policies/tags in place so they operate against Redis instead of the in-memory store.
 
 ## Run the updated application
 

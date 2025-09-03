@@ -35,11 +35,13 @@ The process for installing `azd` varies based on your operating system, but it i
 .NET Aspire 9.4 introduces the `aspire deploy` command (preview/feature flag) that extends publishing capabilities to actively deploy to target environments. This command provides enhanced deployment workflows with custom pre/post-deploy logic.
 
 To enable this feature:
+
 ```bash
 aspire config set features.deployCommandEnabled true
 ```
 
 Then you can use:
+
 ```bash
 aspire deploy
 ```
@@ -47,6 +49,11 @@ aspire deploy
 This command provides enhanced progress reporting, better error messaging, and supports custom deployment hooks for complex deployment scenarios.
 
 ### Initialize the template
+
+> Prerequisites:
+>
+> - Make sure you're signed in: run `azd login` and select the correct Azure subscription.
+> - Run the following commands from the folder that contains your AppHost (for this repo, typically the `complete` folder if you're deploying the finished sample).
 
 1. Open a new terminal window and `cd` into the root of your .NET Aspire project.
 1. Execute the `azd init` command to initialize your project with `azd`, which will inspect the local directory structure and determine the type of app.
@@ -88,14 +95,14 @@ This command provides enhanced progress reporting, better error messaging, and s
       Cancel and exit
     ```
 
-1. `azd` presents each of the projects in the .NET Aspire solution and prompts you to identify which to deploy with HTTP ingress open publicly to all internet traffic. Select only the `myweatherhub` (using the ↓ and Space keys), since you want the API to be private to the Azure Container Apps environment and _not_ available publicly.
+1. `azd` presents each of the projects in the .NET Aspire solution and prompts you to identify which to deploy with HTTP ingress open publicly to all internet traffic. Select only the `myweatherhub` (using the ↓ and Space keys), since you want the API (`api`) to be private to the Azure Container Apps environment and not available publicly.
 
     ```console
     ? Select an option Confirm and continue initializing my app
     By default, a service can only be reached from inside the Azure Container Apps environment it is running in. Selecting a service here will also allow it to be reached from the Internet.
     ? Select which services to expose to the Internet  [Use arrows to move, space to select, <right> to all, <left> to none, type to filter]
-      [ ]  apiservice
-    > [x]  myweatherhub
+          [ ]  api
+        > [x]  myweatherhub
     ```
 
 1. Finally, specify the the environment name, which is used to name provisioned resources in Azure and managing different environments such as `dev` and `prod`.
@@ -155,11 +162,11 @@ You can view the resources created under the resource group <YOUR RESOURCE GROUP
 
 Deploying services (azd deploy)
 
-  (✓) Done: Deploying service apiservice
-  - Endpoint: <YOUR UNIQUE apiservice APP>.azurecontainerapps.io/
+  (✓) Done: Deploying service api
+  - Endpoint: <internal-only>
 
-  (✓) Done: Deploying service webfrontend
-  - Endpoint: <YOUR UNIQUE webfrontend APP>.azurecontainerapps.io/
+  (✓) Done: Deploying service myweatherhub
+  - Endpoint: <YOUR UNIQUE myweatherhub APP>.azurecontainerapps.io/
 
 
 SUCCESS: Your application was deployed to Azure in 1 minute 39 seconds.

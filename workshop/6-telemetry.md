@@ -32,6 +32,8 @@ You'll learn how to:
 
 This means you don't need to manually configure the basic OpenTelemetry infrastructure. You can focus on adding your application-specific telemetry.
 
+> Note: The custom meters and ActivitySource you add in this module are additive. ServiceDefaults has already wired up baseline OpenTelemetry for ASP.NET Core, HttpClient, and runtime metrics; you're layering your app-specific telemetry on top.
+
 ## Implementing Custom Metrics
 
 We'll create a diagnostic infrastructure to track specific metrics about our weather service:
@@ -68,7 +70,7 @@ Our custom metrics track several key aspects of the weather service:
 - **Cache Performance**: Cache hit and miss rates
 - **Distributed Tracing**: Activity source for following requests
 
-3. Register the custom meter and activity source in Program.cs:
+1. Register the custom meter and activity source in Program.cs:
 
 ```csharp
 builder.Services.AddOpenTelemetry()
