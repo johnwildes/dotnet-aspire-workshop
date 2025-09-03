@@ -1,4 +1,4 @@
-# Composants .NET Aspire
+# Intégrations .NET Aspire
 
 Les composants .NET Aspire sont une suite organisée de packages NuGet spécifiquement sélectionnés pour faciliter l'intégration d'applications cloud natives avec des services et plates-formes de premier plan, notamment, mais sans s'y limiter, Redis et PostgreSQL. Chaque composant fournit des fonctionnalités cloud natives essentielles via un provisionnement automatique ou des modèles de configuration standardisés. Les composants .NET Aspire peuvent être utilisés sans le projet `AppHost` (l'orchestrateur), mais ils sont conçus pour fonctionner de manière optimale avec l’app host .NET Aspire.
 
