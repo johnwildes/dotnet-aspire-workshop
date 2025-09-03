@@ -192,26 +192,6 @@ az group delete --name <당신의-리소스-그룹-이름>
 
 **다음**: [모듈 #10: 고급 컨테이너 관리](10-container-management.md)
 
-1. 솔루션 탐색기에서 **AppHost** 프로젝트를 마우스 오른쪽 버튼으로 클릭하고 **Publish**를 선택하여 **Publish** 대화 상자를 엽니다.
-
-  > [!TIP]
-  > .NET Aspire를 게시하려면 최신 버전의 `azd` CLI가 필요합니다. 이는 .NET Aspire 워크로드와 함께 설치되어야 하지만, CLI가 설치되지 않았거나 최신 버전이 아니라는 알림이 표시되면 이 튜토리얼의 다음 부분에 따라 설치할 수 있습니다.
-
-1. 게시 대상에서 **Azure Container Apps for .NET Aspire**를 선택합니다.
-
-    ![게시 대화 상자 워크플로의 스크린샷](media/vs-deploy.png)
-
-1. **AzDev Environment** 단계에서 원하는 **Subscription** 및 **Location** 값을 선택한 다음 **Environment Name**을 입력합니다(예: _aspire-weather_). 환경 이름은 Azure Container Apps 환경 리소스의 이름을 결정합니다.
-1. **Finish**을 선택하여 환경을 생성한 다음 **Close**를 선택하여 대화 상자를 종료하고 배포 환경 요약을 확인합니다.
-1. **Publish**를 선택하여 Azure에서 리소스를 프로비저닝하고 배포합니다.
-
-    > [!TIP]
-    > 이 프로세스는 완료하는 데 몇 분이 걸릴 수 있습니다. Visual Studio는 출력 로그에서 배포 진행 상태에 대한 상태 업데이트를 제공하며, 이 업데이트를 통해 게시 작업이 어떻게 진행되는지 많은 것을 배울 수 있습니다! 이 과정에서는 Resource Group, Azure Container Registry, Log Analytics Workspace 및 Azure Container Apps 환경을 생성하는 단계를 포함합니다. 그런 다음 앱을 Azure Container Apps 환경에 배포합니다.
-
-1. 게시가 끝나면 Visual Studio는 환경 화면 하단에 리소스 URL을 표시합니다. 이러한 링크를 사용하여 배포를 끝낸 다양한 리소스를 볼 수 있습니다. **webfrontend** URL을 선택하여 배포된 앱을 브라우저에서 엽니다.
-
-    ![완료된 게시 프로세스와 배포된 리소스의 스크린샷](media/vs-publish-complete.png)
-
 ## Azure Developer CLI 설치
 
 `azd`를 설치하는 과정은 운영 체제에 따라 다르지만, `winget`, `brew`, `apt` 또는 직접 `curl`을 통해 널리 제공됩니다. `azd`를 설치하려면 [Azure Developer CLI 설치](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)를 참조하세요.
