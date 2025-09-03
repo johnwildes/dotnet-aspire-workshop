@@ -1,38 +1,69 @@
-# Configuración del sistema
+# Configuración de la Máquina
 
 Este taller utilizará las siguientes herramientas:
 
-- [.NET 8 SDK](https://dot.net/download)
-- [Carga de trabajo de .NET Aspire](https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling?tabs=dotnet-cli%2Cunix#install-net-aspire)
+- [SDK de .NET 9](https://get.dot.net/9) o [.NET 10 Preview](https://get.dot.net/10) (opcional)
 - [Docker Desktop](https://docs.docker.com/engine/install/) o [Podman](https://podman.io/getting-started/installation)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) o [Visual Studio Code](https://code.visualstudio.com/) con [C# DevKit](https://code.visualstudio.com/docs/csharp/get-started)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) o [Visual Studio Code](https://code.visualstudio.com/) con [C# Dev Kit](https://code.visualstudio.com/docs/csharp/get-started)
 
 Para obtener la mejor experiencia, recomendamos utilizar Visual Studio 2022 con la carga de trabajo de .NET Aspire. Sin embargo, también puedes utilizar Visual Studio Code con el C# Dev Kit y la carga de trabajo de .NET Aspire. A continuación, se muestran las guías de configuración para cada plataforma.
 
+> **Nuevo en .NET Aspire 9.4**: ¡Soporte completo para .NET 10 Preview! Ahora puedes crear proyectos Aspire dirigidos a .NET 10 usando `dotnet new aspire --framework net10.0`
+
 ## Windows con Visual Studio
 
-- Instala [Visual Studio 2022 versión 17.10 o posterior](https://visualstudio.microsoft.com/vs/).
-  - Selecciona las siguientes cargas de trabajo:
-    - Carga de trabajo de `ASP.NET y desarrollo web`.
-    - Componente `.NET Aspire SDK` en `Componentes individuales`.
+- Instala [Visual Studio 2022 versión 17.12 o posterior](https://visualstudio.microsoft.com/vs/).
+  - Cualquier edición funcionará incluyendo la [Visual Studio Community gratuita](https://visualstudio.microsoft.com/free-developer-offers/)
+  - Selecciona la carga de trabajo `ASP.NET y desarrollo web`.
 
 ## Mac, Linux y Windows sin Visual Studio
 
-- Instala la última versión del [.NET 8 SDK](https://dot.net/download?cid=eshop)
-- Instala la carga de trabajo de [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling?tabs=dotnet-cli%2Cunix#install-net-aspire) con los siguientes comandos:
-
-```powershell
-dotnet workload update
-dotnet workload install aspire
-```
-
-> Nota: Es posible que estos comandos requieran `sudo`.
+- Instala la última versión del [SDK de .NET 9](https://get.dot.net/9?cid=eshop)
 
 - Instala [Visual Studio Code con C# Dev Kit](https://code.visualstudio.com/docs/csharp/get-started)
 
 > Nota: Cuando se ejecuta en Mac con Apple Silicon (procesador de la serie M), se requiere Rosetta 2 para grpc-tools.
 
+## Instalar las Plantillas Más Recientes de .NET Aspire
+
+Ejecuta el siguiente comando para instalar las plantillas de .NET Aspire 9.4.
+
+```cli
+dotnet new install Aspire.ProjectTemplates::9.4.0 --force
+```
+
+## Instalar la CLI de .NET Aspire (Opcional)
+
+.NET Aspire 9.4 introduce la CLI de Aspire generalmente disponible, proporcionando una experiencia de desarrollador optimizada. Puedes instalarla usando uno de estos métodos:
+
+### Instalación Rápida (Recomendada)
+```bash
+# Windows (PowerShell)
+iex "& { $(irm https://aspire.dev/install.ps1) }"
+
+# macOS/Linux (Bash)
+curl -sSL https://aspire.dev/install.sh | bash
+```
+
+### Herramienta Global de .NET
+```cli
+dotnet tool install -g Aspire.Cli
+```
+
+La CLI de Aspire proporciona comandos útiles como:
+- `aspire new` - Crear nuevos proyectos Aspire
+- `aspire run` - Encontrar y ejecutar el AppHost desde cualquier lugar en tu repositorio
+- `aspire add` - Agregar paquetes de integración de hospedaje
+- `aspire config` - Configurar ajustes de Aspire
+- `aspire publish` - Generar artefactos de implementación
+
 ## Prueba de la instalación
 
 Para probar tu instalación, consulta el [Crear tu primer proyecto de .NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/build-your-first-aspire-app) para obtener más información.
+
+## Abrir la Solución de Inicio del Taller
+
+Para comenzar el taller, abre `start/MyWeatherHub.sln` en Visual Studio 2022. Si estás usando Visual Studio Code, abre la carpeta `start` y cuando el C# Dev Kit te pregunte qué solución abrir, selecciona **MyWeatherHub.sln**.
+
+**Siguiente**: [Módulo #2 - Service Defaults](2-servicedefaults.md)
 
