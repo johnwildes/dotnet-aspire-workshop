@@ -1,6 +1,6 @@
 > 이 문서는 [Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/overview)를 이용해 초벌 번역 후 검수를 진행했습니다. 따라서 번역 품질이 기대와 다를 수 있습니다. 문서 번역에 대해 제안할 내용이 있을 경우, [이슈](../../../issue)에 남겨주시면 확인후 반영하겠습니다.
 
-# .NET Aspire 컴포넌트
+# .NET Aspire 통합
 
 .NET Aspire 컴포넌트는 Redis 및 PostgreSQL을 포함하여 주요 서비스 및 플랫폼과 클라우드 네이티브 애플리케이션의 통합을 용이하게 하기 위해 특별히 큐레이션한 NuGet 패키지 모음입니다. 각 컴포넌트는 자동 프로비저닝 또는 표준화된 구성 패턴을 통해 필수적인 클라우드 네이티브 기능을 제공합니다. .NET Aspire 컴포넌트는 AppHost(오케스트레이터) 프로젝트 없이도 사용할 수 있지만, .NET Aspire AppHost와 함께 사용할 때 가장 잘 작동하도록 만들어졌습니다.
 

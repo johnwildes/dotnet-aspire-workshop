@@ -2,12 +2,13 @@
 
 本研讨会需要使用如下开发工具:
 
-- [.NET 9 SDK](https://get.dot.net/9)
-- 或者 [.NET 8 SDK](https://get.dot.net/8) 与 [.NET Aspire Workload](https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling?tabs=dotnet-cli%2Cunix#install-net-aspire)
+- [.NET 9 SDK](https://get.dot.net/9) 或者 [.NET 10 Preview](https://get.dot.net/10) (可选)
 - [Docker Desktop](https://docs.docker.com/engine/install/) 或者 [Podman](https://podman.io/getting-started/installation)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) 或者 [Visual Studio Code](https://code.visualstudio.com/) 和 [C# Dev Kit](https://code.visualstudio.com/docs/csharp/get-started)
 
 为了获得最佳体验，我们推荐使用将 Visual Studio 2022 与 .NET Aspire 工作负载一起使用。但是，您也可以将 Visual Studio Code 与 C# Dev Kit 和 .NET Aspire 工作负载一起使用。以下是每个平台的设置指南。
+
+> **.NET Aspire 9.4 中的新功能**：完全支持 .NET 10 Preview！您现在可以使用 `dotnet new aspire --framework net10.0` 创建针对 .NET 10 的 Aspire 项目
 
 ## Windows 平台上使用 Visual Studio
 
@@ -24,6 +25,39 @@
 - 安装 [Visual Studio Code with C# Dev Kit](https://code.visualstudio.com/docs/csharp/get-started)
 
 > 注意: 在装有 Apple Silicon（M 系列处理器）的 Mac 上运行时，还需要 Rosetta 2 for grpc-tools。
+
+## 安装最新的 .NET Aspire 模板
+
+运行以下命令安装 .NET Aspire 9.4 模板。
+
+```cli
+dotnet new install Aspire.ProjectTemplates::9.4.0 --force
+```
+
+## 安装 .NET Aspire CLI (可选)
+
+.NET Aspire 9.4 引入了正式可用的 Aspire CLI，提供精简的开发者体验。您可以使用以下方法之一进行安装：
+
+### 快速安装 (推荐)
+```bash
+# Windows (PowerShell)
+iex "& { $(irm https://aspire.dev/install.ps1) }"
+
+# macOS/Linux (Bash)
+curl -sSL https://aspire.dev/install.sh | bash
+```
+
+### .NET 全局工具
+```cli
+dotnet tool install -g Aspire.Cli
+```
+
+Aspire CLI 提供有用的命令，如：
+- `aspire new` - 创建新的 Aspire 项目
+- `aspire run` - 从存储库中的任何位置查找并运行 AppHost
+- `aspire add` - 添加托管集成包
+- `aspire config` - 配置 Aspire 设置
+- `aspire publish` - 生成部署工件
 
 ## 测试安装
 

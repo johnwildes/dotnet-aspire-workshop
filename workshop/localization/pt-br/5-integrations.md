@@ -1,4 +1,4 @@
-# Componentes .NET Aspire
+# Integrações .NET Aspire
 
 Os componentes .NET Aspire são um conjunto selecionado de pacotes NuGet especificamente escolhidos para facilitar a integração de aplicações nativas da nuvem com serviços e plataformas proeminentes, incluindo, mas não se limitando a, Redis e PostgreSQL. Cada componente fornece funcionalidades essenciais nativas da nuvem por meio de provisionamento automático ou padrões de configuração padronizados. Os componentes .NET Aspire podem ser usados sem um projeto de host de aplicativo (orquestrador), mas são projetados para funcionar melhor com o host de aplicativos .NET Aspire.
 

@@ -1,51 +1,77 @@
 # Desplegar una aplicación .NET Aspire en Azure Container Apps
 
-Las aplicaciones .NET Aspire están diseñadas para ejecutarse en entornos contenerizados. Azure Container Apps es un entorno completamente administrado que te permite ejecutar microservicios y aplicaciones contenerizadas en una plataforma sin servidor. Este artículo te guiará a través de la creación de una nueva solución .NET Aspire y su despliegue en Microsoft Azure Container Apps usando Visual Studio y la CLI de Desarrollador de Azure (`azd`).
+.NET Aspire está optimizado para aplicaciones destinadas a ejecutarse en entornos contenerizados. [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) es un entorno completamente administrado que te permite ejecutar microservicios y aplicaciones contenerizadas en una plataforma sin servidor. Este artículo te guiará a través de la creación de una nueva solución .NET Aspire y su despliegue en Microsoft Azure Container Apps usando Visual Studio y la CLI de Desarrollador de Azure (`azd`).
 
-En este ejemplo, asumiremos que estás desplegando la aplicación MyWeatherHub de las secciones anteriores. Puedes usar el código que has construido, o puedes usar el código en el directorio **complete**. Sin embargo, los pasos son los mismos para cualquier aplicación .NET Aspire.
+En este ejemplo, asumiremos que estás desplegando la aplicación MyWeatherHub de las secciones anteriores. Puedes usar el código que has construido, o puedes usar el código en el directorio **complete**. Sin embargo, los pasos generales son los mismos para cualquier aplicación .NET Aspire.
 
 ## Desplegar la aplicación con Visual Studio
 
-1. En el explorador de soluciones, haz clic derecho en el proyecto **AppHost** y selecciona **Publicar** para abrir el diálogo de **Publicación**.
+1. En el Explorador de Soluciones, haz clic derecho en el proyecto **AppHost** y selecciona **Publicar** para abrir el diálogo de **Publicación**.
 
-  > [!CONSEJO]
-  > Publicar .NET Aspire requiere la versión actual de la CLI `azd`. Esto debería instalarse con la carga de trabajo de .NET Aspire, pero si recibes una notificación de que la CLI no está instalada o actualizada, puedes seguir las instrucciones en la siguiente parte de este tutorial para instalarla.
+    > Publicar .NET Aspire requiere la versión actual de la CLI `azd`. Esto debería instalarse con la carga de trabajo de .NET Aspire, pero si recibes una notificación de que la CLI no está instalada o actualizada, puedes seguir las instrucciones en la siguiente parte de este tutorial para instalarla.
 
 1. Selecciona **Azure Container Apps para .NET Aspire** como el destino de publicación.
-  ![Una captura de pantalla del flujo de trabajo del diálogo de publicación.](media/vs-deploy.png)
-1. En el paso **Ambiente de AzDev**, selecciona los valores de **Suscripción** y **Ubicación** deseados y luego ingresa un **Nombre del ambiente** como _aspire-weather_. El nombre del ambiente determina la nomenclatura de los recursos del ambiente de Azure Container Apps.
+
+    ![Una captura de pantalla del flujo de trabajo del diálogo de publicación.](media/vs-deploy.png)
+
+1. En el paso **Ambiente AzDev**, selecciona los valores de **Suscripción** y **Ubicación** deseados y luego ingresa un **Nombre del ambiente** como _aspire-weather_. El nombre del ambiente determina la nomenclatura de los recursos del ambiente de Azure Container Apps.
 1. Selecciona **Finalizar** para crear el ambiente, luego **Cerrar** para salir del flujo de trabajo del diálogo y ver el resumen del ambiente de despliegue.
 1. Selecciona **Publicar** para aprovisionar y desplegar los recursos en Azure.
 
-  > [!CONSEJO]
-  > Este proceso puede tardar varios minutos en completarse. Visual Studio proporciona actualizaciones de estado sobre el progreso del despliegue en los registros de salida y puedes aprender mucho sobre cómo funciona la publicación observando estas actualizaciones. Verás que el proceso implica la creación de un grupo de recursos, un Registro de Contenedores de Azure, un espacio de trabajo de Log Analytics y un ambiente de Azure Container Apps. La aplicación es entonces desplegada en el ambiente de Azure Container Apps.
+    > Este proceso puede tardar varios minutos en completarse. Visual Studio proporciona actualizaciones de estado sobre el progreso del despliegue en los registros de salida y puedes aprender mucho sobre cómo funciona la publicación observando estas actualizaciones! Verás que el proceso implica crear un grupo de recursos, un Registro de Contenedores de Azure, un espacio de trabajo de Log Analytics y un ambiente de Azure Container Apps. La aplicación se despliega entonces en el ambiente de Azure Container Apps.
 
 1. Cuando la publicación se completa, Visual Studio muestra las URLs de los recursos en la parte inferior de la pantalla del ambiente. Usa estos enlaces para ver los diversos recursos desplegados. Selecciona la URL de **webfrontend** para abrir un navegador a la aplicación desplegada.
-  ![Una captura de pantalla del proceso de publicación completado y los recursos desplegados.](media/vs-publish-complete.png)
 
-## Instalar la CLI de Desarrollador de Azure
+    ![Una captura de pantalla del proceso de publicación completado y los recursos desplegados.](media/vs-publish-complete.png)
+
+## Desplegar la aplicación con la CLI de Desarrollador de Azure (azd)
+
+### Instalar la CLI de Desarrollador de Azure
 
 El proceso para instalar `azd` varía según tu sistema operativo, pero está ampliamente disponible a través de `winget`, `brew`, `apt`, o directamente mediante `curl`. Para instalar `azd`, consulta [Instalar la CLI de Desarrollador de Azure](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd).
 
+### Nuevo en .NET Aspire 9.4: comando aspire deploy
+
+.NET Aspire 9.4 introduce el comando `aspire deploy` (vista previa/feature flag) que extiende las capacidades de publicación para desplegar activamente en entornos de destino. Este comando proporciona flujos de trabajo de despliegue mejorados con lógica personalizada pre/post-despliegue.
+
+Para habilitar esta característica:
+
+```bash
+aspire config set features.deployCommandEnabled true
+```
+
+Luego puedes usar:
+
+```bash
+aspire deploy
+```
+
+Este comando proporciona informes de progreso mejorados, mejores mensajes de error, y soporte para hooks de despliegue personalizados para escenarios de despliegue complejos.
+
 ### Inicializar la plantilla
+
+> Prerrequisitos:
+>
+> - Asegúrate de haber iniciado sesión: ejecuta `azd login` y selecciona la suscripción de Azure correcta.
+> - Ejecuta los siguientes comandos desde la carpeta que contiene tu AppHost (para este repositorio, típicamente la carpeta `complete` si estás desplegando el ejemplo terminado).
 
 1. Abre una nueva ventana de terminal y navega (`cd`) a la raíz de tu proyecto .NET Aspire.
 1. Ejecuta el comando `azd init` para inicializar tu proyecto con `azd`, el cual inspeccionará la estructura de directorios local y determinará el tipo de aplicación.
 
-  ```console
-  azd init
-  ```
+    ```console
+    azd init
+    ```
 
-  Para más información sobre el comando `azd init`, consulta [azd init](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-init).
+    Para más información sobre el comando `azd init`, consulta [azd init](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-init).
 1. Si esta es la primera vez que has inicializado la aplicación, `azd` te pedirá el nombre del entorno:
 
-  ```console
-  Inicializando una aplicación para ejecutar en Azure (azd init)
-  
-  ? Ingresa un nuevo nombre de entorno: [? para ayuda]
-  ```
+    ```console
+    Inicializando una aplicación para ejecutar en Azure (azd init)
+    
+    ? Ingresa un nuevo nombre de entorno: [? para ayuda]
+    ```
 
-  Ingresa el nombre de entorno deseado para continuar. Para más información sobre la gestión de entornos con `azd`, consulta [azd env](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-env).
+    Ingresa el nombre de entorno deseado para continuar. Para más información sobre la gestión de entornos con `azd`, consulta [azd env](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-env).
 1. Selecciona **Usar código en el directorio actual** cuando `azd` te ofrezca dos opciones de inicialización de la aplicación.
 
   ```console
@@ -97,8 +123,6 @@ El proceso para instalar `azd` varía según tu sistema operativo, pero está am
 - _.azure/config.json_: Archivo de configuración que informa a `azd` cuál es el entorno activo actual.
 - _.azure/aspireazddev/.env_: Contiene sobreescrituras específicas del entorno.
 - _.azure/aspireazddev/config.json_: Archivo de configuración que informa a `azd` qué servicios deben tener un punto final público en este entorno.
-
-[](https://learn.microsoft.com/dotnet/aspire/deployment/azure/aca-deployment?tabs=visual-studio%2Cinstall-az-windows%2Cpowershell&pivots=azure-azd#deploy-the-app)
 
 ### Desplegar la aplicación
 
@@ -163,3 +187,5 @@ Ejecuta el siguiente comando de Azure CLI para eliminar el grupo de recursos cua
 ```console
 az group delete --name <nombre-de-tu-grupo-de-recursos>
 ```
+
+**Siguiente**: [Módulo #10: Gestión Avanzada de Contenedores](10-container-management.md)
