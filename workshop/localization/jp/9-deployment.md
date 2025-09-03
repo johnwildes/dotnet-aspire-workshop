@@ -124,8 +124,6 @@ aspire deploy
 - _.azure/aspireazddev/.env_：環境固有のオーバーライドを含みます。
 - _.azure/aspireazddev/config.json_：この環境でパブリック エンドポイントを持つべきサービスを `azd` に通知する構成ファイル。
 
-
-
 ### アプリのデプロイ
 
 `azd` が初期化されると、プロビジョニングとデプロイのプロセスを単一のコマンドとして実行できます。[azd up](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-up)

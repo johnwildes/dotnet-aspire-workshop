@@ -124,8 +124,6 @@ Este comando fornece relatórios de progresso aprimorados, melhores mensagens de
 - _.azure/aspireazddev/.env_: Contém substituições específicas do ambiente.
 - _.azure/aspireazddev/config.json_: Arquivo de configuração que informa ao `azd` quais serviços devem ter um endpoint público neste ambiente.
 
-
-
 ### Implantar o aplicativo
 
 Uma vez que `azd` está inicializado, o processo de provisionamento e implantação pode ser executado como um único comando, [azd up](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-up).

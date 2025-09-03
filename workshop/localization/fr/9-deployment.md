@@ -124,8 +124,6 @@ Cette commande fournit des rapports de progression améliorés, de meilleurs mes
 - _.azure/aspireazddev/.env_ : Contient les remplacements spécifiques à l'environnement.
 - _.azure/aspireazddev/config.json_ : Fichier de configuration qui informe `azd` quels services doivent avoir un point de terminaison public dans cet environnement.
 
-
-
 ### Déployer l'application
 
 Une fois qu'`azd` est initialisé, le processus de provisionnement et de déploiement peut être exécuté comme une seule commande, [azd up](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-up).

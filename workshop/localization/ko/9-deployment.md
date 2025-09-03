@@ -124,8 +124,6 @@ aspire deploy
 - _.azure/aspireazddev/.env_: 환경별 재정의를 포함합니다.
 - _.azure/aspireazddev/config.json_: 이 환경에서 공용 끝점을 가져야 하는 서비스를 `azd`에 알려주는 구성 파일입니다.
 
-
-
 ### 앱 배포
 
 `azd`가 초기화되면 프로비저닝 및 배포 프로세스를 단일 명령인 [azd up](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-up)으로 실행할 수 있습니다.

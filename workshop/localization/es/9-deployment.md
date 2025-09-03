@@ -124,8 +124,6 @@ Este comando proporciona informes de progreso mejorados, mejores mensajes de err
 - _.azure/aspireazddev/.env_: Contiene sobreescrituras específicas del entorno.
 - _.azure/aspireazddev/config.json_: Archivo de configuración que informa a `azd` qué servicios deben tener un punto final público en este entorno.
 
-
-
 ### Desplegar la aplicación
 
 Una vez que `azd` está inicializado, el proceso de aprovisionamiento y despliegue se puede ejecutar como un solo comando, [azd up](https://learn.microsoft.com/azure/developer/azure-developer-cli/reference#azd-up).

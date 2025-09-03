@@ -2,7 +2,7 @@
 
 .NET Aspire 针对在容器化环境中运行的应用程序进行了优化。[Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) 是一个完全托管的环境，使您能够在无服务器平台上运行微服务和容器化应用程序。本文将指导您创建新的 .NET Aspire 解决方案，并使用 Visual Studio 和 Azure Developer CLI (`azd`) 将其部署到 Microsoft Azure Container Apps。
 
-在此示例中，我们假设您正在部署前面部分中的 MyWeatherHub 应用程序。您可以使用已构建的代码，也可以使用 **complete** 目录中的代码。但是，对于任何 .NET Aspire 应用程序，一般步骤都是相同的。
+在此示例中，我们假设您正在部署前面部分中的 MyWeatherHub 应用程序。您可以使用您构建的代码，也可以使用 **complete** 目录中的代码。但是，对于任何 .NET Aspire 应用程序，一般步骤都是相同的。
 
 ## 使用 Visual Studio 部署应用
 
@@ -123,8 +123,6 @@ aspire deploy
 - _.azure/config.json_：配置文件，告知 `azd` 当前活动环境是什么。
 - _.azure/aspireazddev/.env_：包含特定于环境的覆盖。
 - _.azure/aspireazddev/config.json_：配置文件，告知 `azd` 在此环境中哪些服务应该有公共终结点。
-
-
 
 ### 部署应用
 
