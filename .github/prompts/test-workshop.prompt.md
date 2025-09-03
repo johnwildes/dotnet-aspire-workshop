@@ -172,7 +172,7 @@ Focus exclusively on modules 1–9 in this repository.
 - [x] Module 3 (Dashboard & App Host): The instruction says "Set Default Project"; in Visual Studio the label is "Set as Startup Project". Confirmed and updated wording.
 - [x] Module 4 (Typos): "MyWeatheApp" appears in text; should be "MyWeatherHub". Fixed.
 - [x] Module 5 (Redis admin UI naming): The text references "Redis Commander", but the instructions and screenshots refer to "Redis Insight". Standardized on "Redis Insight".
-- [ ] Module 5 (Output caching guidance): The doc says to delete default Output Caching code; in `complete` the API uses `builder.AddRedisOutputCache("cache")` and still configures `services.AddOutputCache(...)` to add tags/policies. Clarify that the intent is to remove the default in-memory policy, not prevent using Output Caching; with Redis configured, `AddOutputCache` policies still apply but store is Redis.
+- [x] Module 5 (Output caching guidance): Clarified that removing the default in-memory policy avoids duplication; policies/tags still apply with Redis as the store when using `builder.AddRedisOutputCache("cache")`.
 - [x] Module 5 (Container runtime prerequisite timing): The Redis container requires Docker/Podman. Added an explicit reminder to start Docker/Podman before launching the AppHost.
 - [x] Module 6 (Telemetry duplication): Added a note that ServiceDefaults provides baseline OTEL and custom meters/sources are additive.
 - [x] Module 7 (Persistent containers): Clarified that `WithLifetime(ContainerLifetime.Persistent)` and `WithInitFiles(...)` are optional enhancements.

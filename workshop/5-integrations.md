@@ -29,7 +29,7 @@ With the NuGet package installed, we can add Redis to our App Host:
                      .WithReference(cache);
     ```
 
-1. Additionally, we could configure [Redis Insight](https://github.com/RedisInsight/RedisInsight), a Redis management tool from the Redis team. As part of the `Aspire.Hosting.Redis` package, Redis Insight is available in the same integration. To add Redis Insight, update the code adding the Redis resource to call the `WithRedisInsight()` method on the returned builder:
+1. Add [Redis Insight](https://github.com/RedisInsight/RedisInsight), a Redis management tool from the Redis team. As part of the `Aspire.Hosting.Redis` package, Redis Insight is available in the same integration. Update the Redis resource to call the `WithRedisInsight()` method on the returned builder:
 
     ```csharp
     var cache = builder.AddRedis("cache")
