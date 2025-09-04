@@ -36,7 +36,7 @@
                        .WithRedisCommander();
     ```
 
-## 运行应用
+## 运行应用（启动 Redis）
 
 我们没有对 `Api` 或 `MyWeatherHub` 项目进行任何更改，但我们可以看到在启动 App Host 时 Redis 缓存启动。
 
@@ -49,7 +49,7 @@
 
     ![Redis running in dashboard and desktop](./media/redis-started.png)
 
-## 在 API 项目中集成 Output Caching 
+## 在 API 项目中集成 Output Caching
 
 我们可以将两种类型的缓存集成到 ASP.NET Core 应用程序中：
 

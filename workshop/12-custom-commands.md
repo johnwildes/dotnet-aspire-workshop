@@ -5,6 +5,7 @@
 Want to add superpowers to your .NET Aspire dashboard? Custom commands are here to save the day! In this module, we'll explore how to create interactive commands that let you manage your application resources directly from the Aspire dashboard - no more switching between terminals, browsers, and tools.
 
 We'll cover:
+
 1. Understanding the custom commands architecture
 2. Creating resource-specific commands (like clearing a Redis cache)
 3. Building HTTP commands for API interactions
@@ -35,7 +36,7 @@ The best part? All commands are discoverable in the dashboard UI and can include
 | **Executable Commands** | Run external processes | Database migrations, file operations |
 | **State-Aware Commands** | Context-sensitive actions | Enable when healthy, disable when offline |
 
-## Building Our First Custom Command: Clear Redis Cache 
+## Building Our First Custom Command: Clear Redis Cache
 
 Let's start by adding a command to clear our Redis cache. This is perfect for development when you want to reset the cache and review cache loading scenarios.
 
@@ -112,6 +113,7 @@ internal static class RedisResourceBuilderExtensions
 Let's break down what makes this command work:
 
 #### 1. Command Registration
+
 ```csharp
 builder.WithCommand(
     name: "clear-cache",                    // Internal identifier
@@ -122,6 +124,7 @@ builder.WithCommand(
 ```
 
 #### 2. Command Options
+
 ```csharp
 commandOptions: new CommandOptions
 {
@@ -133,17 +136,21 @@ commandOptions: new CommandOptions
 }
 ```
 
-The IconName comes from the Blazor FluentUI icons that the dashboard uses.  You can choose an icon to use on their site at: https://www.fluentui-blazor.net/Icon#explorer
+The IconName comes from the Blazor FluentUI icons that the dashboard uses.  You can choose an icon to use on their site at: <https://www.fluentui-blazor.net/Icon#explorer>
 
 #### 3. Command Execution
+
 The `OnRunClearCacheCommandAsync` method:
+
 - Gets the Redis connection string
 - Connects to Redis
 - Executes the `FLUSHALL` command
 - Returns success or failure
 
 #### 4. State Management
+
 The `OnUpdateResourceState` method determines when the command should be available:
+
 - **Enabled**: When Redis is healthy
 - **Disabled**: When Redis is unhealthy or offline
 
@@ -242,6 +249,7 @@ services.AddOutputCache(options =>
 ```
 
 This endpoint:
+
 - **Validates the invalidation key** through a secure header
 - **Clears all cached data** by evicting the "AllCache" tag
 - **Returns appropriate HTTP status codes** (200 OK or 401 Unauthorized)
@@ -287,7 +295,9 @@ public static class ApiCommandExtensions
 ### Understanding HTTP Command Features
 
 #### 1. Request Preparation
+
 The `PrepareRequest` callback lets you customize the HTTP request:
+
 ```csharp
 PrepareRequest = (context) =>
 {
@@ -298,11 +308,13 @@ PrepareRequest = (context) =>
 ```
 
 #### 2. HTTP Method Configuration
+
 ```csharp
 Method = HttpMethod.Post,    // GET, POST, PUT, DELETE, etc.
 ```
 
 #### 3. Security Integration
+
 The command uses a parameter for the invalidation key, ensuring secure API access.
 
 ### Using the HTTP Command
@@ -522,15 +534,20 @@ public static IResourceBuilder<ProjectResource> WithMigrationCommand(
 ## Best Practices for Custom Commands
 
 ### 1. **Keep Commands Focused**
+
 Each command should do one thing well. Don't create mega-commands that perform multiple unrelated operations.
 
 ### 2. **Use Descriptive Names**
+
 Command names should clearly indicate what they do:
+
 - ✅ `clear-cache`, `restart-service`, `run-migrations`
 - ❌ `action1`, `do-stuff`, `command`
 
 ### 3. **Handle Failures Gracefully**
+
 Always return appropriate results and log errors:
+
 ```csharp
 try
 {
@@ -545,12 +562,15 @@ catch (Exception ex)
 ```
 
 ### 4. **Use Confirmations for Destructive Operations**
+
 Any command that deletes, clears, or modifies data should require confirmation.
 
 ### 5. **Implement State Management**
+
 Disable commands when they shouldn't be available (e.g., when a service is offline).
 
 ### 6. **Provide Good UX**
+
 - Use meaningful icons
 - Write clear descriptions
 - Choose appropriate confirmation messages

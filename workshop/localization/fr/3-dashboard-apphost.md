@@ -9,24 +9,22 @@ Avant de continuer, considérez quelques termes courants utilisés dans .NET Asp
 * *Ressource* : une ressource représente une partie d'une application, qu'il s'agisse d'un projet .NET, d'un conteneur ou d'un exécutable, ou d'une autre ressource telle qu'une base de données, un cache ou un service cloud (tel qu'un service de stockage).
 * *Référence* : Une référence définit une connexion entre des ressources, exprimée sous forme de dépendance à l'aide de l'API WithReference. Pour plus d’informations, consultez Ressources de référence.
 
-
 ## Créer un projet hôte d'application
 
 ### Visual Studio et Visual Studio Code
 
 1. Ajoutez un nouveau projet à la solution appelé `AppHost`:
 
-  - Faites un clic droit sur la solution et sélectionnez `Add` > `New project`.
-  - Sélectionnez le modèle de projet `.NET Aspire App Host`.
-  - Nommez le projet `AppHost`.
-  - Cliquez sur `Next` > `Create`.
+* Faites un clic droit sur la solution et sélectionnez `Add` > `New project`.
+* Sélectionnez le modèle de projet `.NET Aspire App Host`.
+* Nommez le projet `AppHost`.
+* Cliquez sur `Next` > `Create`.
 
   *Visual Studio*
   ![Boîte de dialogue Visual Studio pour ajouter un projet hôte d'application](./../../media/vs-add-apphost.png)
 
   *Code de studio visuel*
   ![Boîte de dialogue Visual Studio Code pour ajouter un projet hôte d'application](./../../media/vsc-add-apphost.png)
-
 
 ### Ligne de commande
 
@@ -40,12 +38,12 @@ Avant de continuer, considérez quelques termes courants utilisés dans .NET Asp
 
 1. Ajoutez une référence aux projets `Api` et `MyWeatherHub` dans le nouveau projet `AppHost` :
 
-  - Faites un clic droit sur le projet `AppHost` et sélectionnez `Ajouter` > `Référence`.
-  - Vérifiez les projets `Api` et `MyWeatherHub` et cliquez sur `OK`.
+* Faites un clic droit sur le projet `AppHost` et sélectionnez `Ajouter` > `Référence`.
+* Vérifiez les projets `Api` et `MyWeatherHub` et cliquez sur `OK`.
 
   > Astuce de pro : dans Visual Studio 2022, vous pouvez faire glisser et déposer le projet sur un autre projet pour ajouter une référence.
-1. Lorsque ces références sont ajoutées, les générateurs de sources génèrent automatiquement le code nécessaire pour référencer les projets dans l'App Host.
 
+1. Lorsque ces références sont ajoutées, les générateurs de sources génèrent automatiquement le code nécessaire pour référencer les projets dans l'App Host.
 
 ## Orchestrer l'application
 
@@ -61,8 +59,9 @@ Avant de continuer, considérez quelques termes courants utilisés dans .NET Asp
 
 1. Définissez le projet `AppHost` comme projet de démarrage dans Visual Studio en cliquant avec le bouton droit sur `AppHost` et en cliquant sur `Définir le projet par défaut`.
 1. Si vous utilisez Visual Studio Code, ouvrez le fichier `launch.json` et remplacez tout le contenu par ce qui suit :
-	```json
-	{
+
+ ```json
+ {
         "version": "0.2.0",
         "configurations": [
             {
@@ -73,7 +72,8 @@ Avant de continuer, considérez quelques termes courants utilisés dans .NET Asp
             }
         ]
     }
-	```
+ ```
+
 1. Exécutez App Host à l'aide du panneau `Exécuter et déboguer` dans Visual Studio Code ou Visual Studio.
 1. Le tableau de bord .NET Aspire s'ouvrira dans votre navigateur par défaut et affichera les ressources et dépendances de votre application.
 
@@ -91,10 +91,12 @@ Avant de continuer, considérez quelques termes courants utilisés dans .NET Asp
   ![Tableau de bord .NET Aspire](./../../media/dashboard-metrics.png)
 
 ## Créer une erreur
+
 1. Ouvrez l'onglet `Structuré` sur le tableau de bord.
 1. Réglez le `Niveau` sur `Erreur` et notez qu'aucune erreur n'apparaît.
 1. Sur le site Web `MyWeatherApp`, cliquez sur plusieurs villes différentes pour générer des erreurs. Habituellement, 5 villes différentes génèrent une erreur.
 1. Après avoir généré les erreurs, l'onglet `Structuré` se mettra automatiquement à jour sur le tableau de bord et remarquera que les erreurs sont affichées.
 
   ![Tableau de bord .NET Aspire](./../../media/dashboard-error.png)
+
 1. Cliquez sur `Trace` ou `Détails` pour voir le message d'erreur et la trace de la pile.

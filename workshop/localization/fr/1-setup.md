@@ -10,7 +10,6 @@ Pour une expérience optimale, nous vous recommandons d'utiliser Visual Studio 2
 
 > **Nouveau dans .NET Aspire 9.4** : Support complet pour .NET 10 Preview ! Vous pouvez maintenant créer des projets Aspire ciblant .NET 10 en utilisant `dotnet new aspire --framework net10.0`
 
-
 ## Windows avec Visual Studio
 
 - Installer [Visual Studio 2022 version 17.12 ou plus récent](https://visualstudio.microsoft.com/vs/).
@@ -38,6 +37,7 @@ dotnet new install Aspire.ProjectTemplates::9.4.0 --force
 .NET Aspire 9.4 introduit l'interface de ligne de commande Aspire généralement disponible, offrant une expérience de développement rationalisée. Vous pouvez l'installer en utilisant l'une de ces méthodes :
 
 ### Installation rapide (Recommandée)
+
 ```bash
 # Windows (PowerShell)
 iex "& { $(irm https://aspire.dev/install.ps1) }"
@@ -47,19 +47,21 @@ curl -sSL https://aspire.dev/install.sh | bash
 ```
 
 ### Outil global .NET
+
 ```cli
 dotnet tool install -g Aspire.Cli
 ```
 
 L'interface de ligne de commande Aspire fournit des commandes utiles comme :
+
 - `aspire new` - Créer de nouveaux projets Aspire
 - `aspire run` - Trouver et exécuter l'AppHost depuis n'importe où dans votre dépôt
 - `aspire add` - Ajouter des packages d'intégration d'hébergement
 - `aspire config` - Configurer les paramètres Aspire
 - `aspire publish` - Générer des artefacts de déploiement
 
-
 ## Tester l’installation
+
 Pour tester votre installation, consultez [Build your first .NET Aspire project](https://learn.microsoft.com/dotnet/aspire/get-started/build-your-first-aspire-app) pour plus d'informations.
 
 ## Ouvrir la solution de démarrage de l'atelier

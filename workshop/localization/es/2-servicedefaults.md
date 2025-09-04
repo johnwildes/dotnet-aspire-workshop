@@ -15,10 +15,10 @@
 
 1. Agrega un nuevo proyecto a la solución llamado `ServiceDefaults`:
 
- - Haz clic derecho en la solución y selecciona `Agregar` > `Nuevo proyecto`.
- - Selecciona la plantilla de proyecto `.NET Aspire Service Defaults`.
- - Nombra el proyecto `ServiceDefaults`.
- - Haz clic en `Siguiente` > `Crear`.
+- Haz clic derecho en la solución y selecciona `Agregar` > `Nuevo proyecto`.
+- Selecciona la plantilla de proyecto `.NET Aspire Service Defaults`.
+- Nombra el proyecto `ServiceDefaults`.
+- Haz clic en `Siguiente` > `Crear`.
 
  *Visual Studio*
  ![Cuadro de diálogo de Visual Studio para agregar un proyecto de valores predeterminados del servicio](./../../media/vs-add-servicedefaults.png)
@@ -38,10 +38,10 @@
 
 1. Agrega una referencia al proyecto `ServiceDefaults` en los proyectos `Api` y `MyWeatherHub`:
 
- - Haz clic derecho en el proyecto `Api` y selecciona `Agregar` > `Referencia`.
-  - Marca el proyecto `ServiceDefaults` y haz clic en `Aceptar`.
- - Haz clic derecho en el proyecto `MyWeatherHub` y selecciona `Agregar` > `Referencia`.
-  - Marca el proyecto `ServiceDefaults` y haz clic en `Aceptar`.
+- Haz clic derecho en el proyecto `Api` y selecciona `Agregar` > `Referencia`.
+- Marca el proyecto `ServiceDefaults` y haz clic en `Aceptar`.
+- Haz clic derecho en el proyecto `MyWeatherHub` y selecciona `Agregar` > `Referencia`.
+- Marca el proyecto `ServiceDefaults` y haz clic en `Aceptar`.
 
  > Consejo: En Visual Studio 2022, puedes arrastrar y soltar el proyecto sobre otro proyecto para agregar una referencia.
 
@@ -61,15 +61,15 @@
 
 1. Ejecuta la aplicación utilizando una configuración de multiproyecto en Visual Studio o Visual Studio Code.
 
- - Visual Studio: Haz clic derecho en la solución `MyWeatherHub` y ve a propiedades. Selecciona `Api` y `MyWeatherHub` como proyectos de inicio, selecciona `Aceptar`.
-  - ![Propiedades de la solución de Visual Studio](./../../media/vs-multiproject.png)
-  - Haz clic en `Iniciar` para iniciar y depurar ambos proyectos.
- - Visual Studio Code: Ejecuta los proyectos `Api` y `MyWeatherHub` utilizando el panel `Ejecutar y depurar`. Hemos proporcionado un archivo `launch.json` con las configuraciones necesarias para ejecutar ambos.
+- Visual Studio: Haz clic derecho en la solución `MyWeatherHub` y ve a propiedades. Selecciona `Api` y `MyWeatherHub` como proyectos de inicio, selecciona `Aceptar`.
+- ![Propiedades de la solución de Visual Studio](./../../media/vs-multiproject.png)
+- Haz clic en `Iniciar` para iniciar y depurar ambos proyectos.
+- Visual Studio Code: Ejecuta los proyectos `Api` y `MyWeatherHub` utilizando el panel `Ejecutar y depurar`. Hemos proporcionado un archivo `launch.json` con las configuraciones necesarias para ejecutar ambos.
 
 1. Prueba la aplicación navegando a las siguientes URL:
 
- - [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API (documento OpenAPI)
- - [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
+- [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API (documento OpenAPI)
+- [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
 
 1. Deberías ver el documento OpenAPI (JSON) de la API y la página de inicio de MyWeatherHub.
 1. También puedes ver las comprobaciones de estado de la API navegando a [https://localhost:7032/health](https://localhost:7032/health).

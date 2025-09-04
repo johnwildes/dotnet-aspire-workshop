@@ -15,10 +15,10 @@
 
 1. Ajoutez un nouveau projet à la solution appelé `ServiceDefaults`:
 
- - Faites un clic droit sur la solution et sélectionnez `Add` > `New Project`.
- - Sélectionnez le modèle de projet `.NET Aspire Service Defaults`.
- - Nommé le projet `ServiceDefaults`.
- - Cliquez `Next` > `Create`.
+- Faites un clic droit sur la solution et sélectionnez `Add` > `New Project`.
+- Sélectionnez le modèle de projet `.NET Aspire Service Defaults`.
+- Nommé le projet `ServiceDefaults`.
+- Cliquez `Next` > `Create`.
 
  *Visual Studio*
  ![Boîte de dialogue Visual Studio pour ajouter un projet de valeurs par défaut du service](./../../media/vs-add-servicedefaults.png)
@@ -46,7 +46,7 @@
  > Conseil de pro: dans Visual Studio 2022, vous pouvez faire glisser et déposer le projet sur un autre projet pour ajouter une référence.
 
 1. Dans les projets `Api` et `MyWeatherHub`, modifiez leurs fichiers `Program.cs`, en ajoutant la ligne suivante immédiatement après leur ligne `var builder = WebApplication.CreateBuilder(args);` :
- 
+
  ```csharp
  builder.AddServiceDefaults();
  ```
@@ -68,8 +68,8 @@
 
 1. Test the application by navigating to the following URLs:
 
- - [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API (OpenAPI document)
- - [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
+- [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API (OpenAPI document)
+- [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
 
 1. You should see the OpenAPI document (JSON) for the API and the MyWeatherHub home page.
 1. You can also view the health checks for the API by navigating to [https://localhost:7032/health](https://localhost:7032/health).

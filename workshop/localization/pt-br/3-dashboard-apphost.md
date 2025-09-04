@@ -15,10 +15,10 @@ Antes de continuar, considere alguns termos comuns usados no .NET Aspire:
 
 1. Adicione um novo projeto à solução chamado `AppHost`:
 
-    - Clique com o botão direito na solução e selecione `Add` > `New Project`.
-    - Selecione o modelo de projeto `.NET Aspire App Host`.
-    - Nomeie o projeto como `AppHost`.
-    - Clique em `Next` > `Create`.
+    * Clique com o botão direito na solução e selecione `Add` > `New Project`.
+    * Selecione o modelo de projeto `.NET Aspire App Host`.
+    * Nomeie o projeto como `AppHost`.
+    * Clique em `Next` > `Create`.
 
     *Visual Studio*
     ![Janela do Visual Studio para adicionar um projeto de host de aplicativo](./../../media/vs-add-apphost.png)
@@ -30,15 +30,15 @@ Antes de continuar, considere alguns termos comuns usados no .NET Aspire:
 
 1. Crie um novo projeto usando o comando `dotnet new aspire-apphost`:
 
-	```bash
-	dotnet new aspire-apphost -n AppHost
+ ```bash
+ dotnet new aspire-apphost -n AppHost
     ```
 
 ## Configure Padrões de Serviço (Service Defaults)
 
 1. Adicione as referências dos projetos `Api` e `MyWeatherHub` no novo projeto `AppHost`:
-    - Clique com o botão direito no projeto `AppHost` e selecione `Add` > `Reference`.
-        - Marque os projetos `Api` e `MyWeatherHub` e clique em `OK`.
+    * Clique com o botão direito no projeto `AppHost` e selecione `Add` > `Reference`.
+        * Marque os projetos `Api` e `MyWeatherHub` e clique em `OK`.
 
     > Dica: No Visual Studio 2022, você pode arrastar e soltar o projeto em outro projeto para adicionar uma referência.
 1. Quando essas referências são adicionadas, os seradores de código automaticamente geram o código necessário para referenciar os projetos no Host da Aplicação.
@@ -48,17 +48,18 @@ Antes de continuar, considere alguns termos comuns usados no .NET Aspire:
 1. No projeto `AppHost`, atualize o arquivo `Program.cs`, adicionando a seguinte linha imediatamente após a linha `var builder = DistributedApplication.CreateBuilder(args);`:
 
     ```csharp
-	var api = builder.AddProject<Projects.Api>("api");
+ var api = builder.AddProject<Projects.Api>("api");
 
-	var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub");
+ var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub");
     ```
 
 ## Execute a aplicação
 
 1. Defina o projeto `AppHost` como o projeto de inicialização no Visual Studio clicando com o botão direito no `AppHost` e clicando em `Set Defaul Project`.
 1. Se você estiver usando o Visual Studio Code, abra o `launch.json` e substitua todo o conteúdo pelo seguinte:
+
     ```json
-	{
+ {
         "version": "0.2.0",
         "configurations": [
             {
@@ -70,6 +71,7 @@ Antes de continuar, considere alguns termos comuns usados no .NET Aspire:
         ]
     }
     ```
+
 1. Execute o Host da Aplicação usando o painel `Run and Debug` no Visual Studio Code ou Visual Studio.
 1. O Painel do .NET Aspire será aberto no seu navegador padrão e exibirá os recursos e dependências da sua aplicação.
 

@@ -65,7 +65,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 - **一致的开发**：数据库保持您离开时的相同状态
 
 > **注意**：持久容器主要适用于开发场景。在生产部署中，您通常会使用自动处理持久性的托管数据库服务。
-
+>
 > **高级容器功能**：.NET Aspire还支持高级容器配置，如用于更好启动协调的`WithExplicitStart()`，以及用于挂载初始化脚本的`WithContainerFiles()`。当复杂开发场景需要时，这些功能提供对容器行为的细粒度控制。要了解这些高级功能的更多信息，请参阅官方文档中的[使用卷持久化数据](https://learn.microsoft.com/dotnet/aspire/fundamentals/persist-data-volumes)和[容器资源生命周期](https://learn.microsoft.com/dotnet/aspire/fundamentals/app-host-overview#container-resource-lifecycle)。
 
 ## 将EF Core与PostgreSQL集成
@@ -76,7 +76,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
 ```
 
-2. 创建您的DbContext类：
+1. 创建您的DbContext类：
 
 ```csharp
 public class MyWeatherContext : DbContext
@@ -96,7 +96,7 @@ public class MyWeatherContext : DbContext
 }
 ```
 
-3. 在应用程序的Program.cs中注册DbContext：
+1. 在应用程序的Program.cs中注册DbContext：
 
 ```csharp
 builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
@@ -104,7 +104,7 @@ builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
 
 请注意，.NET Aspire自动处理连接字符串配置。连接名称"weatherdb"与我们在AppHost项目中创建的数据库名称匹配。
 
-4. 设置数据库初始化：
+1. 设置数据库初始化：
 
 ```csharp
 if (app.Environment.IsDevelopment())
@@ -130,14 +130,14 @@ if (app.Environment.IsDevelopment())
 @inject MyWeatherContext DbContext
 ```
 
-2. 将这些新属性添加到`@code`块以支持收藏功能：
+1. 将这些新属性添加到`@code`块以支持收藏功能：
 
 ```csharp
 bool ShowOnlyFavorites { get; set; }
 List<Zone> FavoriteZones { get; set; } = new List<Zone>();
 ```
 
-3. 更新`OnInitializedAsync`方法以从数据库加载收藏。找到现有方法并替换为：
+1. 更新`OnInitializedAsync`方法以从数据库加载收藏。找到现有方法并替换为：
 
 ```csharp
 protected override async Task OnInitializedAsync()
@@ -147,7 +147,7 @@ protected override async Task OnInitializedAsync()
 }
 ```
 
-4. 最后，添加`ToggleFavorite`方法来处理将收藏保存到数据库。将此方法添加到`@code`块：
+1. 最后，添加`ToggleFavorite`方法来处理将收藏保存到数据库。将此方法添加到`@code`块：
 
 ```csharp
 private async Task ToggleFavorite(Zone zone)
@@ -166,7 +166,7 @@ private async Task ToggleFavorite(Zone zone)
 }
 ```
 
-5. 在`Home.razor`的`@code`块中，找到`zones`属性并替换为包含收藏过滤器的更新版本：
+1. 在`Home.razor`的`@code`块中，找到`zones`属性并替换为包含收藏过滤器的更新版本：
 
 ```csharp
 IQueryable<Zone> zones
@@ -191,7 +191,7 @@ IQueryable<Zone> zones
 }
 ```
 
-6. 首先，添加一个复选框来过滤区域列表。在`Home.razor`中，在`<QuickGrid>`元素之前添加此代码：
+1. 首先，添加一个复选框来过滤区域列表。在`Home.razor`中，在`<QuickGrid>`元素之前添加此代码：
 
 ```csharp
 <div class="form-check mb-3">
@@ -202,7 +202,7 @@ IQueryable<Zone> zones
 </div>
 ```
 
-7. 接下来，添加一个新列来显示收藏状态。在`<QuickGrid>`元素内的现有State列之后添加此列定义：
+1. 接下来，添加一个新列来显示收藏状态。在`<QuickGrid>`元素内的现有State列之后添加此列定义：
 
 ```csharp
 <TemplateColumn Title="收藏">

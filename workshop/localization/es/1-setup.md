@@ -37,6 +37,7 @@ dotnet new install Aspire.ProjectTemplates::9.4.0 --force
 .NET Aspire 9.4 introduce la CLI de Aspire generalmente disponible, proporcionando una experiencia de desarrollador optimizada. Puedes instalarla usando uno de estos métodos:
 
 ### Instalación Rápida (Recomendada)
+
 ```bash
 # Windows (PowerShell)
 iex "& { $(irm https://aspire.dev/install.ps1) }"
@@ -46,11 +47,13 @@ curl -sSL https://aspire.dev/install.sh | bash
 ```
 
 ### Herramienta Global de .NET
+
 ```cli
 dotnet tool install -g Aspire.Cli
 ```
 
 La CLI de Aspire proporciona comandos útiles como:
+
 - `aspire new` - Crear nuevos proyectos Aspire
 - `aspire run` - Encontrar y ejecutar el AppHost desde cualquier lugar en tu repositorio
 - `aspire add` - Agregar paquetes de integración de hospedaje
@@ -66,4 +69,3 @@ Para probar tu instalación, consulta el [Crear tu primer proyecto de .NET Aspir
 Para comenzar el taller, abre `start/MyWeatherHub.sln` en Visual Studio 2022. Si estás usando Visual Studio Code, abre la carpeta `start` y cuando el C# Dev Kit te pregunte qué solución abrir, selecciona **MyWeatherHub.sln**.
 
 **Siguiente**: [Módulo #2 - Service Defaults](2-servicedefaults.md)
-

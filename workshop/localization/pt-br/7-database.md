@@ -65,7 +65,7 @@ Com `ContainerLifetime.Persistent`, o contêiner PostgreSQL continuará executan
 - **Desenvolvimento consistente**: O banco de dados permanece no mesmo estado em que você o deixou
 
 > **Nota**: Contêineres persistentes são principalmente úteis para cenários de desenvolvimento. Em implantações de produção, você normalmente usará serviços de banco de dados gerenciados que tratam da persistência automaticamente.
-
+>
 > **Recursos Avançados de Contêiner**: O .NET Aspire também suporta configuração avançada de contêiner como `WithExplicitStart()` para melhor coordenação de inicialização, e `WithContainerFiles()` para montar scripts de inicialização. Esses recursos fornecem controle fino sobre o comportamento do contêiner quando necessário para cenários de desenvolvimento complexos. Para saber mais sobre esses recursos avançados, veja [Persistir dados usando volumes](https://learn.microsoft.com/dotnet/aspire/fundamentals/persist-data-volumes) e [Ciclo de vida do recurso de contêiner](https://learn.microsoft.com/dotnet/aspire/fundamentals/app-host-overview#container-resource-lifecycle) na documentação oficial.
 
 ## Integrando EF Core com PostgreSQL
@@ -76,7 +76,7 @@ Com `ContainerLifetime.Persistent`, o contêiner PostgreSQL continuará executan
 <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
 ```
 
-2. Crie sua classe DbContext:
+1. Crie sua classe DbContext:
 
 ```csharp
 public class MyWeatherContext : DbContext
@@ -96,7 +96,7 @@ public class MyWeatherContext : DbContext
 }
 ```
 
-3. Registre o DbContext no Program.cs da sua aplicação:
+1. Registre o DbContext no Program.cs da sua aplicação:
 
 ```csharp
 builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
@@ -104,7 +104,7 @@ builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
 
 Note que o .NET Aspire trata da configuração da string de conexão automaticamente. O nome da conexão "weatherdb" corresponde ao nome do banco de dados que criamos no projeto AppHost.
 
-4. Configure a inicialização do banco de dados:
+1. Configure a inicialização do banco de dados:
 
 ```csharp
 if (app.Environment.IsDevelopment())
@@ -130,14 +130,14 @@ Agora atualizaremos a aplicação web para suportar favoritismo de zonas climát
 @inject MyWeatherContext DbContext
 ```
 
-2. Adicione essas novas propriedades ao bloco `@code` para suportar a funcionalidade de favoritos:
+1. Adicione essas novas propriedades ao bloco `@code` para suportar a funcionalidade de favoritos:
 
 ```csharp
 bool ShowOnlyFavorites { get; set; }
 List<Zone> FavoriteZones { get; set; } = new List<Zone>();
 ```
 
-3. Atualize o método `OnInitializedAsync` para carregar favoritos do banco de dados. Encontre o método existente e substitua por:
+1. Atualize o método `OnInitializedAsync` para carregar favoritos do banco de dados. Encontre o método existente e substitua por:
 
 ```csharp
 protected override async Task OnInitializedAsync()
@@ -147,7 +147,7 @@ protected override async Task OnInitializedAsync()
 }
 ```
 
-4. Finalmente, adicione o método `ToggleFavorite` para tratar do salvamento de favoritos no banco de dados. Adicione este método ao bloco `@code`:
+1. Finalmente, adicione o método `ToggleFavorite` para tratar do salvamento de favoritos no banco de dados. Adicione este método ao bloco `@code`:
 
 ```csharp
 private async Task ToggleFavorite(Zone zone)
@@ -166,7 +166,7 @@ private async Task ToggleFavorite(Zone zone)
 }
 ```
 
-5. No bloco `@code` de `Home.razor`, localize a propriedade `zones` e substitua por esta versão atualizada que inclui o filtro de favoritos:
+1. No bloco `@code` de `Home.razor`, localize a propriedade `zones` e substitua por esta versão atualizada que inclui o filtro de favoritos:
 
 ```csharp
 IQueryable<Zone> zones
@@ -191,7 +191,7 @@ IQueryable<Zone> zones
 }
 ```
 
-6. Primeiro, adicione uma caixa de seleção para filtrar a lista de zonas. Em `Home.razor`, adicione este código logo antes do elemento `<QuickGrid>`:
+1. Primeiro, adicione uma caixa de seleção para filtrar a lista de zonas. Em `Home.razor`, adicione este código logo antes do elemento `<QuickGrid>`:
 
 ```csharp
 <div class="form-check mb-3">
@@ -202,7 +202,7 @@ IQueryable<Zone> zones
 </div>
 ```
 
-7. Em seguida, adicione uma nova coluna para mostrar o status de favorito. Adicione esta definição de coluna dentro do elemento `<QuickGrid>`, após a coluna State existente:
+1. Em seguida, adicione uma nova coluna para mostrar o status de favorito. Adicione esta definição de coluna dentro do elemento `<QuickGrid>`, após a coluna State existente:
 
 ```csharp
 <TemplateColumn Title="Favorito">
