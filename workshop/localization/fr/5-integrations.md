@@ -6,7 +6,6 @@ Les composants .NET Aspire ne doivent pas être confondus avec les packages d'h�
 
 Il existe une liste sans cesse croissante de [composants .NET Aspire](https://learn.microsoft.com/dotnet/aspire/fundamentals/components-overview?tabs=dotnet-cli#available-components) créés et livrés par Microsoft et le communauté. .NET Aspire est flexible et n'importe qui peut créer son propre composant à intégrer à ses propres services.
 
-
 Améliorons notre application en y ajoutant un composant. Nous ajouterons un composant qui nous aidera à nous connecter à un cache Redis pour améliorer les performances de notre API.
 
 ## Ajouter un composant Redis à l'hôte de l'application
@@ -25,26 +24,27 @@ Avec NuGet installé, nous pouvons le configurer.
 1. Ouvrez le fichier `Program.cs` dans le projet `AppHost`.
 1. Ajoutez le code suivant sous `var builder = DistributedApplication.CreateBuilder(args);`
 
-	```csharp
-	var cache = builder.AddRedis("cache")
-	```
-  	Ici, nous avons configuré le cache Redis avec le nom `cache`. Ce nom est utilisé pour identifier le cache dans `Api` ou `MyWeatherHub`.
+ ```csharp
+ var cache = builder.AddRedis("cache")
+ ```
+
+   Ici, nous avons configuré le cache Redis avec le nom `cache`. Ce nom est utilisé pour identifier le cache dans `Api` ou `MyWeatherHub`.
+
 1. Modifiez l'API dans l'hôte de l'application avec une référence au cache.
 
-	```csharp
-	var api = builder.AddProject<Projects.Api>("api")
-			.WithReference(cache);
-	```
+ ```csharp
+ var api = builder.AddProject<Projects.Api>("api")
+   .WithReference(cache);
+ ```
 
 1. De plus, nous pourrions configurer [Redis Commander](https://joeferner.github.io/redis-commander/), un outil de gestion Redis. Dans le cadre du package `Aspire.Hosting.Redis`, Redis Commander est disponible dans le même composant. Pour ajouter Redis Commander, ajoutez le code suivant sous à la configuration Redis nouvellement ajoutée.
 
-	```csharp
-	var cache = builder.AddRedis("cache")
-			.WithRedisCommander();
-	```
+ ```csharp
+ var cache = builder.AddRedis("cache")
+   .WithRedisCommander();
+ ```
 
-
-## Exécutez l'application
+## Exécutez l'application (démarrer Redis)
 
 Nous n'avons apporté aucune modification aux projets `Api` ou `MyWeatherHub`, mais nous pouvons voir le cache Redis démarrer lorsque nous démarrons l'App Host.
 
@@ -63,40 +63,40 @@ Nous n'avons apporté aucune modification aux projets `Api` ou `MyWeatherHub`, m
 1. Ouvrez le fichier `Program.cs` dans le projet `Api`.
 1. Ajoutez le code suivant sous `var builder = WebApplication.CreateBuilder(args);` en haut du fichier :
 
-	```csharp
-	builder.AddRedisOutputCache("cache");
-	```
+ ```csharp
+ builder.AddRedisOutputCache("cache");
+ ```
 
-	> Notez que nous utilisons le nom `cache` pour référencer le cache Redis que nous avons configuré dans l'App Host.
+ > Notez que nous utilisons le nom `cache` pour référencer le cache Redis que nous avons configuré dans l'App Host.
+
 1. Le `NwsManager` a déjà été configuré pour utiliser la mise en cache de sortie, mais avec un cache mémoire. Nous le mettrons à jour pour utiliser le cache Redis. Ouvrez le fichier `NwsManager.cs` dans le dossier `Data`.
 1. Dans la classe `NwsManagerExtensions`, vous trouverez une méthode `AddNwsManager`.
 1. **SUPPRIMER** le code suivant :
 
-	```csharp
-	// Add default output caching
-	services.AddOutputCache(options =>
-	{
-		options.AddBasePolicy(builder => builder.Cache());
-	});
-	```
+ ```csharp
+ // Add default output caching
+ services.AddOutputCache(options =>
+ {
+  options.AddBasePolicy(builder => builder.Cache());
+ });
+ ```
 
-	Étant donné que nous avons configuré l'application pour utiliser le cache Redis dans le fichier `Program.cs`, nous n'avons plus besoin d'ajouter la politique de mise en cache de sortie par défaut.
+ Étant donné que nous avons configuré l'application pour utiliser le cache Redis dans le fichier `Program.cs`, nous n'avons plus besoin d'ajouter la politique de mise en cache de sortie par défaut.
 
+## Exécutez l'application (tester la mise en cache de sortie)
 
-## Exécutez l'application
 1. Démarrez le projet App Host et ouvrez le projet `MyWeatherHub` depuis le tableau de bord
 1. Cliquez sur une ville puis cliquez à nouveau dessus. Vous verrez que la réponse est mise en cache et que la deuxième requête est beaucoup plus rapide que la première sous l'onglet `Traces`.
 
-	![Mise en cache de sortie en action](./../../media/output-caching.png)
-
+ ![Mise en cache de sortie en action](./../../media/output-caching.png)
 
 1. Vous pouvez également voir la réponse mise en cache dans Redis Commander. Ouvrez Redis Commander en cliquant sur le point de terminaison `Redis Commander` dans le tableau de bord. Sous les statistiques, vous verrez les connexions et les commandes traitées.
 
-	![Redis Commander](./../../media/redis-commander.png)
+ ![Redis Commander](./../../media/redis-commander.png)
+
 1. De plus, vous pouvez voir les journaux du cache Redis et de Redis Commander dans l'onglet `Console`.
 
-	![Journaux Redis](./../../media/redis-logs.png)
-
+ ![Journaux Redis](./../../media/redis-logs.png)
 
 ## Conteneurs Redis personnalisés
 
@@ -104,20 +104,21 @@ Les composants .NET Aspire sont flexibles et personnalisables. Par défaut, le c
 
 ```csharp
 var cache = builder.AddRedis("cache")
-	.WithImage("ghcr.io/microsoft/garnet")
-	.WithImageTag("latest")
-	.WithRedisCommander();
+ .WithImage("ghcr.io/microsoft/garnet")
+ .WithImageTag("latest")
+ .WithRedisCommander();
 ```
 
 1. Exécutez l'application et vous verrez maintenant Garnet s'exécuter dans le tableau de bord et dans Docker Desktop.
 
   ![Garnet s'exécutant dans le tableau de bord et le bureau](./../../media/garnet-started.png)
+
 1. Vous pouvez également voir les journaux de Garnet dans l'onglet `Console`.
 
   ![Journaux Garnet](./../../media/garnet-logs.png)
 
-
 ## Résumé
+
 Dans cette section, nous avons ajouté un composant Redis à App Host et intégré la mise en cache de sortie dans l'API. Nous avons vu comment la réponse était mise en cache dans le cache Redis et comment la deuxième requête était beaucoup plus rapide que la première. Nous avons également vu comment utiliser Redis Commander pour gérer le cache Redis.
 
 Il existe de nombreux autres composants disponibles que vous pouvez utiliser pour intégrer vos services. Vous pouvez trouver la liste des composants disponibles [dans la documentation .NET Aspire](https://learn.microsoft.com/dotnet/aspire/fundamentals/components-overview?tabs=dotnet-cli#available-components).

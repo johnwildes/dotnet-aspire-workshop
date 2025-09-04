@@ -57,7 +57,7 @@ Ahora, configuremos Entity Framework Core en nuestra aplicación web para usar P
 <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0" />
 ```
 
-2. Cree un DbContext para su aplicación:
+1. Cree un DbContext para su aplicación:
 
 ```csharp
 public class WeatherDbContext : DbContext
@@ -80,7 +80,7 @@ public class WeatherForecast
 }
 ```
 
-3. Registre el DbContext en su Program.cs:
+1. Registre el DbContext en su Program.cs:
 
 ```csharp
 builder.AddNpgsqlDbContext<WeatherDbContext>("weatherdb");
@@ -89,8 +89,8 @@ builder.AddNpgsqlDbContext<WeatherDbContext>("weatherdb");
 ## Prueba de la integración
 
 1. Ejecute su aplicación AppHost
-2. Abra el panel de Aspire
-3. Verifique que PostgreSQL y PgAdmin estén ejecutándose
-4. Acceda a PgAdmin a través del panel para explorar su base de datos
+1. Abra el panel de Aspire
+1. Verifique que PostgreSQL y PgAdmin estén ejecutándose
+1. Acceda a PgAdmin a través del panel para explorar su base de datos
 
 **Siguiente**: [Módulo #8 - Pruebas de integración](8-integration-testing.md)

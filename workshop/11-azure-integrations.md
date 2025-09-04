@@ -5,6 +5,7 @@
 Ready to take your .NET Aspire apps to the cloud? You're in the right place! In this module, we'll explore how .NET Aspire makes working with Azure services a breeze - both during development and in production.
 
 We'll cover:
+
 1. Using local emulators to develop against Azure services (without spending a dime!)
 2. Adding serverless powers with Azure Functions (because who doesn't love going serverless?)
 3. Storing data in Azure Cosmos DB (with local emulation magic)
@@ -24,7 +25,7 @@ Cloud development often involves frustrating disconnects between local developme
 
 Let's see how .NET Aspire brings these benefits to life by building an application that uses Azure Functions and Cosmos DB.
 
-## Local Emulators - Azure Without the Cloud!
+## Local Emulators - Azure Without the Cloud
 
 One of .NET Aspire's superpowers is its support for local emulators of Azure services. Here's what you can use without an internet connection:
 
@@ -56,9 +57,10 @@ Let's build a fun little weather application that combines Azure Functions with 
    - Solution name: `AzureIntegrationDemo`
    - Use Redis: No (unchecked)
    - Create a test project: None
-7. Click **Create**
+5. Click **Create**
 
 Your solution now contains:
+
 - `AzureIntegrationDemo.AppHost` - Your orchestrator project
 - `AzureIntegrationDemo.ServiceDefaults` - Your trusty service defaults
 - `AzureIntegrationDemo.Web` - A frontend web app
@@ -83,7 +85,7 @@ Your solution now contains:
 
 Now let's add some serverless capabilities with Azure Functions!
 
-#### Visual Studio Path
+#### Visual Studio Path (Functions)
 
 1. Right-click on your solution in Solution Explorer and select **Add** > **New Project**.
 2. Search for "Azure Functions" and select the **Azure Functions** template.
@@ -159,7 +161,7 @@ Now let's add some serverless capabilities with Azure Functions!
    }
    ```
 
-#### Command Line Path
+#### Command Line Path (Functions)
 
 1. Add a new Azure Functions project:
 
@@ -179,13 +181,15 @@ Now let's add some serverless capabilities with Azure Functions!
 
 Now, let's make our Functions project a full-fledged citizen in our Aspire application:
 
-#### Visual Studio Path
+#### Visual Studio Path (Wiring Functions)
 
 1. Right-click on the AppHost project and add a reference to the Functions project.
 1. In the AppHost project, add a reference to the `Aspire.Hosting.Azure.Functions` package:
+
 ```bash
 dotnet add package Aspire.Hosting.Azure.Functions --prerelease
-```   
+```
+
 1. Open the `Program.cs` file in the AppHost project and update it:
 
    ```csharp
@@ -206,7 +210,7 @@ dotnet add package Aspire.Hosting.Azure.Functions --prerelease
     builder.Build().Run();
    ```
 
-#### Command Line Path
+#### Command Line Path (Wiring Functions)
 
 1. Add a project reference:
 
@@ -220,10 +224,10 @@ dotnet add package Aspire.Hosting.Azure.Functions --prerelease
 
 Now it's time to add some persistent data storage with Azure Cosmos DB. The coolest part? We'll use the Cosmos DB Emulator locally, which means no Azure account needed for development!
 
-### Visual Studio Path
+### Visual Studio Path (Cosmos DB)
 
 1. Right-click on your AppHost project and select **Manage NuGet Packages**
-1. Search for and install `Aspire.Hosting.Azure.CosmosDB` 
+1. Search for and install `Aspire.Hosting.Azure.CosmosDB`
 1. Let's update our AppHost to include Cosmos DB:
 
    ```csharp
@@ -246,6 +250,7 @@ Now it's time to add some persistent data storage with Azure Cosmos DB. The cool
 
     builder.Build().Run();  
    ```
+
 1. Add the `Aspire.Microsoft.Azure.Cosmos` to the Functions project:
 1. Now let's update the `Program.cs` file of our Functions project to use Cosmos DB:
 
@@ -259,6 +264,7 @@ Now it's time to add some persistent data storage with Azure Cosmos DB. The cool
     builder.ConfigureFunctionsWebApplication();
     builder.Build().Run();
    ```
+
 1. Let's add a data model for our weather data. Create a `WeatherData.cs` file:
 
    ```csharp
@@ -320,7 +326,7 @@ Now it's time to add some persistent data storage with Azure Cosmos DB. The cool
    }
    ```
 
-### Command Line Path
+### Command Line Path (Cosmos DB)
 
 1. Install the required NuGet packages:
 
@@ -417,7 +423,7 @@ Now let's wire up our Functions to use the Cosmos DB repository:
    }
    ```
 
-## Let's Run Our Cloud-Ready App Locally!
+## Let's Run Our Cloud-Ready App Locally
 
 Time to see the magic happen:
 
@@ -492,6 +498,7 @@ When it's time to deploy, you'll need to provision Azure resources. .NET Aspire 
    ```
 
 The generated templates in the `.azure` folder include everything you need to deploy your app:
+
 - `main.bicep` - The main infrastructure template
 - Resource-specific templates for Cosmos DB, Functions, etc.
 
@@ -510,6 +517,7 @@ Here are some tips from the trenches:
 ## Summary
 
 Congratulations! You've successfully:
+
 - Created an Aspire application with Azure Functions and Cosmos DB
 - Set up local development with emulators (no Azure account needed!)
 - Built a serverless API that stores and retrieves data

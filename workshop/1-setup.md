@@ -37,6 +37,7 @@ dotnet new install Aspire.ProjectTemplates::9.4.0 --force
 .NET Aspire 9.4 introduces the generally available Aspire CLI, providing a streamlined developer experience. You can install it using one of these methods:
 
 ### Quick Install (Recommended)
+
 ```bash
 # Windows (PowerShell)
 iex "& { $(irm https://aspire.dev/install.ps1) }"
@@ -46,11 +47,13 @@ curl -sSL https://aspire.dev/install.sh | bash
 ```
 
 ### .NET Global Tool
+
 ```cli
 dotnet tool install -g Aspire.Cli
 ```
 
 The Aspire CLI provides useful commands like:
+
 - `aspire new` - Create new Aspire projects
 - `aspire run` - Find and run the AppHost from anywhere in your repo
 - `aspire add` - Add hosting integration packages

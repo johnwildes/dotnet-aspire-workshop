@@ -16,16 +16,16 @@ Para abordar estos problemas, utilizaremos la funcionalidad de descubrimiento de
 1. Abre el archivo `Program.cs` en el proyecto `AppHost`.
 2. Anteriormente agregamos orquestación para incluir varios proyectos usando el método `builder.AddProject`. Esto devolvió un `IResourceBuild` que se puede usar para hacer referencia a los proyectos. Vamos a hacer referencia al proyecto `Api` en el proyecto `MyWeatherHub` actualizando el código:
 
-	```csharp
-	var api = builder.AddProject<Projects.Api>("api");
+ ```csharp
+ var api = builder.AddProject<Projects.Api>("api");
 
-	var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
-		 .WithReference(api)
-		 .WithExternalHttpEndpoints();
-	```
+ var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
+   .WithReference(api)
+   .WithExternalHttpEndpoints();
+ ```
 
-3. El método `WithReference` se utiliza para hacer referencia al proyecto `Api`. Esto permitirá que el proyecto `MyWeatherHub` descubra el proyecto `Api` en tiempo de ejecución.
-4. Si más adelante decides desplegar esta aplicación, necesitarías la llamada a `WithExternalHttpEndpoints` para asegurarte de que sea público para el mundo exterior.
+1. El método `WithReference` se utiliza para hacer referencia al proyecto `Api`. Esto permitirá que el proyecto `MyWeatherHub` descubra el proyecto `Api` en tiempo de ejecución.
+1. Si más adelante decides desplegar esta aplicación, necesitarías la llamada a `WithExternalHttpEndpoints` para asegurarte de que sea público para el mundo exterior.
 
 ## Habilitar el descubrimiento de servicios en MyWeatherHub
 
@@ -35,10 +35,10 @@ Algunos servicios exponen múltiples puntos finales con nombres. Los puntos fina
 
 ```csharp
 builder.Services.AddHttpClient<BasketServiceClient>(
-	 static client => client.BaseAddress = new("https+http://basket"));
+  static client => client.BaseAddress = new("https+http://basket"));
 
 builder.Services.AddHttpClient<BasketServiceDashboardClient>(
-	 static client => client.BaseAddress = new("https+http://_dashboard.basket"));
+  static client => client.BaseAddress = new("https+http://_dashboard.basket"));
 ```
 
 En el ejemplo anterior, `BasketServiceClient` utilizará el punto final predeterminado del servicio `basket`, mientras que `BasketServiceDashboardClient` utilizará el punto final `dashboard` del servicio `basket`. Ahora, actualicemos el proyecto `MyWeatherHub` para que use el descubrimiento de servicios para conectarse al servicio `Api`.
@@ -48,21 +48,21 @@ Esto se puede lograr actualizando la configuración existente de `WeatherEndpoin
 1. Abre el archivo `appsettings.json` en el proyecto `MyWeatherHub`.
 2. Actualiza la configuración de `WeatherEndpoint` para usar el descubrimiento de servicios:
 
-	```json
-	"WeatherEndpoint": "https+http://api"
-	```
+ ```json
+ "WeatherEndpoint": "https+http://api"
+ ```
 
-3. Ahora, la configuración de `WeatherEndpoint` utiliza el descubrimiento de servicios para conectarse al servicio `Api`.
+1. Ahora, la configuración de `WeatherEndpoint` utiliza el descubrimiento de servicios para conectarse al servicio `Api`.
 
 Opcionalmente, podemos actualizar la URL para no utilizar la configuración de `WeatherEndpoint`.
 
 1. Abre el archivo `Program.cs` en el proyecto `MyWeatherHub`.
 2. Actualiza la configuración de `WeatherEndpoint` para usar el descubrimiento de servicios:
 
-	```csharp
-	builder.Services.AddHttpClient<NwsManager>(
-		 static client => client.BaseAddress = new("https+http://api"));
-	```
+ ```csharp
+ builder.Services.AddHttpClient<NwsManager>(
+   static client => client.BaseAddress = new("https+http://api"));
+ ```
 
 ## Ejecutar la aplicación
 
@@ -72,7 +72,7 @@ Opcionalmente, podemos actualizar la URL para no utilizar la configuración de `
 4. En el panel de control, haz clic en `Detalles` para el proyecto `MyWeatherHub`. Esto mostrará todas las configuraciones que .NET Aspire configuró al ejecutar la aplicación desde App Host.
 5. Haz clic en el icono del ojo para revelar los valores y desplázate hasta la parte inferior donde verás `services__api_http_0` y `services__api_https_0` configurados con los valores correctos del servicio `Api`.
 
-	![Configuración de descubrimiento de servicios en el panel de control](media/dashboard-servicediscovery.png)
+ ![Configuración de descubrimiento de servicios en el panel de control](media/dashboard-servicediscovery.png)
 
 ## Conclusión
 

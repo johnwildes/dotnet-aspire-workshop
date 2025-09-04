@@ -189,4 +189,3 @@ az group delete --name <あなたのリソース グループ名>
 ```
 
 **次**: [モジュール #10: 高度なコンテナー管理](10-container-management.md)
-

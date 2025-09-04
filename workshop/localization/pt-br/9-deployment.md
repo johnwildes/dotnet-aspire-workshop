@@ -189,4 +189,3 @@ az group delete --name <nome-do-seu-grupo-de-recursos>
 ```
 
 **Próximo**: [Módulo #10: Gerenciamento Avançado de Contêineres](10-container-management.md)
-

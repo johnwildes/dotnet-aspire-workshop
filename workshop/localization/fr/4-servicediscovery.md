@@ -2,7 +2,6 @@
 
 .NET Aspire inclut des fonctionnalités permettant de configurer la découverte de services au moment du développement et des tests. La fonctionnalité de découverte de services fonctionne en fournissant une configuration au format attendu par le résolveur de point de terminaison basé sur la configuration du projet .NET Aspire AppHost aux projets de service individuels ajoutés au modèle d'application.
 
-
 ## Configuration de la découverte de services
 
 Actuellement, `MyWeatherHub` utilise une configuration statique pour se connecter à `Api`. Ce n’est pas idéal pour plusieurs raisons, notamment :
@@ -53,6 +52,7 @@ Cela peut être accompli en mettant à jour les paramètres de configuration `We
   ```json
   "WeatherEndpoint": "https+http://api"
   ```
+
 1. Le paramètre de configuration `WeatherEndpoint` utilise désormais la découverte de services pour se connecter au service `Api`.
 
 En option, nous pouvons mettre à jour l'URL pour ne pas utiliser les paramètres de configuration `WeatherEndpoint`.
@@ -74,7 +74,6 @@ En option, nous pouvons mettre à jour l'URL pour ne pas utiliser les paramètre
 1. Cliquez sur l'icône en forme d'œil pour révéler les valeurs et faites défiler vers le bas où vous verrez `services__api_http_0` et `services__api_https_0` configurés avec les valeurs correctes du service `Api`.
 
   ![Paramètres de découverte de services dans le tableau de bord](media/dashboard-servicediscovery.png)
-
 
 ## Conclusion
 

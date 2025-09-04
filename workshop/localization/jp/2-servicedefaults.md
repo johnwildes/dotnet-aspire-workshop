@@ -15,10 +15,10 @@
 
 1. `ServiceDefaults` という名前の新しいプロジェクトをソリューションに追加します：
 
- - ソリューションを右クリックし、追加 > 新しいプロジェクトを選択します。
- - `.NET Aspire Service Defaults` プロジェクトテンプレートを選択します。
- - プロジェクトに `ServiceDefaults` という名前を付けます。
- - `次へ` > `作成` をクリックします。
+- ソリューションを右クリックし、追加 > 新しいプロジェクトを選択します。
+- `.NET Aspire Service Defaults` プロジェクトテンプレートを選択します。
+- プロジェクトに `ServiceDefaults` という名前を付けます。
+- `次へ` > `作成` をクリックします。
 
  *Visual Studio*
  ![Visual Studio での service defaults プロジェクトの追加ダイアログ](./../../media/vs-add-servicedefaults.png)
@@ -38,15 +38,15 @@
 
 1. `Api` および `MyWeatherHub` プロジェクトに `ServiceDefaults` プロジェクトへの参照を追加します：
 
- - `Api` プロジェクトを右クリックし、`追加` > `参照` を選択します。
-  - `ServiceDefaults` プロジェクトをチェックし、`OK` をクリックします。
- - `MyWeatherHub` プロジェクトを右クリックし、`追加` > `参照` を選択します。
-  - `ServiceDefaults` プロジェクトをチェックし、`OK` をクリックします。
+- `Api` プロジェクトを右クリックし、`追加` > `参照` を選択します。
+- `ServiceDefaults` プロジェクトをチェックし、`OK` をクリックします。
+- `MyWeatherHub` プロジェクトを右クリックし、`追加` > `参照` を選択します。
+- `ServiceDefaults` プロジェクトをチェックし、`OK` をクリックします。
 
  > プロのヒント: Visual Studio 2022では、プロジェクトを別のプロジェクトにドラッグ＆ドロップして参照を追加できます。
 
 1. `Api` および `MyWeatherHub` プロジェクトの両方で、`Program.cs` ファイルを更新し、以下の行を `var builder = WebApplication.CreateBuilder(args);` 行の直後に追加します：
- 
+
  ```csharp
  builder.AddServiceDefaults();
  ```
@@ -60,15 +60,16 @@
 ## アプリケーションの実行
 
 1. Visual Studio または Visual Studio Code でマルチプロジェクト起動構成を使用してアプリケーションを実行します。
- - Visual Studio: `MyWeatherHub` ソリューションを右クリックしてプロパティに移動し、`Api` と `MyWeatherHub` をスタートアッププロジェクトとして選択し、`OK` をクリックします。
-  - ![Visual Studio ソリューション プロパティ](./../../media/vs-multiproject.png)
-  - `開始` をクリックして、両方のプロジェクトを開始およびデバッグします。
- - Visual Studio Code: `Run and Debug` パネルを使用して `Api` および `MyWeatherHub` プロジェクトを実行します。必要な構成が含まれている `launch.json` ファイルを提供しています。
+
+- Visual Studio: `MyWeatherHub` ソリューションを右クリックしてプロパティに移動し、`Api` と `MyWeatherHub` をスタートアッププロジェクトとして選択し、`OK` をクリックします。
+- ![Visual Studio ソリューション プロパティ](./../../media/vs-multiproject.png)
+- `開始` をクリックして、両方のプロジェクトを開始およびデバッグします。
+- Visual Studio Code: `Run and Debug` パネルを使用して `Api` および `MyWeatherHub` プロジェクトを実行します。必要な構成が含まれている `launch.json` ファイルを提供しています。
 
 1. 次の URL に移動してアプリケーションをテストします：
 
- - [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API（OpenAPI ドキュメント）
- - [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
+- [https://localhost:7032/openapi/v1.json](https://localhost:7032/openapi/v1.json) - API（OpenAPI ドキュメント）
+- [https://localhost:7274/](https://localhost:7274/) - MyWeatherHub
 
 1. API の OpenAPI ドキュメント（JSON）と MyWeatherHub のホームページが表示されるはずです。
 1. 次のURLに移動してAPIのヘルスチェックを表示できます：[https://localhost:7032/health](https://localhost:7032/health)

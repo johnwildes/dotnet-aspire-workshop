@@ -7,6 +7,7 @@ GitHub Models provides free access to AI models directly through GitHub, making 
 ## 🤖 What are GitHub Models?
 
 GitHub Models offers free access to popular AI models including:
+
 - **GPT-4o and GPT-4o mini** for chat completions
 - **Phi-3 models** for lightweight AI tasks
 - **Other foundation models** for various AI scenarios
@@ -28,8 +29,8 @@ Before we begin, here are some useful links to learn more about GitHub's AI offe
 ### Prerequisites
 
 1. A GitHub account
-2. Access to GitHub Models (currently in preview)
-3. Your GitHub personal access token with appropriate permissions
+1. Access to GitHub Models (currently in preview)
+1. Your GitHub personal access token with appropriate permissions
 
 ### Step 1: Add GitHub Models Package to AppHost
 
@@ -37,7 +38,7 @@ First, we need to add the GitHub Models integration package to the AppHost proje
 
 1. Navigate to your project directory
 
-2. Use the Aspire CLI to add the GitHub Models hosting integration:
+1. Use the Aspire CLI to add the GitHub Models hosting integration:
 
 ```bash
 aspire add github-models
@@ -50,7 +51,7 @@ This command will automatically add the `Aspire.Hosting.GitHub.Models` package r
 Now let's add the GitHub Models integration to our AppHost project:
 
 1. Open your `AppHost/Program.cs` file
-2. Add the GitHub Models integration:
+1. Add the GitHub Models integration:
 
 ```csharp
 var builder = DistributedApplication.CreateBuilder(args);
@@ -75,7 +76,7 @@ var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
 Add the necessary NuGet packages to your MyWeatherHub project:
 
 1. Open your `MyWeatherHub/MyWeatherHub.csproj` file
-2. Add the following package references:
+1. Add the following package references:
 
 ```xml
 <PackageReference Include="Aspire.Azure.AI.Inference" Version="9.4.0-preview.1.25378.8" />
@@ -174,7 +175,7 @@ Update your `Components/Pages/Home.razor` to use the AI-powered forecast summari
 @inject ForecastSummarizer Summarizer
 ```
 
-2. Add a property to store the AI summary:
+1. Add a property to store the AI summary:
 
 ```csharp
 @code {
@@ -187,7 +188,7 @@ Update your `Components/Pages/Home.razor` to use the AI-powered forecast summari
 }
 ```
 
-3. Update the `SelectZone` method to use AI summarization:
+1. Update the `SelectZone` method to use AI summarization:
 
 ```csharp
 private async Task SelectZone(Zone zone)
@@ -218,7 +219,7 @@ private async Task SelectZone(Zone zone)
 }
 ```
 
-4. Update the forecast display to use the AI summary for background selection:
+1. Update the forecast display to use the AI summary for background selection:
 
 ```razor
 @if (SelectedZone != null && Forecast != null)
@@ -257,8 +258,8 @@ Each folder contains multiple background images that the AI will randomly select
 ## 🧪 Testing the Integration
 
 1. **Set up GitHub Models access**: Ensure your GitHub token has access to GitHub Models
-2. **Run the application**: Use `dotnet run` or the Aspire dashboard
-3. **Test AI integration**: Select different weather zones and observe:
+1. **Run the application**: Use `dotnet run` or the Aspire dashboard
+1. **Test AI integration**: Select different weather zones and observe:
    - The AI analyzing weather forecasts
    - Dynamic background selection based on AI analysis
    - The display showing which background the AI selected
@@ -288,6 +289,7 @@ var prompt = $"""
 ### Error Handling and Fallbacks
 
 The implementation includes robust error handling:
+
 - Default to "Cloudy" background if AI fails
 - Graceful degradation when GitHub Models is unavailable
 - Logging for debugging AI responses
@@ -301,6 +303,7 @@ The implementation includes robust error handling:
 ## 🔍 Monitoring and Observability
 
 The GitHub Models integration will appear in your Aspire dashboard:
+
 - Monitor AI model usage and response times
 - View connection status and health
 - Debug configuration issues
@@ -310,9 +313,9 @@ The GitHub Models integration will appear in your Aspire dashboard:
 Now that you have GitHub Models integrated:
 
 1. **Experiment with different models** - Try other available models for different use cases
-2. **Add more AI features** - Consider adding weather recommendations or alerts
-3. **Implement caching** - Cache AI responses to improve performance
-4. **Add user preferences** - Let users choose between manual and AI background selection
+1. **Add more AI features** - Consider adding weather recommendations or alerts
+1. **Implement caching** - Cache AI responses to improve performance
+1. **Add user preferences** - Let users choose between manual and AI background selection
 
 ## Congratulations! 🎉
 
@@ -321,4 +324,3 @@ You've successfully integrated GitHub Models with your .NET Aspire application! 
 Throughout this workshop, you've learned how to build, configure, and enhance cloud-native applications using .NET Aspire. You now have the skills to create resilient, observable, and scalable distributed applications with AI capabilities.
 
 **Previous**: [Module #13 - Healthchecks](13-healthchecks.md) | **Next**: [Module #15 - Docker Integration](15-docker-integration.md)
-

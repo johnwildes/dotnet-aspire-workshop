@@ -65,7 +65,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 - **一貫した開発**：データベースは前回のままの状態を保ちます
 
 > **注意**: 永続コンテナは主に開発シナリオで有用です。本番環境のデプロイでは、通常、永続性を自動的に処理するマネージドデータベースサービスを使用します。
-
+>
 > **高度なコンテナ機能**: .NET Aspireは、より良い起動調整のための`WithExplicitStart()`や、初期化スクリプトをマウントするための`WithContainerFiles()`など、高度なコンテナ設定もサポートします。これらの機能は、複雑な開発シナリオで必要な場合に、コンテナの動作を細かく制御します。これらの高度な機能について詳しくは、公式ドキュメントの[ボリュームを使用したデータの永続化](https://learn.microsoft.com/dotnet/aspire/fundamentals/persist-data-volumes)と[コンテナリソースのライフサイクル](https://learn.microsoft.com/dotnet/aspire/fundamentals/app-host-overview#container-resource-lifecycle)を参照してください。
 
 ## EF CoreとPostgreSQLの統合
@@ -76,7 +76,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
 ```
 
-2. DbContextクラスを作成します：
+1. DbContextクラスを作成します：
 
 ```csharp
 public class MyWeatherContext : DbContext
@@ -96,7 +96,7 @@ public class MyWeatherContext : DbContext
 }
 ```
 
-3. アプリケーションのProgram.csでDbContextを登録します：
+1. アプリケーションのProgram.csでDbContextを登録します：
 
 ```csharp
 builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
@@ -104,7 +104,7 @@ builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
 
 .NET Aspireが接続文字列の設定を自動的に処理することに注意してください。接続名「weatherdb」は、AppHostプロジェクトで作成したデータベース名と一致します。
 
-4. データベース初期化を設定します：
+1. データベース初期化を設定します：
 
 ```csharp
 if (app.Environment.IsDevelopment())
@@ -130,14 +130,14 @@ if (app.Environment.IsDevelopment())
 @inject MyWeatherContext DbContext
 ```
 
-2. お気に入り機能をサポートするために、`@code`ブロックにこれらの新しいプロパティを追加します：
+1. お気に入り機能をサポートするために、`@code`ブロックにこれらの新しいプロパティを追加します：
 
 ```csharp
 bool ShowOnlyFavorites { get; set; }
 List<Zone> FavoriteZones { get; set; } = new List<Zone>();
 ```
 
-3. データベースからお気に入りを読み込むために`OnInitializedAsync`メソッドを更新します。既存のメソッドを見つけて、次のように置き換えます：
+1. データベースからお気に入りを読み込むために`OnInitializedAsync`メソッドを更新します。既存のメソッドを見つけて、次のように置き換えます：
 
 ```csharp
 protected override async Task OnInitializedAsync()
@@ -147,7 +147,7 @@ protected override async Task OnInitializedAsync()
 }
 ```
 
-4. 最後に、お気に入りをデータベースに保存するための`ToggleFavorite`メソッドを追加します。このメソッドを`@code`ブロックに追加してください：
+1. 最後に、お気に入りをデータベースに保存するための`ToggleFavorite`メソッドを追加します。このメソッドを`@code`ブロックに追加してください：
 
 ```csharp
 private async Task ToggleFavorite(Zone zone)
@@ -166,7 +166,7 @@ private async Task ToggleFavorite(Zone zone)
 }
 ```
 
-5. `Home.razor`の`@code`ブロックで`zones`プロパティを見つけ、お気に入りフィルターを含むこの更新されたバージョンに置き換えます：
+1. `Home.razor`の`@code`ブロックで`zones`プロパティを見つけ、お気に入りフィルターを含むこの更新されたバージョンに置き換えます：
 
 ```csharp
 IQueryable<Zone> zones
@@ -191,7 +191,7 @@ IQueryable<Zone> zones
 }
 ```
 
-6. まず、ゾーンリストをフィルタリングするためのチェックボックスを追加します。`Home.razor`で、`<QuickGrid>`要素の直前にこのコードを追加します：
+1. まず、ゾーンリストをフィルタリングするためのチェックボックスを追加します。`Home.razor`で、`<QuickGrid>`要素の直前にこのコードを追加します：
 
 ```csharp
 <div class="form-check mb-3">
@@ -202,7 +202,7 @@ IQueryable<Zone> zones
 </div>
 ```
 
-7. 次に、お気に入りの状態を表示する新しい列を追加します。`<QuickGrid>`要素内の既存のState列の後に、この列定義を追加します：
+1. 次に、お気に入りの状態を表示する新しい列を追加します。`<QuickGrid>`要素内の既存のState列の後に、この列定義を追加します：
 
 ```csharp
 <TemplateColumn Title="お気に入り">

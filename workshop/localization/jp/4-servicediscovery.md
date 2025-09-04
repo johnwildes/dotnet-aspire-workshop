@@ -1,4 +1,4 @@
-# サービスディスカバリー 
+# サービスディスカバリー
 
 .NET Aspire には、開発およびテスト時にサービスディスカバリを設定するための機能が含まれています。サービスディスカバリ機能は、.NET Aspire AppHost プロジェクトからアプリケーションモデルに追加された個々のサービスプロジェクトに対して、構成ベースのエンドポイントリゾルバから期待される形式で構成を提供することで機能します。
 
@@ -16,13 +16,13 @@
 1. `AppHost` プロジェクトの `Program.cs` ファイルを開きます。
 1. 以前、`builder.AddProject` メソッドを使用していくつかのプロジェクトを含むオーケストレーションを追加しました。これにより、プロジェクトを参照するために使用できる `IResourceBuild` が返されます。次のコードを更新して、`MyWeatherHub` プロジェクトで `Api` プロジェクトを参照します：
 
-	```csharp
-	var api = builder.AddProject<Projects.Api>("api");
+ ```csharp
+ var api = builder.AddProject<Projects.Api>("api");
 
-	var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
-		.WithReference(api)
-		.WithExternalHttpEndpoints();
-	```
+ var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
+  .WithReference(api)
+  .WithExternalHttpEndpoints();
+ ```
 
 1. `WithReference` メソッドは `Api` プロジェクトを参照するために使用されます。これにより、`MyWeatherHub` プロジェクトは実行時にApiプロジェクトをディスカバリできるようになります。
 1. 後でこのアプリをデプロイする場合、`WithExternalHttpEndpoints` の呼び出しが必要になります。これにより、外部からアクセスできるようになります。
@@ -35,10 +35,10 @@
 
 ```csharp
 builder.Services.AddHttpClient<BasketServiceClient>(
-	static client => client.BaseAddress = new("https+http://basket"));
+ static client => client.BaseAddress = new("https+http://basket"));
 
 builder.Services.AddHttpClient<BasketServiceDashboardClient>(
-	static client => client.BaseAddress = new("https+http://_dashboard.basket"));
+ static client => client.BaseAddress = new("https+http://_dashboard.basket"));
 ```
 
 上記の例では、`BasketServiceClient` は `basket` サービスのデフォルトエンドポイントを使用し、`BasketServiceDashboardClient` は `basket` サービスの `dashboard` エンドポイントを使用します。次に、`MyWeatherHub` プロジェクトを更新して、サービスディスカバリを使用して `Api` サービスに接続します。
@@ -49,9 +49,10 @@ builder.Services.AddHttpClient<BasketServiceDashboardClient>(
 
 1. `WeatherEndpoint` 構成設定をサービスディスカバリを使用するように更新します：
 
-	```json
-	"WeatherEndpoint": "https+http://api"
-	```
+ ```json
+ "WeatherEndpoint": "https+http://api"
+ ```
+
 1. `WeatherEndpoint` 構成設定は、サービスディスカバリを使用して `Api` サービスに接続するようになりました。
 
 オプションで、`WeatherEndpoint` 構成設定を使用しないようにURLを更新できます。
@@ -59,10 +60,10 @@ builder.Services.AddHttpClient<BasketServiceDashboardClient>(
 1. `MyWeatherHub` プロジェクトの `Program.cs` ファイルを開きます。
 1. `WeatherEndpoint` 構成設定をサービスディスカバリを使用するように更新します：
 
-	```csharp
-	builder.Services.AddHttpClient<NwsManager>(
-		static client => client.BaseAddress = new("https+http://api"));
-	```
+ ```csharp
+ builder.Services.AddHttpClient<NwsManager>(
+  static client => client.BaseAddress = new("https+http://api"));
+ ```
 
 ## アプリケーションの実行
 
@@ -72,8 +73,7 @@ builder.Services.AddHttpClient<BasketServiceDashboardClient>(
 1. ダッシュボードで `MyWeatherHub` プロジェクトの `詳細` をクリックします。これにより、App Host からアプリを実行する際に .NET Aspire が構成したすべての設定が表示されます。
 1. 目のアイコンをクリックして値を表示し、`services__api_http_0` および `services__api_https_0` が `Api` サービスの正しい値で構成されていることを確認します。
 
-	![ダッシュボードのサービスディスカバリ設定](./../../media/dashboard-servicediscovery.png)
-
+ ![ダッシュボードのサービスディスカバリ設定](./../../media/dashboard-servicediscovery.png)
 
 ## 結論
 

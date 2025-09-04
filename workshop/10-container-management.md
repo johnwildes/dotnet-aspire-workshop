@@ -5,6 +5,7 @@
 Let's take our .NET Aspire skills to the next level! In this module, we'll dive into the world of advanced container management - a crucial skill for making your cloud applications production-ready.
 
 We'll explore how to:
+
 - Control container lifetimes (keep them running even when you stop debugging!)
 - Persist data between container restarts (no more losing your Redis cache!)
 - Fine-tune container resource settings (because sharing is caring, but not with CPU cores)
@@ -49,7 +50,7 @@ Ready to make your Redis container stick around? Let's update our App Host:
        .WithLifetime(ContainerLifetime.Persistent);
    ```
 
-That's it! Now your Redis container will keep running even when you stop debugging. The next time you run your app, it'll connect to the existing container instead of starting a new one. 
+That's it! Now your Redis container will keep running even when you stop debugging. The next time you run your app, it'll connect to the existing container instead of starting a new one.
 
 > 💡 **Pro tip**: Notice how much faster your app starts now? No more waiting for container downloads and initialization!
 
@@ -125,10 +126,10 @@ One of the coolest features in .NET Aspire 9 is the ability to control your reso
 
 ![Persistent Container](./media/aspire-pin.png)
 
-4. Click the "Stop" button to stop your Redis container
-5. Watch how your application reacts (spoiler: it probably won't handle it well!)
-6. Click "Start" to bring Redis back to life
-7. See your app recover automatically
+1. Click the "Stop" button to stop your Redis container
+1. Watch how your application reacts (spoiler: it probably won't handle it well!)
+1. Click "Start" to bring Redis back to life
+1. See your app recover automatically
 
 This is an amazing way to test resilience without restarting your entire debug session. Want to see how your app handles database outages? Just click "Stop" on your database container!
 
@@ -176,6 +177,7 @@ This is perfect if you need more advanced monitoring than what the built-in Aspi
 The [Container Build sample](https://github.com/dotnet/aspire-samples/tree/main/samples/ContainerBuild) demonstrates how to include non-.NET services in your Aspire application. In this example, a Go/gin service plays nicely with .NET services.
 
 You'll discover:
+
 - How to build custom containers for non-.NET code
 - Techniques for service discovery across technology boundaries
 - Ways to maintain a consistent development experience in a polyglot environment
@@ -183,4 +185,3 @@ You'll discover:
 This is invaluable when working with existing microservices or when certain components are better built with other technologies.
 
 **Next**: [Module #11: Azure Integrations](11-azure-integrations.md)
-

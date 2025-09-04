@@ -39,6 +39,7 @@ dotnet new install Aspire.ProjectTemplates::9.4.0 --force
 .NET Aspire 9.4 引入了正式可用的 Aspire CLI，提供精简的开发者体验。您可以使用以下方法之一进行安装：
 
 ### 快速安装 (推荐)
+
 ```bash
 # Windows (PowerShell)
 iex "& { $(irm https://aspire.dev/install.ps1) }"
@@ -48,11 +49,13 @@ curl -sSL https://aspire.dev/install.sh | bash
 ```
 
 ### .NET 全局工具
+
 ```cli
 dotnet tool install -g Aspire.Cli
 ```
 
 Aspire CLI 提供有用的命令，如：
+
 - `aspire new` - 创建新的 Aspire 项目
 - `aspire run` - 从存储库中的任何位置查找并运行 AppHost
 - `aspire add` - 添加托管集成包

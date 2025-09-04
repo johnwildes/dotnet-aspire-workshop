@@ -34,6 +34,7 @@
 有些服务会暴露多个命名端点，在默认情况下，URI 中的 scheme 部分被用于引用正在解析的端点名称，例如，对于 URI 为 `https://basket` 来说，它将被解析为命名为在 `basket` 服务之上的 `https` 端点。在 Aspire 的默认情况下，项目资源根据它们的  *launchSettings.json*  文件的内容定义其端点，所以，大多数的项目默认接受 `https` 和 `http` 命名的端点。引用 URI 的 scheme 部分可以包含多个通过 `+` 字符分隔的名称，并按照优先次序排列。例如，对于 `https+http://basket` 来说，将会尝试首先解析 `basket` 服务的 `https` 命名端点，如果没有找到，它将解析 `http` 端点。
 
 对于命名端点与预期方案不匹配的情况，也可以通过在请求 URI 的主机部分的第一个子域部分中指定端点名称来显式解析它们，当第一部分以下划线 (`_`) 为前缀时，格式为 'scheme://_endpointName.serviceName' 。例如，如果名为 `basket` 的服务公开了名为 `dashboard` 的 HTTPS 端点，则可以使用 URI 为 `https+http://_dashboard.basket` 来指定此端点，例如：
+
 ```csharp
 builder.Services.AddHttpClient<BasketServiceClient>(
     static client => client.BaseAddress = new("https+http://basket"));
@@ -54,7 +55,7 @@ builder.Services.AddHttpClient<BasketServiceDashboardClient>(
     ```
 
 3. 现在 `WeatherEndpoint` 配置设置已经在使用服务发现连接到 `Api` 服务了
-   
+
 或者，我们不使用 `WeatherEndpoint` 配置设置，而是通过更新使用的 URL 来实现。直接在 ：
 
 1. 打开 `MyWeatherHub` 项目中的 `Program.cs` 代码文件。

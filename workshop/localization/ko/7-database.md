@@ -65,7 +65,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 - **일관된 개발**: 데이터베이스가 마지막으로 남겨둔 상태와 동일한 상태를 유지합니다
 
 > **참고**: 지속적 컨테이너는 주로 개발 시나리오에 유용합니다. 프로덕션 배포에서는 일반적으로 지속성을 자동으로 처리하는 관리형 데이터베이스 서비스를 사용합니다.
-
+>
 > **고급 컨테이너 기능**: .NET Aspire는 더 나은 시작 조정을 위한 `WithExplicitStart()`와 초기화 스크립트 마운트를 위한 `WithContainerFiles()`와 같은 고급 컨테이너 구성도 지원합니다. 이러한 기능은 복잡한 개발 시나리오에 필요할 때 컨테이너 동작에 대한 세밀한 제어를 제공합니다. 이러한 고급 기능에 대해 자세히 알아보려면 공식 문서의 [볼륨을 사용한 데이터 지속성](https://learn.microsoft.com/dotnet/aspire/fundamentals/persist-data-volumes) 및 [컨테이너 리소스 수명 주기](https://learn.microsoft.com/dotnet/aspire/fundamentals/app-host-overview#container-resource-lifecycle)를 참조하세요.
 
 ## EF Core와 PostgreSQL 통합
@@ -76,7 +76,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
 ```
 
-2. DbContext 클래스를 생성합니다:
+1. DbContext 클래스를 생성합니다:
 
 ```csharp
 public class MyWeatherContext : DbContext
@@ -96,7 +96,7 @@ public class MyWeatherContext : DbContext
 }
 ```
 
-3. 애플리케이션의 Program.cs에서 DbContext를 등록합니다:
+1. 애플리케이션의 Program.cs에서 DbContext를 등록합니다:
 
 ```csharp
 builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
@@ -104,7 +104,7 @@ builder.AddNpgsqlDbContext<MyWeatherContext>(connectionName: "weatherdb");
 
 .NET Aspire가 연결 문자열 구성을 자동으로 처리한다는 점에 주목하세요. 연결 이름 "weatherdb"는 AppHost 프로젝트에서 생성한 데이터베이스 이름과 일치합니다.
 
-4. 데이터베이스 초기화를 설정합니다:
+1. 데이터베이스 초기화를 설정합니다:
 
 ```csharp
 if (app.Environment.IsDevelopment())
@@ -130,14 +130,14 @@ if (app.Environment.IsDevelopment())
 @inject MyWeatherContext DbContext
 ```
 
-2. 즐겨찾기 기능을 지원하기 위해 `@code` 블록에 이러한 새 속성을 추가합니다:
+1. 즐겨찾기 기능을 지원하기 위해 `@code` 블록에 이러한 새 속성을 추가합니다:
 
 ```csharp
 bool ShowOnlyFavorites { get; set; }
 List<Zone> FavoriteZones { get; set; } = new List<Zone>();
 ```
 
-3. 데이터베이스에서 즐겨찾기를 로드하도록 `OnInitializedAsync` 메서드를 업데이트합니다. 기존 메서드를 찾아 다음으로 교체합니다:
+1. 데이터베이스에서 즐겨찾기를 로드하도록 `OnInitializedAsync` 메서드를 업데이트합니다. 기존 메서드를 찾아 다음으로 교체합니다:
 
 ```csharp
 protected override async Task OnInitializedAsync()
@@ -147,7 +147,7 @@ protected override async Task OnInitializedAsync()
 }
 ```
 
-4. 마지막으로, 즐겨찾기를 데이터베이스에 저장하는 `ToggleFavorite` 메서드를 추가합니다. 이 메서드를 `@code` 블록에 추가하세요:
+1. 마지막으로, 즐겨찾기를 데이터베이스에 저장하는 `ToggleFavorite` 메서드를 추가합니다. 이 메서드를 `@code` 블록에 추가하세요:
 
 ```csharp
 private async Task ToggleFavorite(Zone zone)
@@ -166,7 +166,7 @@ private async Task ToggleFavorite(Zone zone)
 }
 ```
 
-5. `Home.razor`의 `@code` 블록에서 `zones` 속성을 찾아 즐겨찾기 필터를 포함하는 이 업데이트된 버전으로 교체합니다:
+1. `Home.razor`의 `@code` 블록에서 `zones` 속성을 찾아 즐겨찾기 필터를 포함하는 이 업데이트된 버전으로 교체합니다:
 
 ```csharp
 IQueryable<Zone> zones
@@ -191,7 +191,7 @@ IQueryable<Zone> zones
 }
 ```
 
-6. 먼저, 존 목록을 필터링하기 위한 체크박스를 추가합니다. `Home.razor`에서 `<QuickGrid>` 요소 바로 앞에 이 코드를 추가합니다:
+1. 먼저, 존 목록을 필터링하기 위한 체크박스를 추가합니다. `Home.razor`에서 `<QuickGrid>` 요소 바로 앞에 이 코드를 추가합니다:
 
 ```csharp
 <div class="form-check mb-3">
@@ -202,7 +202,7 @@ IQueryable<Zone> zones
 </div>
 ```
 
-7. 다음으로, 즐겨찾기 상태를 표시하는 새 열을 추가합니다. `<QuickGrid>` 요소 내의 기존 State 열 뒤에 이 열 정의를 추가합니다:
+1. 다음으로, 즐겨찾기 상태를 표시하는 새 열을 추가합니다. `<QuickGrid>` 요소 내의 기존 State 열 뒤에 이 열 정의를 추가합니다:
 
 ```csharp
 <TemplateColumn Title="즐겨찾기">

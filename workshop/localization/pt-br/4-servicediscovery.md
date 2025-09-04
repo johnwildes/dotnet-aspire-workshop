@@ -17,11 +17,12 @@ Para resolver esses problemas, usaremos a funcionalidade de descoberta de servi�
 1. Anteriormente, adicionamos orquestração para incluir vários projetos usando o método `builder.AddProject`. Isso retornou um `IResourceBuild` que pode ser usado para referenciar projetos. Vamos referenciar o projeto `Api` no projeto `MyWeatherHub` atualizando o código:
 
     ```csharp
-	var api = builder.AddProject<Projects.Api>("api");
 
-	var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
-		.WithReference(api)
-		.WithExternalHttpEndpoints();
+ var api = builder.AddProject<Projects.Api>("api");
+
+ var web = builder.AddProject<Projects.MyWeatherHub>("myweatherhub")
+  .WithReference(api)
+  .WithExternalHttpEndpoints();
     ```
 
 1. O método `WithReference` é usado para referenciar o projeto `Api`. Isso permitirá que o projeto `MyWeatherHub` descubra o projeto `Api` em tempo de execução.
@@ -34,10 +35,10 @@ Alguns serviços expõem múltiplos endpoints (named endpoints). Endpoints podem
 
 ```csharp
 builder.Services.AddHttpClient<BasketServiceClient>(
-	static client => client.BaseAddress = new("https+http://basket"));
+ static client => client.BaseAddress = new("https+http://basket"));
 
 builder.Services.AddHttpClient<BasketServiceDashboardClient>(
-	static client => client.BaseAddress = new("https+http://_dashboard.basket"));
+ static client => client.BaseAddress = new("https+http://_dashboard.basket"));
 ```
 
 No exemplo, o `BasketServiceClient` usará o endpoint padrão do serviço `basket`, enquanto o `BasketServiceDashboardClient` usará o endpoint `dashboard` do serviço `basket`. Agora, vamos atualizar o projeto `MyWeatherHub` para usar a descoberta de serviços para se conectar ao serviço `Api`.
@@ -49,8 +50,10 @@ Isso pode ser realizado atualizando as configurações existentes de `WeatherEnd
 1. Atualize as configurações de `WeatherEndpoint` para usar a descoberta de serviços:
 
     ```json
-	"WeatherEndpoint": "https+http://api"
+
+ "WeatherEndpoint": "https+<http://api>"
     ```
+
 1. A configuração de `WeatherEndpoint` agora está usando a descoberta de serviços para se conectar ao serviço `Api`.
 
 Opcionalmente, podemos atualizar a url para não usar as configurações de `WeatherEndpoint`.
@@ -59,8 +62,9 @@ Opcionalmente, podemos atualizar a url para não usar as configurações de `Wea
 1. Atualize as configurações de `WeatherEndpoint` para usar a descoberta de serviços:
 
     ```csharp
-	builder.Services.AddHttpClient<NwsManager>(
-		static client => client.BaseAddress = new("https+http://api"));
+
+ builder.Services.AddHttpClient<NwsManager>(
+  static client => client.BaseAddress = new("https+<http://api>"));
     ```
 
 ## Execute a aplicação

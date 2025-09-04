@@ -100,7 +100,6 @@ Before continuing, consider some common terminology used in .NET Aspire:
 1. Click on the `Trace` or the `Details` to see the error message and stack trace.
 
 > Note: The API intentionally simulates an error roughly every 5th forecast request in `NwsManager` to make it easy to observe failures in the dashboard during development.
-
 > Note: Health endpoints like `/health` and `/alive` are mapped by `MapDefaultEndpoints()` only when the app runs in the Development environment. Ensure you're running locally in Development when following health-check steps.
 
 ## The Dashboard Resource Graph

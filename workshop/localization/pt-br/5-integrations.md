@@ -25,10 +25,11 @@ Com o NuGet instalado, podemos configurá-lo.
 1. Adicione o seguinte código abaixo de `var builder = DistributedApplication.CreateBuilder(args);`
 
     ```csharp
-	var cache = builder.AddRedis("cache")
+
+ var cache = builder.AddRedis("cache")
     ```
 
-	Aqui, configuramos o cache Redis com o nome `cache`. Este nome é usado para identificar o cache na `Api` ou `MyWeatherHub`.
+ Aqui, configuramos o cache Redis com o nome `cache`. Este nome é usado para identificar o cache na `Api` ou `MyWeatherHub`.
 
 1. Atualize a `api` no Host de Aplicativo com uma referência ao cache.
 
@@ -44,7 +45,7 @@ Com o NuGet instalado, podemos configurá-lo.
             .WithRedisCommander();
     ```
 
-## Execute a aplicação
+## Execute a aplicação (iniciar o Redis)
 
 Não fizemos nenhuma alteração nos projetos `Api` ou `MyWeatherHub`, mas podemos ver o cache Redis iniciar quando iniciamos o Host de Aplicativo.
 
@@ -110,11 +111,11 @@ var cache = builder.AddRedis("cache")
 
 1. Execute a aplicação e agora você verá o Garnet rodando no dashboard e no Docker Desktop.
 
-	![Garnet rodando no dashboard e no Docker Desktop.](./../../media/garnet-started.png)
+ ![Garnet rodando no dashboard e no Docker Desktop.](./../../media/garnet-started.png)
 
 1. Você também pode ver os logs do Garnet na aba `Console`.
 
-	![Logs do Garnet](./../../media/garnet-logs.png)
+ ![Logs do Garnet](./../../media/garnet-logs.png)
 
 ## Resumo
 
