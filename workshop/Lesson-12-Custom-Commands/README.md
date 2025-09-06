@@ -593,4 +593,4 @@ The examples we've built - Redis cache clearing and API cache invalidation - are
 
 Start with simple commands and gradually build more sophisticated operations as your application grows. Your future self (and your teammates) will thank you for the productivity boost!
 
-**Next**: [Module #13: Health Checks](13-healthchecks.md)
+**Next**: [Module #13: Health Checks](../Lesson-13-HealthChecks/README.md)

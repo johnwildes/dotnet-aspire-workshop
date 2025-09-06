@@ -307,6 +307,6 @@ Neste módulo, adicionamos suporte de banco de dados PostgreSQL à nossa aplica�
 
 O próximo passo natural seria adicionar testes para verificar se a integração do banco de dados funciona corretamente.
 
-Vá para [Módulo #8: Testes de Integração](./8-integration-testing.md) para aprender como escrever testes de integração para sua aplicação .NET Aspire.
+Vá para [Módulo #8: Testes de Integração](../Lesson-08-Integration-Testing/README.md) para aprender como escrever testes de integração para sua aplicação .NET Aspire.
 
-**Próximo**: [Módulo #8: Testes de Integração](./8-integration-testing.md)
+**Próximo**: [Módulo #8: Testes de Integração](../Lesson-08-Integration-Testing/README.md)

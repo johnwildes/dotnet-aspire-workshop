@@ -70,4 +70,4 @@ Aspire CLI 提供有用的命令，如：
 
 在 Visual Studio 2022 中打开 `start/MyWeatherHub.sln` 解决方案，开始研讨会。如果您在使用 Visual Studio code，打开 `start` 文件夹，当 C# Dev Kit 提示打开哪个解决方案时，选择 **MyWeatherHub.sln**。
 
-**下一节**: [模块 #2 - Service Defaults](2-servicedefaults.md)
+**下一节**: [模块 #2 - Service Defaults](../Lesson-02-ServiceDefaults/README.md)

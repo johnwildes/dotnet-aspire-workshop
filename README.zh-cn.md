@@ -60,21 +60,21 @@
 
 本研讨会分为 15 个模块（预计完成时间：4-6 小时）：
 
-1. [设置和安装](./workshop/1-setup.md)
-1. [Service Defaults](./workshop/2-servicedefaults.md)
-1. [开发者仪表板和编排](./workshop/3-dashboard-apphost.md)
-1. [服务发现](./workshop/4-servicediscovery.md)
-1. [集成](./workshop/5-integrations.md)
-1. [遥测模块](./workshop/6-telemetry.md)
-1. [数据库模块](./workshop/7-database.md)
-1. [集成测试](./workshop/8-integration-testing.md)
-1. [部署](./workshop/9-deployment.md)
-1. [容器管理](./workshop/10-container-management.md)
-1. [Azure 集成](./workshop/11-azure-integrations.md)
-1. [自定义命令](./workshop/12-custom-commands.md)
-1. [健康检查](./workshop/13-healthchecks.md)
-1. [GitHub Models 集成](./workshop/14-github-models-integration.md)
-1. [Docker 集成](./workshop/15-docker-integration.md)
+1. [设置和安装](./workshop/Lesson-01-Setup/README.md)
+1. [Service Defaults](./workshop/Lesson-02-ServiceDefaults/README.md)
+1. [开发者仪表板和编排](./workshop/Lesson-03-Dashboard-AppHost/README.md)
+1. [服务发现](./workshop/Lesson-04-ServiceDiscovery/README.md)
+1. [集成](./workshop/Lesson-05-Integrations/README.md)
+1. [遥测模块](./workshop/Lesson-06-Telemetry/README.md)
+1. [数据库模块](./workshop/Lesson-07-Database/README.md)
+1. [集成测试](./workshop/Lesson-08-Integration-Testing/README.md)
+1. [部署](./workshop/Lesson-09-Deployment/README.md)
+1. [容器管理](./workshop/Lesson-10-Container-Management/README.md)
+1. [Azure 集成](./workshop/Lesson-11-Azure-Integrations/README.md)
+1. [自定义命令](./workshop/Lesson-12-Custom-Commands/README.md)
+1. [健康检查](./workshop/Lesson-13-HealthChecks/README.md)
+1. [GitHub Models 集成](./workshop/Lesson-14-GitHub-Models-Integration/README.md)
+1. [Docker 集成](./workshop/Lesson-15-Docker-Integration/README.md)
 
 此研讨会的完整[幻灯片](./workshop/AspireWorkshop.pptx)可供使用。
 
@@ -86,7 +86,7 @@
 
 1. 导航到 `start` 文件夹
 2. 打开解决方案文件 `MyWeatherHub.sln`
-3. 按照[模块 1：设置和安装](./workshop/1-setup.md)中的说明操作
+3. 按照[模块 1：设置和安装](./workshop/Lesson-01-Setup/README.md)中的说明操作
 
 ## 演示数据
 

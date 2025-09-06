@@ -286,4 +286,4 @@ You've successfully integrated Docker containers into your .NET Aspire applicati
 
 This powerful capability allows you to build comprehensive development environments that include all the tools and services your team needs.
 
-**Previous**: [Module #14 - GitHub Models Integration](14-github-models-integration.md)
+**Previous**: [Module #14 - GitHub Models Integration](../Lesson-14-GitHub-Models-Integration/README.md)

@@ -307,6 +307,6 @@ Data API Builder（DAB）は、データベーススキーマからRESTとGraphQ
 
 次の自然なステップは、データベース統合が正しく動作することを確認するテストを追加することです。
 
-[モジュール #8: 統合テスト](./8-integration-testing.md)に進んで、.NET Aspireアプリケーションの統合テストの書き方を学びましょう。
+[モジュール #8: 統合テスト](../Lesson-08-Integration-Testing/README.md)に進んで、.NET Aspireアプリケーションの統合テストの書き方を学びましょう。
 
-**次へ**: [モジュール #8: 統合テスト](./8-integration-testing.md)
+**次へ**: [モジュール #8: 統合テスト](../Lesson-08-Integration-Testing/README.md)

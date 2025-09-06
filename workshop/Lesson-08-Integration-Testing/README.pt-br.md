@@ -262,4 +262,4 @@ Para um mergulho mais profundo em testes com .NET Aspire, incluindo um walkthrou
 
 Agora, vamos aprender sobre opções de deploy ao usar .NET Aspire.
 
-**Próximo**: [Módulo #9: Deployment](./9-deployment.md)
+**Próximo**: [Módulo #9: Deployment](../Lesson-09-Deployment/README.md)

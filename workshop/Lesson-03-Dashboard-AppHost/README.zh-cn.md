@@ -99,4 +99,4 @@
 
 5. 点击 `Trace` 或者 `Details` 链接来查看错误信息和调用堆栈。
 
-**下一节**: [模块 #4: Service Discovery](./4-servicediscovery.md)
+**下一节**: [模块 #4: Service Discovery](../Lesson-04-ServiceDiscovery/README.md)

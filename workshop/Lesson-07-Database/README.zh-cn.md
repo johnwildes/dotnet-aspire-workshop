@@ -307,6 +307,6 @@ SQL数据库项目集成使您能够将数据库架构作为源代码的一部�
 
 下一个自然步骤是添加测试以验证数据库集成是否正常工作。
 
-前往[模块#8：集成测试](./8-integration-testing.md)学习如何为您的.NET Aspire应用程序编写集成测试。
+前往[模块#8：集成测试](../Lesson-08-Integration-Testing/README.md)学习如何为您的.NET Aspire应用程序编写集成测试。
 
-**下一步**：[模块#8：集成测试](./8-integration-testing.md)
+**下一步**：[模块#8：集成测试](../Lesson-08-Integration-Testing/README.md)

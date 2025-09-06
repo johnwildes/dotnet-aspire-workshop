@@ -262,4 +262,4 @@ For a deeper dive into testing with .NET Aspire, including a video walkthrough, 
 
 Now, let's learn about deployment options when using .NET Aspire.
 
-**Next**: [Module #9: Deployment](./9-deployment.md)
+**Next**: [Module #9: Deployment](../Lesson-09-Deployment/README.md)

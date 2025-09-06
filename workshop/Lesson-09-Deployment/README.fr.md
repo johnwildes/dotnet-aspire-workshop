@@ -188,4 +188,4 @@ Exécutez la commande Azure CLI suivante pour supprimer le groupe de ressources 
 az group delete --name <nom-de-votre-groupe-de-ressources>
 ```
 
-**Suivant** : [Module #10 : Gestion Avancée de Conteneurs](10-container-management.md)
+**Suivant** : [Module #10 : Gestion Avancée de Conteneurs](../Lesson-10-Container-Management/README.md)

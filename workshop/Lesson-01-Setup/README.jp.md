@@ -68,4 +68,4 @@ Aspire CLI は以下のような便利なコマンドを提供します：
 
 ワークショップを開始するには、Visual Studio 2022 で `start/MyWeatherHub.sln` を開きます。Visual Studio Code を使用している場合は、`start` フォルダを開き、C# Dev Kit がどのソリューションを開くかを尋ねたときに、**MyWeatherHub.sln** を選択します。
 
-**次へ**: [モジュール #2 - Service Defaults](2-servicedefaults.md)
+**次へ**: [モジュール #2 - Service Defaults](../Lesson-02-ServiceDefaults/README.md)

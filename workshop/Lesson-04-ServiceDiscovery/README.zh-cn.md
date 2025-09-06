@@ -84,4 +84,4 @@ builder.Services.AddHttpClient<BasketServiceDashboardClient>(
 
 您可以通过 [.NET Aspire Service Discovery](https://learn.microsoft.com/dotnet/aspire/service-discovery/overview) 文档进一步学习服务发现的高级用法和配置。
 
-**下一节**: [模块 #5: Integrations](./5-integrations.md)
+**下一节**: [模块 #5: Integrations](../Lesson-05-Integrations/README.md)

@@ -59,21 +59,21 @@ Avant de commencer cet atelier, assurez-vous d'avoir :
 
 Cet atelier se décompose en 15 modules (temps de réalisation estimé : 4-6 heures) :
 
-1. [Configuration et installation](./workshop/1-setup.md)
-1. [Paramètres par défaut](./workshop/2-servicedefaults.md)
-1. [Tableau de bord et orchestration](./workshop/3-dashboard-apphost.md)
-1. [Découverte de services](./workshop/4-servicediscovery.md)
-1. [Intégrations](./workshop/5-integrations.md)
-1. [Module de télémétrie](./workshop/6-telemetry.md)
-1. [Module de base de données](./workshop/7-database.md)
-1. [Tests d'intégration](./workshop/8-integration-testing.md)
-1. [Déploiement](./workshop/9-deployment.md)
-1. [Gestion des conteneurs](./workshop/10-container-management.md)
-1. [Intégrations Azure](./workshop/11-azure-integrations.md)
-1. [Commandes personnalisées](./workshop/12-custom-commands.md)
-1. [Vérifications de santé](./workshop/13-healthchecks.md)
-1. [Intégration GitHub Models](./workshop/14-github-models-integration.md)
-1. [Intégration Docker](./workshop/15-docker-integration.md)
+1. [Configuration et installation](./workshop/Lesson-01-Setup/README.md)
+1. [Paramètres par défaut](./workshop/Lesson-02-ServiceDefaults/README.md)
+1. [Tableau de bord et orchestration](./workshop/Lesson-03-Dashboard-AppHost/README.md)
+1. [Découverte de services](./workshop/Lesson-04-ServiceDiscovery/README.md)
+1. [Intégrations](./workshop/Lesson-05-Integrations/README.md)
+1. [Module de télémétrie](./workshop/Lesson-06-Telemetry/README.md)
+1. [Module de base de données](./workshop/Lesson-07-Database/README.md)
+1. [Tests d'intégration](./workshop/Lesson-08-Integration-Testing/README.md)
+1. [Déploiement](./workshop/Lesson-09-Deployment/README.md)
+1. [Gestion des conteneurs](./workshop/Lesson-10-Container-Management/README.md)
+1. [Intégrations Azure](./workshop/Lesson-11-Azure-Integrations/README.md)
+1. [Commandes personnalisées](./workshop/Lesson-12-Custom-Commands/README.md)
+1. [Vérifications de santé](./workshop/Lesson-13-HealthChecks/README.md)
+1. [Intégration GitHub Models](./workshop/Lesson-14-GitHub-Models-Integration/README.md)
+1. [Intégration Docker](./workshop/Lesson-15-Docker-Integration/README.md)
 
 Un [diaporama](./workshop/AspireWorkshop.pptx) complet est disponible pour cet atelier.
 
@@ -85,7 +85,7 @@ Pour commencer l'atelier :
 
 1. Naviguez vers le dossier `start`
 2. Ouvrez le fichier de solution `MyWeatherHub.sln`
-3. Suivez les instructions dans [Module 1 : Configuration et installation](./workshop/1-setup.md)
+3. Suivez les instructions dans [Module 1 : Configuration et installation](./workshop/Lesson-01-Setup/README.md)
 
 ## Données de démonstration
 

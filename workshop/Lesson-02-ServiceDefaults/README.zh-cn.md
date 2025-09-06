@@ -82,4 +82,4 @@
    System.Net.Http.HttpClient.NwsManager.ClientHandler: Information: Sending HTTP request GET http://localhost:5271/forecast/AKZ318
    ```
 
-**下一节**: [模块 #3 - Dashboard & App Host](3-dashboard-apphost.md)
+**下一节**: [模块 #3 - Dashboard & App Host](../Lesson-03-Dashboard-AppHost/README.md)

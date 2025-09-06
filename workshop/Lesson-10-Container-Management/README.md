@@ -184,4 +184,4 @@ You'll discover:
 
 This is invaluable when working with existing microservices or when certain components are better built with other technologies.
 
-**Next**: [Module #11: Azure Integrations](11-azure-integrations.md)
+**Next**: [Module #11: Azure Integrations](../Lesson-11-Azure-Integrations/README.md)

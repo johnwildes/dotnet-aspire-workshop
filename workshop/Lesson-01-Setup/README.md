@@ -68,4 +68,4 @@ To test your installation, see the [Build your first .NET Aspire project](https:
 
 To start the workshop open `start/MyWeatherHub.sln` in Visual Studio 2022. If you are using Visual Studio code open the `start` folder and when prompted by the C# Dev Kit which solution to open, select **MyWeatherHub.sln**.
 
-**Next**: [Module #2 - Service Defaults](2-servicedefaults.md)
+**Next**: [Module #2 - Service Defaults](../Lesson-02-ServiceDefaults/README.md)

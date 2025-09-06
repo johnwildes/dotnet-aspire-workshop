@@ -188,4 +188,4 @@ aspire deploy
 az group delete --name <您的资源组名称>
 ```
 
-**下一步**：[模块 #10：高级容器管理](10-container-management.md)
+**下一步**：[模块 #10：高级容器管理](../Lesson-10-Container-Management/README.md)

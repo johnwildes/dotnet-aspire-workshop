@@ -262,4 +262,4 @@ Playwrightの詳細については、[公式ドキュメント](https://playwrig
 
 それでは、.NET Aspireを使用する際のデプロイメントオプションについて学びましょう。
 
-**次へ**：[モジュール#9：デプロイメント](./9-deployment.md)
+**次へ**：[モジュール#9：デプロイメント](../Lesson-09-Deployment/README.md)

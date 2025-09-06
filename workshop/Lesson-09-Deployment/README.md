@@ -190,4 +190,4 @@ Run the following Azure CLI command to delete the resource group when you no lon
 az group delete --name <your-resource-group-name>
 ```
 
-**Next**: [Module #10: Advanced Container Management](10-container-management.md)
+**Next**: [Module #10: Advanced Container Management](../Lesson-10-Container-Management/README.md)

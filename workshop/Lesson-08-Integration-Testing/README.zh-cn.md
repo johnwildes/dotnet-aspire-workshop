@@ -262,4 +262,4 @@ Playwright 可用于执行 Web 应用程序的端到端测试。它可以模拟�
 
 现在，让我们了解使用 .NET Aspire 时的部署选项。
 
-**下一步**：[模块 #9：部署](./9-deployment.md)
+**下一步**：[模块 #9：部署](../Lesson-09-Deployment/README.md)

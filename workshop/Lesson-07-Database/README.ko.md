@@ -307,6 +307,6 @@ Data API Builder(DAB)는 데이터베이스 스키마에서 REST 및 GraphQL 엔
 
 다음 자연스러운 단계는 데이터베이스 통합이 올바르게 작동하는지 확인하는 테스트를 추가하는 것입니다.
 
-[모듈 #8: 통합 테스트](./8-integration-testing.md)로 이동하여 .NET Aspire 애플리케이션의 통합 테스트 작성 방법을 알아보세요.
+[모듈 #8: 통합 테스트](../Lesson-08-Integration-Testing/README.md)로 이동하여 .NET Aspire 애플리케이션의 통합 테스트 작성 방법을 알아보세요.
 
-**다음**: [모듈 #8: 통합 테스트](./8-integration-testing.md)
+**다음**: [모듈 #8: 통합 테스트](../Lesson-08-Integration-Testing/README.md)

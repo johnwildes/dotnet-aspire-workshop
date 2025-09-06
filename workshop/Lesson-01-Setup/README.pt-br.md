@@ -68,4 +68,4 @@ Para testar sua instalação, consulte [Construa seu primeiro projeto .NET Aspir
 
 Para iniciar o workshop, abra `start/MyWeatherHub.sln` no Visual Studio 2022. Se você estiver usando o Visual Studio Code, abra a pasta `start` e quando solicitado pelo C# Dev Kit sobre qual solução abrir, selecione **MyWeatherHub.sln**.
 
-**Próximo**: [Módulo #2 - Service Defaults](2-servicedefaults.md)
+**Próximo**: [Módulo #2 - Service Defaults](../Lesson-02-ServiceDefaults/README.md)

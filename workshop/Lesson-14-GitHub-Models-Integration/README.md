@@ -323,4 +323,4 @@ You've successfully integrated GitHub Models with your .NET Aspire application! 
 
 Throughout this workshop, you've learned how to build, configure, and enhance cloud-native applications using .NET Aspire. You now have the skills to create resilient, observable, and scalable distributed applications with AI capabilities.
 
-**Previous**: [Module #13 - Healthchecks](13-healthchecks.md) | **Next**: [Module #15 - Docker Integration](15-docker-integration.md)
+**Previous**: [Module #13 - Healthchecks](../Lesson-13-HealthChecks/README.md) | **Next**: [Module #15 - Docker Integration](../Lesson-15-Docker-Integration/README.md)

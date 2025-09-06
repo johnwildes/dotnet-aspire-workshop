@@ -306,6 +306,6 @@ In this module, we added PostgreSQL database support to our application using .N
 
 The natural next step would be to add tests to verify the database integration works correctly.
 
-Head over to [Module #8: Integration Testing](./8-integration-testing.md) to learn how to write integration tests for your .NET Aspire application.
+Head over to [Module #8: Integration Testing](../Lesson-08-Integration-Testing/README.md) to learn how to write integration tests for your .NET Aspire application.
 
-**Next**: [Module #8: Integration Testing](./8-integration-testing.md)
+**Next**: [Module #8: Integration Testing](../Lesson-08-Integration-Testing/README.md)

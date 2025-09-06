@@ -262,4 +262,4 @@ Playwright에 대한 자세한 정보는 [공식 문서](https://playwright.dev/
 
 이제 .NET Aspire를 사용할 때의 배포 옵션에 대해 알아보겠습니다.
 
-**다음**: [모듈 #9: 배포](./9-deployment.md)
+**다음**: [모듈 #9: 배포](../Lesson-09-Deployment/README.md)
