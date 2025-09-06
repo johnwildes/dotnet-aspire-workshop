@@ -21,15 +21,15 @@ There are three main objectives:
 
 The workshop is organized as 15 modules; this testing procedure focuses strictly on the first nine modules:
 
-1. Setup & Installation (`workshop/1-setup.md`)
-2. Service Defaults (`workshop/2-servicedefaults.md`)
-3. Developer Dashboard & Orchestration (`workshop/3-dashboard-apphost.md`)
-4. Service Discovery (`workshop/4-servicediscovery.md`)
-5. Integrations (`workshop/5-integrations.md`)
-6. Telemetry (`workshop/6-telemetry.md`)
-7. Database (`workshop/7-database.md`)
-8. Integration Testing (`workshop/8-integration-testing.md`)
-9. Deployment (`workshop/9-deployment.md`)
+1. Setup & Installation (`workshop/Lesson-01-Setup/README.md`)
+2. Service Defaults (`workshop/Lesson-02-ServiceDefaults/README.md`)
+3. Developer Dashboard & Orchestration (`workshop/Lesson-03-Dashboard-AppHost/README.md`)
+4. Service Discovery (`workshop/Lesson-04-ServiceDiscovery/README.md`)
+5. Integrations (`workshop/Lesson-05-Integrations/README.md`)
+6. Telemetry (`workshop/Lesson-06-Telemetry/README.md`)
+7. Database (`workshop/Lesson-07-Database/README.md`)
+8. Integration Testing (`workshop/Lesson-08-Integration-Testing/README.md`)
+9. Deployment (`workshop/Lesson-09-Deployment/README.md`)
 
 Supporting code snapshots:
 - `start/` — starting project used during the workshop
@@ -66,16 +66,16 @@ $env:AZURE_LOCATION = "<your-azure-region>"  # e.g. eastus, westus3
 ## Procedure
 
 - **Preparation (Module 1 – Setup & Installation)**
-  - Follow `workshop/1-setup.md` to install prerequisites (including .NET SDK 9, `azd` for Module 9, and any recommended tooling).
+  - Follow `workshop/Lesson-01-Setup/README.md` to install prerequisites (including .NET SDK 9, `azd` for Module 9, and any recommended tooling).
   - Verify the repository builds locally using the commands below.
 
 - **Modules 2–8**
-  - Follow `workshop/2-servicedefaults.md` through `workshop/8-integration-testing.md` using the `start/` solution as your working project.
+  - Follow `workshop/Lesson-02-ServiceDefaults/README.md` through `workshop/Lesson-08-Integration-Testing/README.md` using the `start/` solution as your working project.
   - At each module boundary, note any unclear instructions and deviations needed to get things working.
   - Use `complete/` as a reference if you get blocked; document the differences.
 
 - **Module 9 – Deployment**
-  - Follow `workshop/9-deployment.md`.
+  - Follow `workshop/Lesson-09-Deployment/README.md`.
   - If `azure.yaml` is not present, initialize with `azd init` and confirm it detects the AppHost correctly. Then provision/deploy as appropriate.
   - If you cannot deploy to Azure in your environment, document the exact step where you stop and why (e.g., lack of subscription access), but still validate that `azd init` runs and generates expected files.
 ## Evaluation

@@ -60,21 +60,21 @@ Before starting this workshop, ensure you have:
 
 This workshop is broken down into 15 modules (estimated completion time: 4-6 hours):
 
-1. [Setup & Installation](./workshop/1-setup.md)
-1. [Service Defaults](./workshop/2-servicedefaults.md)
-1. [Developer Dashboard & Orchestration](./workshop/3-dashboard-apphost.md)
-1. [Service Discovery](./workshop/4-servicediscovery.md)
-1. [Integrations](./workshop/5-integrations.md)
-1. [Telemetry Module](./workshop/6-telemetry.md)
-1. [Database Module](./workshop/7-database.md)
-1. [Integration Testing](./workshop/8-integration-testing.md)
-1. [Deployment](./workshop/9-deployment.md)
-1. [Container Management](./workshop/10-container-management.md)
-1. [Azure Integrations](./workshop/11-azure-integrations.md)
-1. [Custom Commands](./workshop/12-custom-commands.md)
-1. [Health Checks](./workshop/13-healthchecks.md)
-1. [GitHub Models Integration](./workshop/14-github-models-integration.md)
-1. [Docker Integration](./workshop/15-docker-integration.md)
+1. [Setup & Installation](./workshop/Lesson-01-Setup/README.md)
+1. [Service Defaults](./workshop/Lesson-02-ServiceDefaults/README.md)
+1. [Developer Dashboard & Orchestration](./workshop/Lesson-03-Dashboard-AppHost/README.md)
+1. [Service Discovery](./workshop/Lesson-04-ServiceDiscovery/README.md)
+1. [Integrations](./workshop/Lesson-05-Integrations/README.md)
+1. [Telemetry Module](./workshop/Lesson-06-Telemetry/README.md)
+1. [Database Module](./workshop/Lesson-07-Database/README.md)
+1. [Integration Testing](./workshop/Lesson-08-Integration-Testing/README.md)
+1. [Deployment](./workshop/Lesson-09-Deployment/README.md)
+1. [Container Management](./workshop/Lesson-10-Container-Management/README.md)
+1. [Azure Integrations](./workshop/Lesson-11-Azure-Integrations/README.md)
+1. [Custom Commands](./workshop/Lesson-12-Custom-Commands/README.md)
+1. [Health Checks](./workshop/Lesson-13-HealthChecks/README.md)
+1. [GitHub Models Integration](./workshop/Lesson-14-GitHub-Models-Integration/README.md)
+1. [Docker Integration](./workshop/Lesson-15-Docker-Integration/README.md)
 
 A full [slide deck](./workshop/AspireWorkshop.pptx) is available for this workshop.
 

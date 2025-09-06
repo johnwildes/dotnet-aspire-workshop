@@ -40,21 +40,21 @@
 
 이 워크샵은 15개의 모듈로 나누어져 있습니다 (예상 완료 시간: 4-6시간):
 
-1. [설치 및 설정](./workshop/1-setup.md)
-1. [서비스 기본값](./workshop/2-servicedefaults.md)
-1. [개발자 대시보드 및 오케스트레이션](./workshop/3-dashboard-apphost.md)
-1. [서비스 검색(디스커버리)](./workshop/4-servicediscovery.md)
-1. [통합](./workshop/5-integrations.md)
-1. [텔레메트리 모듈](./workshop/6-telemetry.md)
-1. [데이터베이스 모듈](./workshop/7-database.md)
-1. [통합 테스트](./workshop/8-integration-testing.md)
-1. [배포](./workshop/9-deployment.md)
-1. [컨테이너 관리](./workshop/10-container-management.md)
-1. [Azure 통합](./workshop/11-azure-integrations.md)
-1. [사용자 지정 명령](./workshop/12-custom-commands.md)
-1. [상태 확인](./workshop/13-healthchecks.md)
-1. [GitHub Models 통합](./workshop/14-github-models-integration.md)
-1. [Docker 통합](./workshop/15-docker-integration.md)
+1. [설치 및 설정](./workshop/Lesson-01-Setup/README.md)
+1. [서비스 기본값](./workshop/Lesson-02-ServiceDefaults/README.md)
+1. [개발자 대시보드 및 오케스트레이션](./workshop/Lesson-03-Dashboard-AppHost/README.md)
+1. [서비스 검색(디스커버리)](./workshop/Lesson-04-ServiceDiscovery/README.md)
+1. [통합](./workshop/Lesson-05-Integrations/README.md)
+1. [텔레메트리 모듈](./workshop/Lesson-06-Telemetry/README.md)
+1. [데이터베이스 모듈](./workshop/Lesson-07-Database/README.md)
+1. [통합 테스트](./workshop/Lesson-08-Integration-Testing/README.md)
+1. [배포](./workshop/Lesson-09-Deployment/README.md)
+1. [컨테이너 관리](./workshop/Lesson-10-Container-Management/README.md)
+1. [Azure 통합](./workshop/Lesson-11-Azure-Integrations/README.md)
+1. [사용자 지정 명령](./workshop/Lesson-12-Custom-Commands/README.md)
+1. [상태 확인](./workshop/Lesson-13-HealthChecks/README.md)
+1. [GitHub Models 통합](./workshop/Lesson-14-GitHub-Models-Integration/README.md)
+1. [Docker 통합](./workshop/Lesson-15-Docker-Integration/README.md)
 
 이 워크샵을 위한 전체 [슬라이드 데크](./workshop/AspireWorkshop.pptx)를 사용할 수 있습니다.
 
@@ -66,7 +66,7 @@
 
 1. `start` 폴더로 이동
 2. 솔루션 파일 `MyWeatherHub.sln` 열기
-3. [모듈 1: 설치 및 설정](./workshop/1-setup.md)의 지침을 따르세요
+3. [모듈 1: 설치 및 설정](./workshop/Lesson-01-Setup/README.md)의 지침을 따르세요
 
 ## 데모 데이터
 

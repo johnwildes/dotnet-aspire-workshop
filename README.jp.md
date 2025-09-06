@@ -38,21 +38,21 @@
 
 このワークショップは、15 つのモジュールに分かれています（推定完了時間：4-6時間）:
 
-1. [セットアップ](./workshop/1-setup.md)
-1. [Service Defaults](./workshop/2-servicedefaults.md)
-1. [ダッシュボードとオーケストレーター](./workshop/3-dashboard-apphost.md)
-1. [サービス ディスカバリ](./workshop/4-servicediscovery.md)
-1. [統合](./workshop/5-integrations.md)
-1. [テレメトリモジュール](./workshop/6-telemetry.md)
-1. [データベースモジュール](./workshop/7-database.md)
-1. [統合テスト](./workshop/8-integration-testing.md)
-1. [デプロイメント](./workshop/9-deployment.md)
-1. [コンテナ管理](./workshop/10-container-management.md)
-1. [Azure 統合](./workshop/11-azure-integrations.md)
-1. [カスタムコマンド](./workshop/12-custom-commands.md)
-1. [ヘルスチェック](./workshop/13-healthchecks.md)
-1. [GitHub Models 統合](./workshop/14-github-models-integration.md)
-1. [Docker 統合](./workshop/15-docker-integration.md)
+1. [セットアップ](./workshop/Lesson-01-Setup/README.md)
+1. [Service Defaults](./workshop/Lesson-02-ServiceDefaults/README.md)
+1. [ダッシュボードとオーケストレーター](./workshop/Lesson-03-Dashboard-AppHost/README.md)
+1. [サービス ディスカバリ](./workshop/Lesson-04-ServiceDiscovery/README.md)
+1. [統合](./workshop/Lesson-05-Integrations/README.md)
+1. [テレメトリモジュール](./workshop/Lesson-06-Telemetry/README.md)
+1. [データベースモジュール](./workshop/Lesson-07-Database/README.md)
+1. [統合テスト](./workshop/Lesson-08-Integration-Testing/README.md)
+1. [デプロイメント](./workshop/Lesson-09-Deployment/README.md)
+1. [コンテナ管理](./workshop/Lesson-10-Container-Management/README.md)
+1. [Azure 統合](./workshop/Lesson-11-Azure-Integrations/README.md)
+1. [カスタムコマンド](./workshop/Lesson-12-Custom-Commands/README.md)
+1. [ヘルスチェック](./workshop/Lesson-13-HealthChecks/README.md)
+1. [GitHub Models 統合](./workshop/Lesson-14-GitHub-Models-Integration/README.md)
+1. [Docker 統合](./workshop/Lesson-15-Docker-Integration/README.md)
 
 このワークショップの完全な[スライド](./workshop/AspireWorkshop.pptx)を利用できます。
 
@@ -64,7 +64,7 @@
 
 1. `start` フォルダに移動
 2. ソリューションファイル `MyWeatherHub.sln` を開く
-3. [モジュール 1: セットアップ](./workshop/1-setup.md) の手順に従ってください
+3. [モジュール 1: セットアップ](./workshop/Lesson-01-Setup/README.md) の手順に従ってください
 
 ## デモ データ
 
