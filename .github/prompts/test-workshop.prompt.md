@@ -48,11 +48,15 @@ $env:AZURE_SUBSCRIPTION_ID = "<your-subscription-id>"
 $env:AZURE_LOCATION = "<your-azure-region>"  # e.g. eastus, westus3
 ```
 
-## Important Notes for Testing (modules 1–9)
+-## Important Notes for Testing (modules 1–9)
 
-- Use the `start/` solution as the baseline when following modules 1–8 instructions; consult `complete/` as a known-good reference.
-- Ensure the `complete/` solution builds cleanly and all integration tests pass.
-- For deployment (module 9):
+- Use the per-lesson `code/` folders as the working context for modules 1–9; consult `complete/` as a known-good reference. The policy is:
+  - Lesson 1 contains no code changes and does not require a `code/` copy.
+  - For Lesson 2, copy the entire contents of `start/` into `workshop/Lesson-02-ServiceDefaults/code/` and perform the steps described in `workshop/Lesson-02-ServiceDefaults/README.md` against that copy.
+  - For each subsequent lesson (Lesson N where N >= 3), copy the contents of `workshop/Lesson-(N-1)-*/code/` into `workshop/Lesson-N-*/code/` and perform the steps described in `workshop/Lesson-N-*/README.md` against that copy.
+  - At the end of each lesson run and verify a successful build for that lesson's `code/` folder.
+  - Ensure the `complete/` solution builds cleanly and all integration tests pass.
+-- For deployment (module 9):
   - Run `azd` commands from the correct directory (where `azure.yaml` resides or will be generated).
   - If `azure.yaml` is not present yet, run `azd init` first (as described in the docs) and follow the prompts.
   - Confirm the web project is exposed with external endpoints (look for `.WithExternalHttpEndpoints()` in `complete/AppHost/Program.cs`).
@@ -70,9 +74,13 @@ $env:AZURE_LOCATION = "<your-azure-region>"  # e.g. eastus, westus3
   - Verify the repository builds locally using the commands below.
 
 - **Modules 2–8**
-  - Follow `workshop/Lesson-02-ServiceDefaults/README.md` through `workshop/Lesson-08-Integration-Testing/README.md` using the `start/` solution as your working project.
-  - At each module boundary, note any unclear instructions and deviations needed to get things working.
-  - Use `complete/` as a reference if you get blocked; document the differences.
+- **Modules 2–8**
+  - Workflow (per-lesson `code/` folders):
+    1. Lesson 1 requires no code changes and has no `code/` work.
+    2. For Lesson 2: copy `start/` → `workshop/Lesson-02-ServiceDefaults/code/` and apply all steps in `workshop/Lesson-02-ServiceDefaults/README.md` to that copy.
+    3. For each Lesson N (N ≥ 3): copy `workshop/Lesson-(N-1)-*/code/` → `workshop/Lesson-N-*/code/` and apply all steps in `workshop/Lesson-N-*/README.md` to that copy.
+    4. After completing the steps for the lesson, run a build in the lesson's `code/` folder and confirm it succeeds. Document any deviations required to make the build succeed.
+  - Use `complete/` as a reference if you get blocked; document the differences between the lesson `code/` folder and `complete/`.
 
 - **Module 9 – Deployment**
   - Follow `workshop/Lesson-09-Deployment/README.md`.
@@ -108,6 +116,33 @@ cd complete
 # Run all tests (includes IntegrationTests)
 dotnet test .\MyWeatherHub.sln --verbosity minimal
 cd ..
+```
+
+## Working in lesson `code/` folders (copy + build examples)
+
+Use these PowerShell commands to create the per-lesson working copies and build from them. They assume you are running PowerShell from the repository root.
+
+```powershell
+# Lesson 1: no code changes required
+
+# Lesson 2: copy `start` into Lesson-02 `code` folder
+if (Test-Path .\workshop\Lesson-02-ServiceDefaults\code) { Remove-Item -Recurse -Force .\workshop\Lesson-02-ServiceDefaults\code }
+Copy-Item -Recurse -Force .\start\ .\workshop\Lesson-02-ServiceDefaults\code\
+
+# Build Lesson-02 code
+Push-Location .\workshop\Lesson-02-ServiceDefaults\code
+dotnet build .\MyWeatherHub.sln --verbosity minimal
+Pop-Location
+
+# Lesson N -> Lesson N+1: copy previous lesson's code into next lesson
+# Example: copy Lesson-02 code into Lesson-03
+if (Test-Path .\workshop\Lesson-03-Dashboard-AppHost\code) { Remove-Item -Recurse -Force .\workshop\Lesson-03-Dashboard-AppHost\code }
+Copy-Item -Recurse -Force .\workshop\Lesson-02-ServiceDefaults\code\ .\workshop\Lesson-03-Dashboard-AppHost\code\
+
+# Build Lesson-03 code
+Push-Location .\workshop\Lesson-03-Dashboard-AppHost\code
+dotnet build .\MyWeatherHub.sln --verbosity minimal
+Pop-Location
 ```
 
 Sanity checks in AppHost (complete solution):
