@@ -33,6 +33,12 @@ Before continuing, consider some common terminology used in .NET Aspire:
     dotnet new aspire-apphost -n AppHost
     ```
 
+2. Add the new AppHost project to your solution (required for CLI users):
+
+    ```bash
+    dotnet sln add AppHost/AppHost.csproj
+    ```
+
 ## Add Project References
 
 1. Add a reference to the `Api` and `MyWeatherHub` projects in the new `AppHost` project:
