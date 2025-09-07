@@ -43,7 +43,7 @@ Let's add some interactive parameters to our weather application:
 
 1. Open your `AppHost/Program.cs` file (in the complete or start folder)
 
-2. Add interactive parameters for API configuration:
+1. Add interactive parameters for API configuration:
 
 ```csharp
 var builder = DistributedApplication.CreateBuilder(args);
@@ -84,7 +84,7 @@ var api = builder.AddProject<Projects.Api>("api")
     .WithEnvironment("ENVIRONMENT", environment);
 ```
 
-3. Run your application and observe the interactive prompts in the dashboard when parameters are missing.
+1. Run your application and observe the interactive prompts in the dashboard when parameters are missing.
 
 ## 🔄 Resource Lifecycle Events
 
