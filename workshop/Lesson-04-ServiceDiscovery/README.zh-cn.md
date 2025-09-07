@@ -74,7 +74,7 @@ builder.Services.AddHttpClient<BasketServiceDashboardClient>(
 4. 在仪表板中点击 `MyWeatherHub` 项目的 `Details`. 这将调出 .NET Aspire 在从 App Host 运行应用程序时配置的所有设置。
 5. 点击其中的眼睛图标来查看配置值，卷绕到底部，你将看到对于 `Api` 服务的 `services__api__http__0` 和 `services__api__https__0` 配置了正确的值。
 
-    ![Service discovery settings in the dashboard](media/dashboard-servicediscovery.png)
+    ![Service discovery settings in the dashboard](../media/dashboard-servicediscovery.png)
 
 ## 结论
 

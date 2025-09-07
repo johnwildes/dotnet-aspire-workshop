@@ -12,7 +12,7 @@ In this example, we'll assume you're deploying the MyWeatherHub app from the pre
 
 1. Select **Azure Container Apps for .NET Aspire** as the publishing target.
 
-    ![A screenshot of the publishing dialog workflow.](media/vs-deploy.png)
+    ![A screenshot of the publishing dialog workflow.](../media/vs-deploy.png)
 
 1. On the **AzDev Environment** step, select your desired **Subscription** and **Location** values and then enter an **Environment name** such as _aspire-weather_. The environment name determines the naming of Azure Container Apps environment resources.
 1. Select **Finish** to create the environment, then **Close** to exit the dialog workflow and view the deployment environment summary.
@@ -22,7 +22,7 @@ In this example, we'll assume you're deploying the MyWeatherHub app from the pre
 
 1. When the publish completes, Visual Studio displays the resource URLs at the bottom of the environment screen. Use these links to view the various deployed resources. Select the **webfrontend** URL to open a browser to the deployed app.
 
-    ![A screenshot of the completed publishing process and deployed resources.](media/vs-publish-complete.png)
+    ![A screenshot of the completed publishing process and deployed resources.](../media/vs-publish-complete.png)
 
 ## Deploy the app with the Azure Developer CLI (azd)
 

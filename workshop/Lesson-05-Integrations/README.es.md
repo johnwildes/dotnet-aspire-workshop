@@ -55,7 +55,7 @@ No hemos realizado cambios en los proyectos `Api` o `MyWeatherHub`, pero podemos
 1. Inicia el proyecto del Host de la Aplicación.
 1. Verás tanto el contenedor de Redis como el contenedor de Redis Commander descargarse e iniciar tanto en el dashboard como en Docker Desktop.
 
- ![Redis ejecutándose en el dashboard y en el desktop](./media/redis-started.png)
+ ![Redis ejecutándose en el dashboard y en el desktop](../media/redis-started.png)
 
 ## Integrar Caché de Salida en la API
 
@@ -88,15 +88,15 @@ No hemos realizado cambios en los proyectos `Api` o `MyWeatherHub`, pero podemos
 1. Inicia el proyecto Host de la Aplicación y abre el proyecto `MyWeatherHub` desde el dashboard.
 1. Haz clic en una ciudad y luego haz clic de nuevo. Verás que la respuesta está cacheada y la segunda solicitud es mucho más rápida que la primera bajo la pestaña `Traces`.
 
- ![Caché de salida en acción](./media/output-caching.png)
+ ![Caché de salida en acción](../media/output-caching.png)
 
 1. También puedes ver la respuesta cacheada en el Redis Commander. Abre el Redis Commander haciendo clic en el endpoint `Redis Commander` en el dashboard. Bajo estadísticas verás conexiones y comandos procesados.
 
- ![Redis Commander](./media/redis-commander.png)
+ ![Redis Commander](../media/redis-commander.png)
 
 1. Además, puedes ver los registros de la caché de Redis y del Redis Commander en la pestaña `Console`.
 
- ![Registros de Redis](./media/redis-logs.png)
+ ![Registros de Redis](../media/redis-logs.png)
 
 ## Contenedores Redis Personalizados
 
@@ -111,11 +111,11 @@ var cache = builder.AddRedis("cache")
 
 1. Ejecuta la aplicación y ahora verás Garnet ejecutándose en el dashboard y en Docker Desktop.
 
- ![Garnet ejecutándose en el dashboard y en el desktop](./media/garnet-started.png)
+ ![Garnet ejecutándose en el dashboard y en el desktop](../media/garnet-started.png)
 
 1. También puedes ver los registros de Garnet en la pestaña `Consola`.
 
- ![Registros de Garnet](./media/garnet-logs.png)
+ ![Registros de Garnet](../media/garnet-logs.png)
 
 ## Resumen
 

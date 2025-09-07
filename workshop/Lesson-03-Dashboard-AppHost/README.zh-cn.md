@@ -20,10 +20,10 @@
    - 点击 `Next` > `Create`.
 
     *Visual Studio*
-    ![Visual Studio dialog to add a app host project](./media/vs-add-apphost.png)
+    ![Visual Studio dialog to add a app host project](../media/vs-add-apphost.png)
 
     *Visual Studio Code*
-    ![Visual Studio Code dialog to add a app host project](./media/vsc-add-apphost.png)
+    ![Visual Studio Code dialog to add a app host project](../media/vsc-add-apphost.png)
 
 ### 命令行
 
@@ -75,18 +75,18 @@
 3. 通过 Visual Studio Code 或 Visual Studio 的 `Run and Debug` 面板来运训 App Host .
 4. 此时， .NET Aspire 的仪表板将会在你的默认浏览器中打开，其中显示你的应用中的资源和依赖。
 
-    ![.NET Aspire Dashboard](./media/dashboard.png)
+    ![.NET Aspire Dashboard](../media/dashboard.png)
 
 5. 通过点击 `MyWeatherHub` 项目的端点来打开气象页面，它的地址应该是 [https://localhost:7274](https://localhost:7274).
 6. 请注意，`Api` 和 `MyWeatherHub` 两个项目都处于运行状态，并且像使用配置设置之前一样相互通信。
 7. 返回到 Aspire 仪表板, 点击 `View Logs` 按钮查看来自 `Api` 和 `MyWeatherHub` 项目的控制台日志。
 8. 选择 `Traces` 页签，然后选择某个 API 调用生成的 trace 上的 `View` 。
 
-    ![.NET Aspire Dashboard](./media/dashboard-trace.png)
+    ![.NET Aspire Dashboard](../media/dashboard-trace.png)
 
 9. 探索 `Metrics` 页签来查看来自 `Api` 和 `MyWeatherHub` 项目的指标。
 
-    ![.NET Aspire Dashboard](./media/dashboard-metrics.png)
+    ![.NET Aspire Dashboard](../media/dashboard-metrics.png)
 
 ## 创建一个错误
 
@@ -95,7 +95,7 @@
 3. 在 `MyWeatherApp` 站点上，在多个不同的城市上点击来生成错误。通常，点击 5 个不同的城市将会生成至少一个错误。
 4. 在生成错误之后， `Structured` 页签将会自动更新并显示出错误信息。
 
-    ![.NET Aspire Dashboard](./media/dashboard-error.png)
+    ![.NET Aspire Dashboard](../media/dashboard-error.png)
 
 5. 点击 `Trace` 或者 `Details` 链接来查看错误信息和调用堆栈。
 

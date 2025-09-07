@@ -12,7 +12,7 @@ Neste exemplo, assumiremos que você está implantando o aplicativo MyWeatherHub
 
 1. Selecione **Azure Container Apps for .NET Aspire** como o destino de publicação.
 
-    ![Uma captura de tela do fluxo de trabalho da caixa de diálogo de publicação.](media/vs-deploy.png)
+    ![Uma captura de tela do fluxo de trabalho da caixa de diálogo de publicação.](../media/vs-deploy.png)
 
 1. Na etapa **Ambiente AzDev**, selecione os valores desejados de **Assinatura** e **Localização** e então digite um **Nome do ambiente** como _aspire-weather_. O nome do ambiente determina a nomenclatura dos recursos do ambiente Azure Container Apps.
 1. Selecione **Concluir** para criar o ambiente, então **Fechar** para sair do fluxo de trabalho da caixa de diálogo e ver o resumo do ambiente de implantação.
@@ -22,7 +22,7 @@ Neste exemplo, assumiremos que você está implantando o aplicativo MyWeatherHub
 
 1. Quando a publicação for concluída, o Visual Studio exibe as URLs dos recursos na parte inferior da tela do ambiente. Use esses links para ver os vários recursos implantados. Selecione a URL **webfrontend** para abrir um navegador para o aplicativo implantado.
 
-    ![Uma captura de tela do processo de publicação concluído e dos recursos implantados.](media/vs-publish-complete.png)
+    ![Uma captura de tela do processo de publicação concluído e dos recursos implantados.](../media/vs-publish-complete.png)
 
 ## Implante o aplicativo com o Azure Developer CLI (azd)
 

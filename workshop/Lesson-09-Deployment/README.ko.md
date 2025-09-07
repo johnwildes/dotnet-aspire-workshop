@@ -12,7 +12,7 @@
 
 1. 게시 대상으로 **Azure Container Apps for .NET Aspire**를 선택합니다.
 
-    ![게시 대화 상자 워크플로의 스크린샷.](media/vs-deploy.png)
+    ![게시 대화 상자 워크플로의 스크린샷.](../media/vs-deploy.png)
 
 1. **AzDev Environment** 단계에서 원하는 **구독** 및 **위치** 값을 선택한 다음 _aspire-weather_와 같은 **환경 이름**을 입력합니다. 환경 이름은 Azure Container Apps 환경 리소스의 명명을 결정합니다.
 1. **마침**을 선택하여 환경을 생성한 다음 **닫기**를 선택하여 대화 상자 워크플로를 종료하고 배포 환경 요약을 확인합니다.
@@ -22,7 +22,7 @@
 
 1. 게시가 완료되면 Visual Studio는 환경 화면 하단에 리소스 URL을 표시합니다. 이러한 링크를 사용하여 배포된 다양한 리소스를 확인합니다. **webfrontend** URL을 선택하여 배포된 앱의 브라우저를 엽니다.
 
-    ![완료된 게시 프로세스 및 배포된 리소스의 스크린샷.](media/vs-publish-complete.png)
+    ![완료된 게시 프로세스 및 배포된 리소스의 스크린샷.](../media/vs-publish-complete.png)
 
 ## Azure Developer CLI(azd)로 앱 배포
 

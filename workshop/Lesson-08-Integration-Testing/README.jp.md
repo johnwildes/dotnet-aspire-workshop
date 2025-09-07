@@ -214,7 +214,7 @@ dotnet test IntegrationTests/IntegrationTests.csproj
 1. ビュー > テストエクスプローラーに移動して（またはCtrl+E、Tを押して）テストエクスプローラーを開きます
 1. テストエクスプローラーウィンドウで、ソリューション内のすべてのテストが表示されます
 
-![Visual Studioテストエクスプローラー](./media/vs-test-explorer.png)
+![Visual Studioテストエクスプローラー](../media/vs-test-explorer.png)
 
 1. 以下のことができます：
    - 上部の「すべて実行」ボタンをクリックしてすべてのテストを実行

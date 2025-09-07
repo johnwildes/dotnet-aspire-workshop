@@ -55,7 +55,7 @@ Nous n'avons apporté aucune modification aux projets `Api` ou `MyWeatherHub`, m
 1. Démarrez le projet App Host.
 1. Vous verrez le téléchargement et le démarrage du conteneur Redis et du conteneur Redis Commander dans le tableau de bord et dans Docker Desktop.
 
-  ![Redis s'exécutant dans le tableau de bord et le bureau](./../../media/redis-started.png)
+  ![Redis s'exécutant dans le tableau de bord et le bureau](.../media/redis-started.png)
 
 ## Intégrer la mise en cache des sorties dans l'API
 
@@ -88,15 +88,15 @@ Nous n'avons apporté aucune modification aux projets `Api` ou `MyWeatherHub`, m
 1. Démarrez le projet App Host et ouvrez le projet `MyWeatherHub` depuis le tableau de bord
 1. Cliquez sur une ville puis cliquez à nouveau dessus. Vous verrez que la réponse est mise en cache et que la deuxième requête est beaucoup plus rapide que la première sous l'onglet `Traces`.
 
- ![Mise en cache de sortie en action](./../../media/output-caching.png)
+ ![Mise en cache de sortie en action](.../media/output-caching.png)
 
 1. Vous pouvez également voir la réponse mise en cache dans Redis Commander. Ouvrez Redis Commander en cliquant sur le point de terminaison `Redis Commander` dans le tableau de bord. Sous les statistiques, vous verrez les connexions et les commandes traitées.
 
- ![Redis Commander](./../../media/redis-commander.png)
+ ![Redis Commander](.../media/redis-commander.png)
 
 1. De plus, vous pouvez voir les journaux du cache Redis et de Redis Commander dans l'onglet `Console`.
 
- ![Journaux Redis](./../../media/redis-logs.png)
+ ![Journaux Redis](.../media/redis-logs.png)
 
 ## Conteneurs Redis personnalisés
 
@@ -111,11 +111,11 @@ var cache = builder.AddRedis("cache")
 
 1. Exécutez l'application et vous verrez maintenant Garnet s'exécuter dans le tableau de bord et dans Docker Desktop.
 
-  ![Garnet s'exécutant dans le tableau de bord et le bureau](./../../media/garnet-started.png)
+  ![Garnet s'exécutant dans le tableau de bord et le bureau](.../media/garnet-started.png)
 
 1. Vous pouvez également voir les journaux de Garnet dans l'onglet `Console`.
 
-  ![Journaux Garnet](./../../media/garnet-logs.png)
+  ![Journaux Garnet](.../media/garnet-logs.png)
 
 ## Résumé
 

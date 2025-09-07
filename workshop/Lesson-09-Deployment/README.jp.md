@@ -12,7 +12,7 @@
 
 1. 発行ターゲットとして **Azure Container Apps for .NET Aspire** を選択します。
 
-    ![発行ダイアログ ワークフローのスクリーンショット。](media/vs-deploy.png)
+    ![発行ダイアログ ワークフローのスクリーンショット。](../media/vs-deploy.png)
 
 1. **AzDev Environment** ステップで、希望する **サブスクリプション** と **場所** の値を選択し、_aspire-weather_ などの **環境名** を入力します。環境名は、Azure Container Apps 環境リソースの命名を決定します。
 1. **完了** を選択して環境を作成し、**閉じる** を選択してダイアログ ワークフローを終了し、デプロイ環境の概要を表示します。
@@ -22,7 +22,7 @@
 
 1. 発行が完了すると、Visual Studio は環境画面の下部にリソース URL を表示します。これらのリンクを使用して、デプロイされたさまざまなリソースを表示します。**webfrontend** URL を選択して、デプロイされたアプリへのブラウザーを開きます。
 
-    ![完了した発行プロセスとデプロイされたリソースのスクリーンショット。](media/vs-publish-complete.png)
+    ![完了した発行プロセスとデプロイされたリソースのスクリーンショット。](../media/vs-publish-complete.png)
 
 ## Azure Developer CLI (azd) を使用してアプリをデプロイ
 
