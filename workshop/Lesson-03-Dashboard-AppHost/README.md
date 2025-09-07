@@ -147,5 +147,3 @@ The dashboard can now visualize connections between resources even when they are
 - External service mapping between your services and external dependencies
 
 **Next**: [Module #4: Service Discovery](../Lesson-04-ServiceDiscovery/README.md)
-
-> Heads up: You may also see an optional `it-tools` container/resource in the dashboard if present in your AppHost. It's not required for modules 1–9 and can be ignored.
