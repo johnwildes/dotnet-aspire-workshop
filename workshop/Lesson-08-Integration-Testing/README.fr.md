@@ -31,8 +31,8 @@ Dans le contexte des applications distribuées avec .NET Aspire, les tests d'int
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Aspire.Hosting.Testing" Version="9.4.0" />
-        <PackageReference Include="MSTest" Version="3.8.2" />
+        <PackageReference Include="Aspire.Hosting.Testing" Version="9.4.2" />
+        <PackageReference Include="MSTest" Version="3.10.4" />
     </ItemGroup>
 
     <ItemGroup>

@@ -11,8 +11,8 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.Testing" Version="9.4.0" />
-    <PackageReference Include="MSTest" Version="3.9.3" />
+    <PackageReference Include="Aspire.Hosting.Testing" Version="9.4.2" />
+    <PackageReference Include="MSTest" Version="3.10.4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppHost\AppHost.csproj" />
