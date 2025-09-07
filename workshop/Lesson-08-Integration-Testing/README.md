@@ -31,8 +31,8 @@ In the context of distributed applications with .NET Aspire, integration testing
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Aspire.Hosting.Testing" Version="9.4.0" />
-        <PackageReference Include="MSTest" Version="3.8.2" />
+        <PackageReference Include="Aspire.Hosting.Testing" Version="9.4.2" />
+        <PackageReference Include="MSTest" Version="3.10.4" />
     </ItemGroup>
 
     <ItemGroup>

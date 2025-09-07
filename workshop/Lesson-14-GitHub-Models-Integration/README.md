@@ -79,9 +79,9 @@ Add the necessary NuGet packages to your MyWeatherHub project:
 1. Add the following package references:
 
 ```xml
-<PackageReference Include="Aspire.Azure.AI.Inference" Version="9.4.0-preview.1.25378.8" />
-<PackageReference Include="Microsoft.Extensions.AI" Version="9.7.0" />
-<PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.7.1-preview.1.25365.4" />
+<PackageReference Include="Aspire.Azure.AI.Inference" Version="9.4.2" />
+<PackageReference Include="Microsoft.Extensions.AI" Version="9.8.0" />
+<PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.8.0-preview.1.25412.6" />
 ```
 
 ### Step 4: Configure AI Services in MyWeatherHub

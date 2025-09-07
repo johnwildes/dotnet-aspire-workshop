@@ -89,7 +89,7 @@ Now we'll update the NwsManager class to use our metrics and implement structure
     ILogger<NwsManager> logger)
 ```
 
-The implementation combines several observability features:
+Next, we'll make several additions to `GetForecastByZoneAsync` to add in several observability features. Make the following updates, being careful to keep the existing API code shown by the "... API call logic ..." comment. You can refer to the [completed code for this lesson](code/Api/Data/NwsManager.cs) if needed.
 
 ```csharp
 public async Task<Forecast[]> GetForecastByZoneAsync(string zoneId)
@@ -206,6 +206,20 @@ This implementation shows how our custom metrics work with structured logging:
 ### Example: Adding Azure Monitor
 
 To send telemetry to Azure Application Insights:
+
+> [!NOTE]
+> Getting the connection string: In the Azure Portal, create (or open an existing) Application Insights resource (Create a resource > Application Insights). On the resource **Overview** page, copy the **Connection string** value from the Essentials panel. You can also retrieve it via CLI:
+>
+> ```azurecli
+> az monitor app-insights component show --app <app-insights-name> --resource-group <resource-group> --query connectionString --output tsv
+> ```
+>
+> Official docs:
+>
+> - [Create and get connection string](https://learn.microsoft.com/azure/azure-monitor/app/create-workspace-resource#configure-monitoring)
+> - [OpenTelemetry + Azure Monitor example](https://learn.microsoft.com/dotnet/core/diagnostics/observability-applicationinsights#3-specify-the-connection-string)
+> - [Enable Azure Monitor OpenTelemetry](https://learn.microsoft.com/azure/azure-monitor/app/opentelemetry-enable#enable-opentelemetry-with-application-insights)
+>
 
 1. Install the NuGet package:
 

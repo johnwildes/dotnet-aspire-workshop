@@ -11,7 +11,7 @@
 1. AppHost 프로젝트에 필요한 NuGet 패키지를 설치합니다:
 
 ```xml
-<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
 ```
 
 1. AppHost의 Program.cs를 업데이트하여 PostgreSQL을 추가합니다:
@@ -73,7 +73,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 1. 웹 애플리케이션에 필요한 NuGet 패키지를 설치합니다:
 
 ```xml
-<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.2" />
 ```
 
 1. DbContext 클래스를 생성합니다:

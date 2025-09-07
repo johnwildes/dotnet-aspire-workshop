@@ -11,7 +11,7 @@
 1. 在AppHost项目中安装所需的NuGet包：
 
 ```xml
-<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
 ```
 
 1. 更新AppHost的Program.cs以添加PostgreSQL：
@@ -73,7 +73,7 @@ var weatherDb = postgres.AddDatabase("weatherdb");
 1. 在Web应用程序中安装所需的NuGet包：
 
 ```xml
-<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.2" />
 ```
 
 1. 创建您的DbContext类：

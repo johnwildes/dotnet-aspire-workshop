@@ -35,6 +35,12 @@
 
 ## Configure Service Defaults
 
+Before we dive into the mechanics, here’s why we do each of the next steps:
+
+- Add project references: This lets the `Api` and `MyWeatherHub` projects consume the shared configuration, resilience, telemetry, and discovery wiring that lives in the new `ServiceDefaults` project without repeating that setup in every service.
+- Call `builder.AddServiceDefaults()`: This opt‑in extension applies the opinionated “smart defaults” (OpenTelemetry logging/tracing/metrics, health checks, service discovery, and resilient HTTP handlers) so you start with production‑minded behavior immediately.
+- Call `app.MapDefaultEndpoints()`: This maps development‑time health endpoints (`/health`, `/alive`) and prepares the app for later dashboard and orchestration scenarios. We’ll go deeper into these concepts in later modules; for now just know this lights up diagnostics and readiness probes early.
+
 1. Add a reference to the `ServiceDefaults` project in the `Api` and `MyWeatherHub` projects:
    - Right-click on the `Api` project and select `Add` > `Reference`.
      - Check the `ServiceDefaults` project and click `OK`.

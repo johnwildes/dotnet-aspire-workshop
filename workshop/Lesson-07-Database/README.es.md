@@ -11,7 +11,7 @@ En este módulo, integraremos una base de datos PostgreSQL con nuestra aplicaci�
 1. Instale el paquete NuGet requerido en su proyecto AppHost:
 
 ```xml
-<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
 ```
 
 1. Actualice el Program.cs del AppHost para agregar PostgreSQL:
@@ -53,7 +53,7 @@ Ahora, configuremos Entity Framework Core en nuestra aplicación web para usar P
 1. Instale los paquetes NuGet requeridos en el proyecto MyWeatherHub:
 
 ```xml
-<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.2" />
 <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0" />
 ```
 
