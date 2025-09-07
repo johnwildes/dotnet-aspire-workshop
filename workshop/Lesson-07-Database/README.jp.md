@@ -11,7 +11,7 @@
 1. AppHostプロジェクトに必要なNuGetパッケージをインストールします：
 
 ```xml
-<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
 ```
 
 1. AppHostのProgram.csを更新してPostgreSQLを追加します：

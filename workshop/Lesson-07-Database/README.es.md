@@ -11,7 +11,7 @@ En este m√≥dulo, integraremos una base de datos PostgreSQL con nuestra aplicaci√
 1. Instale el paquete NuGet requerido en su proyecto AppHost:
 
 ```xml
-<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
 ```
 
 1. Actualice el Program.cs del AppHost para agregar PostgreSQL:

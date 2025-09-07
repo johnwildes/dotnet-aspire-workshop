@@ -11,7 +11,7 @@ O .NET Aspire fornece suporte integrado para PostgreSQL através do pacote `Aspi
 1. Instale o pacote NuGet necessário no seu projeto AppHost:
 
 ```xml
-<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
 ```
 
 1. Atualize o Program.cs do AppHost para adicionar PostgreSQL:
