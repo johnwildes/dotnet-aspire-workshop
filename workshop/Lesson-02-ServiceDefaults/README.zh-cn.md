@@ -20,10 +20,10 @@
    - 点击 `Next` > `Create`.
 
     *Visual Studio*
-    ![Visual Studio dialog to add a service defaults project](./media/vs-add-servicedefaults.png)
+    ![Visual Studio dialog to add a service defaults project](../media/vs-add-servicedefaults.png)
 
     *Visual Studio Code*
-    ![Visual Studio Code dialog to add a service defaults project](./media/vsc-add-servicedefaults.png)
+    ![Visual Studio Code dialog to add a service defaults project](../media/vsc-add-servicedefaults.png)
 
 ### 命令行
 
@@ -59,7 +59,7 @@
 
 1. 在 Visual Studio 或 Visual Studio Code 中，使用 multiple-project launch configuration 来运行项目:
    - Visual Studio: 在 `MyWeatherHub` 解决方案右键，然后在属性 properties 页面. 选择 `Api` 和 `MyWeatherHub` 项目作为启动项目, 选择 `OK`.
-     - ![Visual Studio solution properties](./media/vs-multiproject.png)
+     - ![Visual Studio solution properties](../media/vs-multiproject.png)
      - 点击 `Start` 来启动和调试这两个项目.
    - Visual Studio Code: 使用 `Run and Debug` 面板来运行 `Api` 和 `MyWeatherHub` 项目。我们提供了包含所需配置的 `launch.json` 文件来支持运行这两个项目。
 2. 通过导航到以下 URL 来测试应用程序:

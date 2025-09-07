@@ -56,7 +56,7 @@ Não fizemos nenhuma alteração nos projetos `Api` ou `MyWeatherHub`, mas podem
 1. Inicie o projeto Host (App Host) de Aplicativo.
 1. Você verá tanto o contêiner do Redis quanto o contêiner do Redis Commander sendo baixados e iniciados tanto no dashboard quanto no Docker Desktop.
 
-    ![Redis rodando no dashboard e no desktop](./../../media/redis-started.png)
+    ![Redis rodando no dashboard e no desktop](.../media/redis-started.png)
 
 ## Integre o Cache de Saída (Output Caching) na API
 
@@ -89,14 +89,14 @@ Não fizemos nenhuma alteração nos projetos `Api` ou `MyWeatherHub`, mas podem
 1. Inicie o projeto Host de Aplicativo e abra o projeto `MyWeatherHub` a partir do dashboard
 1. Clique em uma cidade e depois clique novamente. Você verá que a resposta é armazenada em cache e a segunda solicitação é muito mais rápida que a primeira na aba `Traces`.
 
-    ![Cache de saída em ação](./../../media/output-caching.png)
+    ![Cache de saída em ação](.../media/output-caching.png)
 
 1. Você também pode ver a resposta armazenada em cache no Redis Commander. Abra o Redis Commander clicando no endpoint `Redis Commander` no dashboard. Nas estatísticas, você verá conexões e comandos processados.
 
-    ![Redis Commander](./../../media/redis-commander.png)
+    ![Redis Commander](.../media/redis-commander.png)
 
 1. Além disso, você pode ver os logs do cache Redis e do Redis Commander na aba `Console`.
-    ![Logs do Redis](./../../media/redis-logs.png)
+    ![Logs do Redis](.../media/redis-logs.png)
 
 ## Contêineres Redis Personalizados
 
@@ -111,11 +111,11 @@ var cache = builder.AddRedis("cache")
 
 1. Execute a aplicação e agora você verá o Garnet rodando no dashboard e no Docker Desktop.
 
- ![Garnet rodando no dashboard e no Docker Desktop.](./../../media/garnet-started.png)
+ ![Garnet rodando no dashboard e no Docker Desktop.](.../media/garnet-started.png)
 
 1. Você também pode ver os logs do Garnet na aba `Console`.
 
- ![Logs do Garnet](./../../media/garnet-logs.png)
+ ![Logs do Garnet](.../media/garnet-logs.png)
 
 ## Resumo
 

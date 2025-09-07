@@ -214,7 +214,7 @@ dotnet test IntegrationTests/IntegrationTests.csproj
 1. 보기 > 테스트 탐색기로 이동하여(또는 Ctrl+E, T를 누름) 테스트 탐색기를 엽니다
 1. 테스트 탐색기 창에서 솔루션의 모든 테스트를 볼 수 있습니다
 
-![Visual Studio 테스트 탐색기](./media/vs-test-explorer.png)
+![Visual Studio 테스트 탐색기](../media/vs-test-explorer.png)
 
 1. 다음을 할 수 있습니다:
    - 상단의 "모두 실행" 버튼을 클릭하여 모든 테스트 실행
