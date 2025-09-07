@@ -70,7 +70,7 @@ Maintenant, configurons Entity Framework Core dans notre application web pour ut
 1. Installez les packages NuGet requis dans le projet MyWeatherHub :
 
 ```xml
-<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.2" />
 <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0" />
 ```
 

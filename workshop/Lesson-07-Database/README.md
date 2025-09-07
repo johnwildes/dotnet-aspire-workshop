@@ -81,7 +81,7 @@ With `ContainerLifetime.Persistent`, the PostgreSQL container will continue runn
 1. Install the required NuGet packages in your web application:
 
 ```xml
-<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.2" />
 ```
 
 1. Create your DbContext class:

@@ -73,7 +73,7 @@ Com `ContainerLifetime.Persistent`, o contêiner PostgreSQL continuará executan
 1. Instale os pacotes NuGet necessários na sua aplicação web:
 
 ```xml
-<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.0" />
+<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.4.2" />
 ```
 
 1. Crie sua classe DbContext:
