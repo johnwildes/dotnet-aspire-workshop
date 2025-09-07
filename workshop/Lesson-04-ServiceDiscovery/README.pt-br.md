@@ -49,10 +49,11 @@ Isso pode ser realizado atualizando as configurações existentes de `WeatherEnd
 
 1. Atualize as configurações de `WeatherEndpoint` para usar a descoberta de serviços:
 
-    ```json
+```json
+"WeatherEndpoint": "https+http://api"
+```
 
- "WeatherEndpoint": "https+<http://api>"
-    ```
+> URI multi-esquema: `https+http://api` instrui o resolvedor a tentar primeiro um endpoint HTTPS para o serviço `api` e, caso não exista, usar HTTP. Os esquemas são avaliados da esquerda para a direita e separados por `+`. Isso evita ter que alterar a configuração ao alternar entre desenvolvimento local (somente HTTP) e ambientes com HTTPS. Use esse formato apenas para endereços internos de `HttpClient`—não o exponha diretamente em links para o usuário.
 
 1. A configuração de `WeatherEndpoint` agora está usando a descoberta de serviços para se conectar ao serviço `Api`.
 
@@ -61,11 +62,10 @@ Opcionalmente, podemos atualizar a url para não usar as configurações de `Wea
 1. Abra o arquivo `Program.cs` no projeto `MyWeatherHub`.
 1. Atualize as configurações de `WeatherEndpoint` para usar a descoberta de serviços:
 
-    ```csharp
-
- builder.Services.AddHttpClient<NwsManager>(
-  static client => client.BaseAddress = new("https+<http://api>"));
-    ```
+```csharp
+builder.Services.AddHttpClient<NwsManager>(
+    static client => client.BaseAddress = new("https+http://api"));
+```
 
 ## Execute a aplicação
 

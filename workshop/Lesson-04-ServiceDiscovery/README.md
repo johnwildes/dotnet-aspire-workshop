@@ -55,6 +55,8 @@ Now, let's update the `MyWeatherHub` project to use service discovery to connect
     "WeatherEndpoint": "https+http://api"
     ```
 
+    > Multi-scheme service discovery: The value `https+http://api` tells the resolver to prefer an HTTPS endpoint for the `api` service if one exists, and fall back to HTTP otherwise. The schemes are evaluated left-to-right and separated by `+`. This lets the same configuration work for local (HTTP only) development and future HTTPS-enabled environments without further changes. Use this pattern only for internal service-to-service `HttpClient` base addresses—don’t surface the multi-scheme form directly in user-facing links.
+
 1. The `WeatherEndpoint` configuration setting is now using service discovery to connect to the `Api` service.
 
 Alternatively, we can update the url to not use the `WeatherEndpoint` configuration settings and instead set the URI directly in the `NwsManager` class:
