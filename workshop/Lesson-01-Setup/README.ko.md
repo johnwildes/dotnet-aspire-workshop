@@ -14,7 +14,7 @@
 
 ## Windows 환경에서 Visual Studio 사용하기
 
-- [Visual Studio 2022 버전 17.12 이상](https://visualstudio.microsoft.com/vs/)을 설치합니다.
+- [Visual Studio 2022 버전 17.14 이상](https://visualstudio.microsoft.com/vs/)을 설치합니다.
   - [무료 Visual Studio Community](https://visualstudio.microsoft.com/free-developer-offers/)를 포함한 모든 에디션이 작동합니다
   - `ASP.NET 및 웹 개발` 워크로드를 선택합니다.
 
@@ -28,10 +28,10 @@
 
 ## 최신 .NET Aspire 템플릿 설치
 
-다음 명령을 실행하여 .NET Aspire 9.4 템플릿을 설치합니다.
+다음 명령을 실행하여 최신 .NET Aspire 템플릿을 설치합니다.
 
 ```cli
-dotnet new install Aspire.ProjectTemplates::9.4.0 --force
+dotnet new install Aspire.ProjectTemplates --force
 ```
 
 ## .NET Aspire CLI 설치 (선택사항)

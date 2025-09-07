@@ -12,7 +12,7 @@ For the best experience, we recommend using Visual Studio 2022 with the .NET Asp
 
 ## Windows with Visual Studio
 
-- Install [Visual Studio 2022 version 17.12 or newer](https://visualstudio.microsoft.com/vs/).
+- Install [Visual Studio 2022 version 17.14 or newer](https://visualstudio.microsoft.com/vs/).
   - Any edition will work including the [free to use Visual Studio Community](https://visualstudio.microsoft.com/free-developer-offers/)
   - Select the following `ASP.NET and web development` workload.
 
@@ -26,10 +26,10 @@ For the best experience, we recommend using Visual Studio 2022 with the .NET Asp
 
 ## Install Latest .NET Aspire Templates
 
-Run the following command to install .NET Aspire 9.4 templates.
+Run the following command to install the latest .NET Aspire templates.
 
 ```cli
-dotnet new install Aspire.ProjectTemplates::9.4.0 --force
+dotnet new install Aspire.ProjectTemplates --force
 ```
 
 ## Install the .NET Aspire CLI (Optional)
