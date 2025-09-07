@@ -32,6 +32,7 @@ The workshop is organized as 15 modules; this testing procedure focuses strictly
 9. Deployment (`workshop/Lesson-09-Deployment/README.md`)
 
 Supporting code snapshots:
+
 - `start/` — starting project used during the workshop
 - `complete/` — a completed reference implementation (includes `IntegrationTests/`)
 
@@ -50,8 +51,14 @@ $env:AZURE_LOCATION = "<your-azure-region>"  # e.g. eastus, westus3
 
 ## Important Notes for Testing (modules 1–9)
 
-- Use the `start/` solution as the baseline when following modules 1–8 instructions; consult `complete/` as a known-good reference.
-- Ensure the `complete/` solution builds cleanly and all integration tests pass.
+- Use the per-lesson `code/` folders as the working context for modules 1–9; consult `complete/` as a known-good reference. The policy is:
+  - Lesson 1 contains no code changes and does not require a `code/` copy.
+  - For Lesson 2, copy the entire contents of `start/` into `workshop/Lesson-02-ServiceDefaults/code/`, ensuring that all files in `Api/Properties/` (including `launchSettings.json`) are copied exactly, to prevent port drift and configuration mismatches. Then perform the steps described in `workshop/Lesson-02-ServiceDefaults/README.md` against that copy.
+  - For each subsequent lesson (Lesson N where N >= 3), copy the contents of `workshop/Lesson-(N-1)-*/code/` into `workshop/Lesson-N-*/code/`, ensuring that all files in `Api/Properties/` (including `launchSettings.json`) are copied exactly, to prevent port drift and configuration mismatches. Then perform the steps described in `workshop/Lesson-N-*/README.md` against that copy.
+  - NEVER copy the `.vs` folder (IDE state) between lessons. If a `.vs` directory appears inside any `workshop/Lesson-XX-*/code` folder, delete it immediately: `Remove-Item -Recurse -Force .\workshop\Lesson-XX-*/code/.vs`.
+  - Prefer excluding transient build/test artifacts (`bin/`, `obj/`, `TestResults/`) unless a lesson explicitly requires inspecting them. This prevents locked file copy errors and keeps snapshots minimal.
+  - At the end of each lesson run and verify a successful build for that lesson's `code/` folder.
+  - Ensure the `complete/` solution builds cleanly and all integration tests pass.
 - For deployment (module 9):
   - Run `azd` commands from the correct directory (where `azure.yaml` resides or will be generated).
   - If `azure.yaml` is not present yet, run `azd init` first (as described in the docs) and follow the prompts.
@@ -70,14 +77,18 @@ $env:AZURE_LOCATION = "<your-azure-region>"  # e.g. eastus, westus3
   - Verify the repository builds locally using the commands below.
 
 - **Modules 2–8**
-  - Follow `workshop/Lesson-02-ServiceDefaults/README.md` through `workshop/Lesson-08-Integration-Testing/README.md` using the `start/` solution as your working project.
-  - At each module boundary, note any unclear instructions and deviations needed to get things working.
-  - Use `complete/` as a reference if you get blocked; document the differences.
+  - Workflow (per-lesson `code/` folders):
+    1. Lesson 1 requires no code changes and has no `code/` work.
+    2. For Lesson 2: copy `start/` → `workshop/Lesson-02-ServiceDefaults/code/` and apply all steps in `workshop/Lesson-02-ServiceDefaults/README.md` to that copy.
+    3. For each Lesson N (N ≥ 3): copy `workshop/Lesson-(N-1)-*/code/` → `workshop/Lesson-N-*/code/` and apply all steps in `workshop/Lesson-N-*/README.md` to that copy.
+    4. After completing the steps for the lesson, run a build in the lesson's `code/` folder and confirm it succeeds. Document any deviations required to make the build succeed.
+  - Use `complete/` as a reference if you get blocked; document the differences between the lesson `code/` folder and `complete/`.
 
 - **Module 9 – Deployment**
   - Follow `workshop/Lesson-09-Deployment/README.md`.
   - If `azure.yaml` is not present, initialize with `azd init` and confirm it detects the AppHost correctly. Then provision/deploy as appropriate.
   - If you cannot deploy to Azure in your environment, document the exact step where you stop and why (e.g., lack of subscription access), but still validate that `azd init` runs and generates expected files.
+
 ## Evaluation
 
 - At the end of each module, verify that the described functionality is present and works as intended (builds succeed, pages load, services communicate, etc.).
@@ -108,6 +119,41 @@ cd complete
 # Run all tests (includes IntegrationTests)
 dotnet test .\MyWeatherHub.sln --verbosity minimal
 cd ..
+```
+
+## Working in lesson `code/` folders (copy + build examples)
+
+Use these PowerShell commands to create the per-lesson working copies and build from them. They assume you are running PowerShell from the repository root.
+
+```powershell
+# Lesson 1: no code changes required
+
+# Lesson 2: copy `start` into Lesson-02 `code` folder
+# Safety: remove IDE and test artifacts in `start` before copying. NEVER copy `.vs`.
+if (Test-Path .\start\.vs) { Remove-Item -Recurse -Force .\start\.vs -ErrorAction SilentlyContinue }
+if (Test-Path .\start\TestResults) { Remove-Item -Recurse -Force .\start\TestResults -ErrorAction SilentlyContinue }
+if (Test-Path .\workshop\Lesson-02-ServiceDefaults\code) { Remove-Item -Recurse -Force .\workshop\Lesson-02-ServiceDefaults\code }
+Get-ChildItem .\start -Force | Where-Object { $_.Name -notin '.vs' } | ForEach-Object { Copy-Item -Recurse -Force $_.FullName (Join-Path .\workshop\Lesson-02-ServiceDefaults\code $_.Name) }
+
+# Build Lesson-02 code
+Push-Location .\workshop\Lesson-02-ServiceDefaults\code
+dotnet build .\MyWeatherHub.sln --verbosity minimal
+Pop-Location
+
+# Lesson N -> Lesson N+1: copy previous lesson's code into next lesson (exclude .vs & transient artifacts)
+# Example: copy Lesson-02 code into Lesson-03
+if (Test-Path .\workshop\Lesson-02-ServiceDefaults\code\.vs) { Remove-Item -Recurse -Force .\workshop\Lesson-02-ServiceDefaults\code\.vs -ErrorAction SilentlyContinue }
+if (Test-Path .\workshop\Lesson-02-ServiceDefaults\code\TestResults) { Remove-Item -Recurse -Force .\workshop\Lesson-02-ServiceDefaults\code\TestResults -ErrorAction SilentlyContinue }
+if (Test-Path .\workshop\Lesson-03-Dashboard-AppHost\code) { Remove-Item -Recurse -Force .\workshop\Lesson-03-Dashboard-AppHost\code }
+Get-ChildItem .\workshop\Lesson-02-ServiceDefaults\code -Force | Where-Object { $_.Name -notin '.vs' } | ForEach-Object { Copy-Item -Recurse -Force $_.FullName (Join-Path .\workshop\Lesson-03-Dashboard-AppHost\code $_.Name) }
+
+# Optional robust alternative (commented):
+# robocopy .\workshop\Lesson-02-ServiceDefaults\code .\workshop\Lesson-03-Dashboard-AppHost\code /MIR /XD .vs TestResults bin obj /NFL /NDL /NJH /NJS /NP | Out-Null
+
+# Build Lesson-03 code
+Push-Location .\workshop\Lesson-03-Dashboard-AppHost\code
+dotnet build .\MyWeatherHub.sln --verbosity minimal
+Pop-Location
 ```
 
 Sanity checks in AppHost (complete solution):

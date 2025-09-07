@@ -122,6 +122,8 @@ For development environments, we use `EnsureCreatedAsync()` to automatically cre
 
 Now we'll update the web application to support favoriting weather zones and filtering them. Let's make these changes step by step:
 
+> QuickGrid Version Note: Ensure the `MyWeatherHub` project references the latest stable 9.0.x version of `Microsoft.AspNetCore.Components.QuickGrid` (currently `9.0.7` in the complete solution) to pick up bug fixes and accessibility improvements.
+
 1. Make sure to add these Entity Framework using statements at the top of `Home.razor` if they're not already present:
 
 ```csharp
