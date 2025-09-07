@@ -215,7 +215,7 @@ We want to add the HealthChecksUI resource using a name of "healthchecks" and we
 
 Run your application, and visit the new HealthChecks resource from the dashboard.  You could see this more complete review of your application's health monitoring and child object statuses:
 
-![HealthChecks User Interface](media/healthchecksui.png)
+![HealthChecks User Interface](../media/healthchecksui.png)
 
 ## References
 
