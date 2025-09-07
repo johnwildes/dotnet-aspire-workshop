@@ -12,7 +12,7 @@
 
 ## Windows 平台上使用 Visual Studio
 
-- 安装 [Visual Studio 2022 version 17.12 或更新的版本](https://visualstudio.microsoft.com/vs/).
+- 安装 [Visual Studio 2022 version 17.14 或更新的版本](https://visualstudio.microsoft.com/vs/).
   - 所有此版本的发行版都可以，包括 [免费 Visual Studio 社区版](https://visualstudio.microsoft.com/free-developer-offers/)
   - 选择 `ASP.NET and web development` 工作负载.
 
@@ -28,10 +28,10 @@
 
 ## 安装最新的 .NET Aspire 模板
 
-运行以下命令安装 .NET Aspire 9.4 模板。
+运行以下命令安装最新的 .NET Aspire 模板。
 
 ```cli
-dotnet new install Aspire.ProjectTemplates::9.4.0 --force
+dotnet new install Aspire.ProjectTemplates --force
 ```
 
 ## 安装 .NET Aspire CLI (可选)

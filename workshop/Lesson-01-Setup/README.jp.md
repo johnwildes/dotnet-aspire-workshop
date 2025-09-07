@@ -12,7 +12,7 @@
 
 ## Visual Studio を使用した Windows
 
-- [Visual Studio 2022 version 17.12 以降](https://visualstudio.microsoft.com/vs/) をインストールします。
+- [Visual Studio 2022 version 17.14 以降](https://visualstudio.microsoft.com/vs/) をインストールします。
   - [無料の Visual Studio Community](https://visualstudio.microsoft.com/free-developer-offers/) を含む、どのエディションでも動作します
   - `ASP.NET と Web 開発` ワークロードを選択します。
 
@@ -26,10 +26,10 @@
 
 ## 最新の .NET Aspire テンプレートのインストール
 
-以下のコマンドを実行して .NET Aspire 9.4 テンプレートをインストールします。
+以下のコマンドを実行して最新の .NET Aspire テンプレートをインストールします。
 
 ```cli
-dotnet new install Aspire.ProjectTemplates::9.4.0 --force
+dotnet new install Aspire.ProjectTemplates --force
 ```
 
 ## .NET Aspire CLI のインストール (オプション)
