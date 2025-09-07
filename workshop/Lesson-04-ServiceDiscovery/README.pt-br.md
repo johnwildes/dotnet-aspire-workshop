@@ -75,7 +75,7 @@ builder.Services.AddHttpClient<NwsManager>(
 1. No painel, clique em `Details` para o projeto `MyWeatherHub`. Isso mostrará todas as configurações que o .NET Aspire configurou ao executar o aplicativo a partir do App Host
 1. Clique no ícone de olho para revelar os valores e role até o final onde você verá `services__api_http_0` e `services__api_https_0` configurados com os valores corretos do serviço `Api`.
 
-    ![Configurações de descoberta de serviços no painel](./../../media/dashboard-servicediscovery.png)
+    ![Configurações de descoberta de serviços no painel](.../media/dashboard-servicediscovery.png)
 
 ## Conclusão
 

@@ -20,10 +20,10 @@
    - Click `Next` > `Create`.
 
     *Visual Studio*
-    ![Visual Studio dialog to add a service defaults project](./media/vs-add-servicedefaults.png)
+    ![Visual Studio dialog to add a service defaults project](../media/vs-add-servicedefaults.png)
 
     *Visual Studio Code*
-    ![Visual Studio Code dialog to add a service defaults project](./media/vsc-add-servicedefaults.png)
+    ![Visual Studio Code dialog to add a service defaults project](../media/vsc-add-servicedefaults.png)
 
 ### Command Line
 
@@ -59,7 +59,7 @@
 
 1. Run the application using a multiple-project launch configuration in Visual Studio or Visual Studio Code:
    - Visual Studio: Right click on the `MyWeatherHub` solution and go to properties. Select the `Api` and `MyWeatherHub` as startup projects, select `OK`.
-     - ![Visual Studio solution properties](./media/vs-multiproject.png)
+     - ![Visual Studio solution properties](../media/vs-multiproject.png)
      - Click `Start` to start and debug both projects.
    - Visual Studio Code: Run the `Api` and `MyWeatherHub` projects using the `Run and Debug` panel. We have provided a `launch.json` file with the necessary configurations to run both.
 1. Test the application by navigating to the following URLs:

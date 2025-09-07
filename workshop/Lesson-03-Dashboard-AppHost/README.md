@@ -20,10 +20,10 @@ Before continuing, consider some common terminology used in .NET Aspire:
    - Click `Next` > `Create`.
 
     *Visual Studio*
-    ![Visual Studio dialog to add a app host project](./media/vs-add-apphost.png)
+    ![Visual Studio dialog to add a app host project](../media/vs-add-apphost.png)
 
     *Visual Studio Code*
-    ![Visual Studio Code dialog to add a app host project](./media/vsc-add-apphost.png)
+    ![Visual Studio Code dialog to add a app host project](../media/vsc-add-apphost.png)
 
 ### Command Line
 
@@ -81,18 +81,18 @@ Before continuing, consider some common terminology used in .NET Aspire:
 1. Run the App Host using the `Run and Debug` panel in Visual Studio Code or Visual Studio.
 1. The .NET Aspire Dashboard will open in your default browser and display the resources and dependencies of your application.
 
-    ![.NET Aspire Dashboard](./media/dashboard.png)
+    ![.NET Aspire Dashboard](../media/dashboard.png)
 
 1. Open the weather page by clicking the Endpoint for the `MyWeatherHub` project resource which will be [https://localhost:7274](https://localhost:7274).
 1. Notice that both the `Api` and `MyWeatherHub` projects are running and can communicate with each other the same way as before using configuration settings.
 1. Back on the Aspire Dashboard, click on the `View Logs` button to see the console logs from the `Api` and `MyWeatherHub` projects.
 1. Select the `Traces` tab and select `View` on a trace where the API is being called.
 
-    ![.NET Aspire Dashboard](./media/dashboard-trace.png)
+    ![.NET Aspire Dashboard](../media/dashboard-trace.png)
 
 1. Explore the `Metrics` tab to see the metrics for the `Api` and `MyWeatherHub` projects.
 
-    ![.NET Aspire Dashboard](./media/dashboard-metrics.png)
+    ![.NET Aspire Dashboard](../media/dashboard-metrics.png)
 
 ## Create an error
 
@@ -101,7 +101,7 @@ Before continuing, consider some common terminology used in .NET Aspire:
 1. On the `MyWeatherApp` website, click on several different cities to generate errors. Usually, clicking on 5 different cities will generate at least one error.
 1. After generating the errors, the `Structured` tab will automatically update on the dashboard and display the errors.
 
-    ![.NET Aspire Dashboard](./media/dashboard-error.png)
+    ![.NET Aspire Dashboard](../media/dashboard-error.png)
 
 1. Click on the `Trace` or the `Details` to see the error message and stack trace.
 
@@ -112,7 +112,7 @@ Before continuing, consider some common terminology used in .NET Aspire:
 
 We saw the table of resources in the .NET Aspire dashboard and that's a nice list of our resources, and we'll see that grow as our application system starts to utilize more resources.  Additionally, there is a **Graph** view of resources available by clicking the **Graph** text just above the table.
 
-![.NET Aspire Dashboard Resource Graph](./media/dashboard-graph.png)
+![.NET Aspire Dashboard Resource Graph](../media/dashboard-graph.png)
 
 This graph is generated based on the references and relationships you configure for your application.
 

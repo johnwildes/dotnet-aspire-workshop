@@ -214,7 +214,7 @@ dotnet test IntegrationTests/IntegrationTests.csproj
 1. Open the Test Explorer by going to View > Test Explorer (or press Ctrl+E, T)
 1. In the Test Explorer window, you'll see all the tests in your solution
 
-![Visual Studio Test Explorer](./media/vs-test-explorer.png)
+![Visual Studio Test Explorer](../media/vs-test-explorer.png)
 
 1. You can:
    - Run all tests by clicking the "Run All" button at the top

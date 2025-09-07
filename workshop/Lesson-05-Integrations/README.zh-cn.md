@@ -47,7 +47,7 @@
 2. 启动 App Host 项目。
 3. 您将在仪表板和 Docker Desktop 中看到 Redis 容器和 Redis Commander 容器的下载和启动。
 
-    ![Redis running in dashboard and desktop](./media/redis-started.png)
+    ![Redis running in dashboard and desktop](../media/redis-started.png)
 
 ## 在 API 项目中集成 Output Caching
 
@@ -86,15 +86,15 @@
 1. 启动 App Host 项目，然后通过仪表板来打开 `MyWeatherHub` 项目。
 2. 点击页面上的某个城市，然后再次点击它。你会看到响应是被缓存的，通过 `Traces` 可以看到第二个请求比第一个请求要快得多。
 
-    ![Output caching in action](./media/output-caching.png)
+    ![Output caching in action](../media/output-caching.png)
 
 3. 你还可以通过 Redis Commander 查看缓存的响应。通过点击仪表板中的 `cache-commander` 端点来访问，在指标 stats 的下面，你可以看到处理的连接和命令统计。
 
-    ![Redis Commander](./media/redis-commander.png)
+    ![Redis Commander](../media/redis-commander.png)
 
 4. In addition, you can see logs for the Redis cache and Redis Commander in the `Console` tab.
 
-    ![Redis logs](./media/redis-logs.png)
+    ![Redis logs](../media/redis-logs.png)
 
 ## 订制 Redis 容器
 
@@ -111,11 +111,11 @@ var cache = builder.AddRedis("cache")
 
 1. 重新运行应用，你可以通过仪表板看到 Garnet 在运行，也可以在 Docker Desktop 中看到 Garnet 在运行。
 
-    ![Garnet running in dashboard and desktop](./media/garnet-started.png)
+    ![Garnet running in dashboard and desktop](../media/garnet-started.png)
 
 2. 还可以 `Console` 页面中看到 Garnet 的日志信息。
 
-    ![Garnet logs](./media/garnet-logs.png)
+    ![Garnet logs](../media/garnet-logs.png)
 
 ## 总结
 

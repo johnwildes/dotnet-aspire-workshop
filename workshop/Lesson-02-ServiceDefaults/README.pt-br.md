@@ -21,10 +21,10 @@
 - Clique em `Next` > `Create`.
 
  *Visual Studio*
- ![Janela do Visual Studio para adicionar um projeto de padrões de serviço](./../../media/vs-add-servicedefaults.png)
+ ![Janela do Visual Studio para adicionar um projeto de padrões de serviço](.../media/vs-add-servicedefaults.png)
 
  *Visual Studio Code*
- ![Janela do Visual Studio Code para adicionar um projeto de padrões de serviço](./../../media/vsc-add-servicedefaults.png)
+ ![Janela do Visual Studio Code para adicionar um projeto de padrões de serviço](.../media/vsc-add-servicedefaults.png)
 
 ### Linha de Comando
 
@@ -62,7 +62,7 @@
 1. Execute a aplicação usando uma configuração de execução multiprojeto no Visual Studio ou Visual Studio Code.
 
 - Visual Studio: Clique com o botão direito na solução `MyWeatherHub` e vá para propriedades. Selecione `Api` e `MyWeatherHub` como "startup projects", selecione `OK`.
-- ![Propriedades da solução do Visual Studio](./../../media/vs-multiproject.png)
+- ![Propriedades da solução do Visual Studio](.../media/vs-multiproject.png)
 - Clique em `Start` para começar e depurar ambos os projetos.
 - Visual Studio Code: Execute os projetos `Api` e `MyWeatherHub` usando o painel `Run and Debug`. Fornecemos um arquivo `launch.json` com as configurações necessárias para executar ambos.
 

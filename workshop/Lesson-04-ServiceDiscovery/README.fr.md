@@ -73,7 +73,7 @@ En option, nous pouvons mettre à jour l'URL pour ne pas utiliser les paramètre
 1. Dans le tableau de bord, cliquez sur `Details` pour le projet `MyWeatherHub`. Cela fera apparaître tous les paramètres configurés par .NET Aspire lors de l'exécution de l'application à partir de l'hôte de l'application.
 1. Cliquez sur l'icône en forme d'œil pour révéler les valeurs et faites défiler vers le bas où vous verrez `services__api_http_0` et `services__api_https_0` configurés avec les valeurs correctes du service `Api`.
 
-  ![Paramètres de découverte de services dans le tableau de bord](media/dashboard-servicediscovery.png)
+  ![Paramètres de découverte de services dans le tableau de bord](../media/dashboard-servicediscovery.png)
 
 ## Conclusion
 

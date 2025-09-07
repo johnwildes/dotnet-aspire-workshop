@@ -12,7 +12,7 @@
 
 1. 选择 **Azure Container Apps for .NET Aspire** 作为发布目标。
 
-    ![发布对话框工作流的屏幕截图。](media/vs-deploy.png)
+    ![发布对话框工作流的屏幕截图。](../media/vs-deploy.png)
 
 1. 在 **AzDev Environment** 步骤中，选择您所需的 **订阅** 和 **位置** 值，然后输入 **环境名称**，如 _aspire-weather_。环境名称决定 Azure Container Apps 环境资源的命名。
 1. 选择 **完成** 以创建环境，然后选择 **关闭** 以退出对话框工作流并查看部署环境摘要。
@@ -22,7 +22,7 @@
 
 1. 发布完成后，Visual Studio 在环境屏幕底部显示资源 URL。使用这些链接查看各种已部署的资源。选择 **webfrontend** URL 以打开浏览器到已部署的应用。
 
-    ![已完成的发布过程和已部署资源的屏幕截图。](media/vs-publish-complete.png)
+    ![已完成的发布过程和已部署资源的屏幕截图。](../media/vs-publish-complete.png)
 
 ## 使用 Azure Developer CLI (azd) 部署应用
 

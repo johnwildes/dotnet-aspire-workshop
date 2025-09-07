@@ -77,7 +77,7 @@ Alternatively, we can update the url to not use the `WeatherEndpoint` configurat
 1. In the dashboard click on the `Details` for the `MyWeatherHub` project. This will bring up all of the settings that .NET Aspire configured when running the app from the App Host.
 1. Click on the eye icon to reveal the values and scroll to the bottom where you will see `services__api__http__0` and `services__api__https__0` configured with the correct values of the `Api` service.`
 
-    ![Service discovery settings in the dashboard](media/dashboard-servicediscovery.png)
+    ![Service discovery settings in the dashboard](../media/dashboard-servicediscovery.png)
 
 ## New in .NET Aspire 9.4: External Service Modeling
 
@@ -100,7 +100,7 @@ var api = builder.AddProject<Projects.Api>("api")
     .WithReference(weatherApi);
 ```
 
-![Dashboard with the additional external resource](media/external-service-resource.png)
+![Dashboard with the additional external resource](../media/external-service-resource.png)
 
 ### Benefits of External Service Modeling
 

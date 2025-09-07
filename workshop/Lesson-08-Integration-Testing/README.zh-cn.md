@@ -214,7 +214,7 @@ dotnet test IntegrationTests/IntegrationTests.csproj
 1. 通过转到查看 > 测试资源管理器打开测试资源管理器（或按 Ctrl+E, T）
 1. 在测试资源管理器窗口中，您将看到解决方案中的所有测试
 
-![Visual Studio 测试资源管理器](./media/vs-test-explorer.png)
+![Visual Studio 测试资源管理器](../media/vs-test-explorer.png)
 
 1. 您可以：
    - 通过单击顶部的"全部运行"按钮来运行所有测试

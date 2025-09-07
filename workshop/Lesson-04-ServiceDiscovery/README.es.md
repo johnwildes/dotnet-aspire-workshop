@@ -72,7 +72,7 @@ Opcionalmente, podemos actualizar la URL para no utilizar la configuración de `
 4. En el panel de control, haz clic en `Detalles` para el proyecto `MyWeatherHub`. Esto mostrará todas las configuraciones que .NET Aspire configuró al ejecutar la aplicación desde App Host.
 5. Haz clic en el icono del ojo para revelar los valores y desplázate hasta la parte inferior donde verás `services__api_http_0` y `services__api_https_0` configurados con los valores correctos del servicio `Api`.
 
- ![Configuración de descubrimiento de servicios en el panel de control](media/dashboard-servicediscovery.png)
+ ![Configuración de descubrimiento de servicios en el panel de control](../media/dashboard-servicediscovery.png)
 
 ## Conclusión
 
