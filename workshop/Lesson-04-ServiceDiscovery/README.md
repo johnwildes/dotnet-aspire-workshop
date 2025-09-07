@@ -33,17 +33,9 @@ When we added `ServiceDefaults` to the projects we automatically enrolled them i
 
 Some services expose multiple, named endpoints. By default, the scheme portion of the URI is used to refer to the name of the endpoint being resolved, e.g. the URI `https://basket` will resolve an endpoint named `https` on the `basket` service. By default in Aspire, project resources declare their endpoints according to the contents of their *launchSettings.json* file, so most projects will by default receive `https` and `http` named endpoints. The scheme portion of the referring URI can include multiple names separated by a `+` character and in preference order, e.g. `https+http://basket` will attempt to resolve the `https` named endpoint, and if not found it will resolve the `http` endpoint, of the `basket` service.
 
-For cases when the named endpoint does not match the intended scheme, they can also be resolved explicitly by specifying the endpoint name in the first sub-domain section of the host portion of the request URI, when the first section is prefixed with an underscore (`_`), following the format `scheme://_endpointName.serviceName`. For example, if a service named "basket" exposes an HTTPS endpoint named "dashboard", then the URI `https+http://_dashboard.basket` can be used to specify this endpoint, for example:
-
-```csharp
-builder.Services.AddHttpClient<BasketServiceClient>(
-    static client => client.BaseAddress = new("https+http://basket"));
-
-builder.Services.AddHttpClient<BasketServiceDashboardClient>(
-    static client => client.BaseAddress = new("https+http://_dashboard.basket"));
-```
-
-In the above example, the `BasketServiceClient` will use the `https` or `http` endpoint of the `basket` service, while the `BasketServiceDashboardClient` will use the `dashboard` endpoint of the `basket` service, via either the HTTPS or HTTP schemes, depending on which is available.
+> [!NOTE]
+> This workshop uses implicit service discovery with the default `http` and `https` named endpoints. .NET Aspire also supports explicitly declaring and resolving additional named endpoints (via code, configuration, and Kubernetes) for advanced scenarios. See the [Named Endpoints section of the Service Discovery docs](https://learn.microsoft.com/dotnet/aspire/service-discovery/overview#named-endpoints)
+ for details.
 
 Now, let's update the `MyWeatherHub` project to use service discovery to connect to the `Api` service. This can be accomplished by updating the existing `WeatherEndpoint` configuration settings in the `appsettings.json`. This is convenient when enabling .NET Aspire in an existing deployed application as you can continue to use your existing configuration settings.
 
