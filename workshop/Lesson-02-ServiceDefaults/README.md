@@ -42,9 +42,9 @@ Before we dive into the mechanics, here’s why we do each of the next steps:
 - Call `app.MapDefaultEndpoints()`: This maps development‑time health endpoints (`/health`, `/alive`) and prepares the app for later dashboard and orchestration scenarios. We’ll go deeper into these concepts in later modules; for now just know this lights up diagnostics and readiness probes early.
 
 1. Add a reference to the `ServiceDefaults` project in the `Api` and `MyWeatherHub` projects:
-   - Right-click on the `Api` project and select `Add` > `Reference`.
+   - Right-click on the `Api` project and select `Add` > `Project Reference`.
      - Check the `ServiceDefaults` project and click `OK`.
-   - Right-click on the `MyWeatherHub` project and select `Add` > `Reference`.
+   - Right-click on the `MyWeatherHub` project and select `Add` > `Project Reference`.
      - Check the `ServiceDefaults` project and click `OK`.
 
    > Pro Tip: In Visual Studio 2022, you can drag and drop the project onto another project to add a reference.
